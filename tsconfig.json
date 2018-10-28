@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "module": "ES6",
+    "moduleResolution": "ES6",
+    "outDir": "./dist",
+    "plugins": [{
+      "name": "tslint-language-service"
+    }],
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": true
+  },
+  "exclude": [
+    ".cache/",
+    ".git/",
+    "dist/",
+    "node_modules/"
+  ]
+}

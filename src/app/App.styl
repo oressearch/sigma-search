@@ -1,0 +1,15 @@
+@import 'stylus-media-breakpoint'
+
+.title
+  font-family Courier
+  text-align center
+  opacity .9
+  +media-lt(sm)
+    color yellow
+  +media-gt(lg)
+    color gray
+  +media(md)
+    color green
+
+::placeholder
+  color gray
