@@ -28,7 +28,7 @@
   "scripts": {
     "start": "parcel serve ./src/index.pug",
     "prebuild": "rm -rf dist",
-    "build": "parcel build ./src/index.pug",
+    "build": "parcel build --public-url /sigma-search-new ./src/index.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

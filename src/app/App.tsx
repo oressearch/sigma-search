@@ -1,15 +1,10 @@
 import React, {Fragment} from 'react'
-import {BrowserRouter, HashRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route} from 'react-router-dom'
 
 import About from './components/About'
 import Contact from './components/Contact'
 import Home from './components/Home'
 import WhatWeDo from './components/WhatWeDo'
-
-// tslint:disable-next-line:variable-name
-const Router = process.env.NODE_ENV === 'production'
-  ? HashRouter
-  : BrowserRouter
 
 // ------------------------------------------------------------------ # Public #
 
