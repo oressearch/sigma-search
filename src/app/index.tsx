@@ -4,6 +4,6 @@ import {render} from 'react-dom'
 import App from './App'
 
 render(
-  <App title="Web app starter" />,
+  <App />,
   document.getElementById('app') || document.body,
 )
