@@ -1,0 +1,15 @@
+@import 'stylus-media-breakpoint'
+
+.container
+  margin-left auto
+  margin-right auto
+  max-width xl-min
+  padding-right 15px
+  padding-left 15px
+  width 100%
+  +media(lg)
+    max-width lg-min
+  +media(md)
+    max-width md-min
+  +media-lt(sm)
+    max-width sm-min

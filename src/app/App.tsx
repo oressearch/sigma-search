@@ -6,12 +6,17 @@ import Contact from './components/Contact'
 import Home from './components/Home'
 import WhatWeDo from './components/WhatWeDo'
 
+import Nav from './components/nav/Nav'
+
+import './App.styl'
+
 // ------------------------------------------------------------------ # Public #
 
 export default function App() {
   return (
     <BrowserRouter>
       <Fragment>
+        <Nav />
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
         <Route exact path="/what-we-do" component={WhatWeDo} />
