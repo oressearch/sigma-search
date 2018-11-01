@@ -1870,7 +1870,7 @@ p.nominalBounds = new cjs.Rectangle(-490,-472.5,909,899.5);
 p.nominalBounds = new cjs.Rectangle(1057.3,379.8,1681.1,731);
 // library properties:
 lib.properties = {
-	id: '75E0C7C39499C6409F115355863EC003',
+	id: '75E0C7C39499C6409F115355863EC004',
 	width: 1920,
 	height: 740,
 	fps: 24,
@@ -1913,7 +1913,7 @@ an.bootstrapCallback=function(fnCallback) {
 };
 
 an.compositions = an.compositions || {};
-an.compositions['75E0C7C39499C6409F115355863EC003'] = {
+an.compositions['75E0C7C39499C6409F115355863EC004'] = {
 	getStage: function() { return exportRoot.getStage(); },
 	getLibrary: function() { return lib; },
 	getSpriteSheet: function() { return ss; },
@@ -1934,67 +1934,3 @@ an.getComposition = function(id) {
 
 
 })(createjs = window.createjs||{}, AdobeAn = window.AdobeAn||{});
-var createjs, AdobeAn;
-
-var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-window.animation_schema_start = () => {
-	canvas = document.getElementById("animation-schema");
-	anim_container = document.getElementById("animation-schema-container");
-	dom_overlay_container = document.createElement("div");
-	var comp=AdobeAn.getComposition("75E0C7C39499C6409F115355863EC003");
-	var lib=comp.getLibrary();
-	handleComplete({},comp);
-}
-function handleComplete(evt,comp) {
-	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var lib=comp.getLibrary();
-	var ss=comp.getSpriteSheet();
-	exportRoot = new lib.schema();
-	stage = new lib.Stage(canvas);
-	stage.enableMouseOver();	
-	//Registers the "tick" event listener.
-	fnStartAnimation = function() {
-		stage.addChild(exportRoot);
-		createjs.Ticker.setFPS(lib.properties.fps);
-		createjs.Ticker.addEventListener("tick", stage);
-	}	    
-	//Code to support hidpi screens and responsive scaling.
-	function makeResponsive(isResp, respDim, isScale, scaleType) {		
-		var lastW, lastH, lastS=1;		
-		window.addEventListener('resize', resizeCanvas);		
-		resizeCanvas();		
-		function resizeCanvas() {			
-			var w = lib.properties.width, h = lib.properties.height;			
-			var iw = window.innerWidth, ih=window.innerHeight;			
-			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
-			if(isResp) {                
-				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
-					sRatio = lastS;                
-				}				
-				else if(!isScale) {					
-					if(iw<w || ih<h)						
-						sRatio = Math.min(xRatio, yRatio);				
-				}				
-				else if(scaleType==1) {					
-					sRatio = Math.min(xRatio, yRatio);				
-				}				
-				else if(scaleType==2) {					
-					sRatio = Math.max(xRatio, yRatio);				
-				}			
-			}			
-			canvas.width = w*pRatio*sRatio;			
-			canvas.height = h*pRatio*sRatio;
-			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
-			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
-			stage.scaleX = pRatio*sRatio;			
-			stage.scaleY = pRatio*sRatio;			
-			lastW = iw; lastH = ih; lastS = sRatio;            
-			stage.tickOnUpdate = false;            
-			stage.update();            
-			stage.tickOnUpdate = true;		
-		}
-	}
-	makeResponsive(true,'width',true,2);	
-	AdobeAn.compositionLoaded(lib.properties.id);
-	fnStartAnimation();
-}

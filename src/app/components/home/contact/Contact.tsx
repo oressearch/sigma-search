@@ -2,7 +2,7 @@ import React from 'react'
 
 // ------------------------------------------------------------------ # Public #
 
-export default function ContactUs() {
+export default function Contact() {
   return (
     <h1>Contact us</h1>
   )

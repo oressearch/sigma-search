@@ -17,11 +17,11 @@ export default function Nav() {
   return (
     <header className={styles.container}>
       <Container tag="nav" className={styles.nav}>
-        <Link className={styles.link} to="">
+        <Link className={styles.link} to="/">
           <img className={styles.logo} src={logo} alt="Logo" />
         </Link>
 
-        <Link className={styles.link} to="">
+        <Link className={styles.link} to="/">
           <img className={styles.logo} src={logo_sm} alt="Logo" />
         </Link>
 

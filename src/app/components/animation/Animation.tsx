@@ -8,6 +8,8 @@ import styles from './Animation.styl'
 interface Props {
   name: string
   composition: string
+  hasResources?: boolean
+  isBackground?: boolean
 }
 
 // ------------------------------------------------------------------ # Public #
@@ -20,38 +22,26 @@ export default class Animation extends Component<Props, {}> {
     super(props)
   }
 
-  public componentDidMount() {
-    const {composition, name} = this.props
-    const {createjs, AdobeAn} = window as any
-
-    const comp = AdobeAn.getComposition(composition)
-    const loader = new createjs.LoadQueue(false)
-
-    loader.addEventListener('fileload', (evt: any) => {
-      const images = comp.getImages()
-
-      if (evt && (evt.item.type === 'image')) {
-        images[evt.item.id] = evt.result
-      }
-    })
-
-    loader.addEventListener('complete', (evt: any) => {
+  public onCompleted(comp: any) {
+    return (evt: any) => {
+      const {createjs, AdobeAn} = window as any
       const lib = comp.getLibrary()
       const ss = comp.getSpriteSheet()
-      const queue = evt.target
-      const root = lib[name]
+      const root = lib[this.props.name]
 
-      for (const ss_metadata of lib.ssMetadata) {
-        ss[ss_metadata.name] = new createjs.SpriteSheet({
-          frames: ss_metadata.frames,
-          images: [queue.getResult(ss_metadata.name)],
-        })
+      if (this.props.hasResources) {
+        for (const ss_metadata of lib.ssMetadata) {
+          ss[ss_metadata.name] = new createjs.SpriteSheet({
+            frames: ss_metadata.frames,
+            images: [evt.target.getResult(ss_metadata.name)],
+          })
+        }
       }
 
       const stage = new lib.Stage(this.animation)
       stage.enableMouseOver()
 
-      const fnStartAnimation = () => {
+      const start_animation = () => {
         stage.addChild(new root())
         createjs.Ticker.setFPS(lib.properties.fps)
         createjs.Ticker.addEventListener('tick', stage)
@@ -96,26 +86,49 @@ export default class Animation extends Component<Props, {}> {
       resize_canvas()
 
       AdobeAn.compositionLoaded(lib.properties.id)
-      fnStartAnimation()
-    })
+      start_animation()
+    }
+  }
 
-    loader.loadManifest(comp.getLibrary().properties.manifest)
+  public onFileLoaded(comp: any) {
+    return (evt: any) => {
+      const images = comp.getImages()
+
+      if (evt && (evt.item.type === 'image')) {
+        images[evt.item.id] = evt.result
+      }
+    }
+  }
+
+  public componentDidMount() {
+    const {createjs, AdobeAn} = window as any
+    const composition = AdobeAn.getComposition(this.props.composition)
+
+    if (this.props.hasResources) {
+      const loader = new createjs.LoadQueue(false)
+      loader.addEventListener('fileload', this.onFileLoaded(composition))
+      loader.addEventListener('complete', this.onCompleted(composition))
+      loader.loadManifest(composition.getLibrary().properties.manifest)
+    } else {
+      this.onCompleted(composition)({})
+    }
   }
 
   public render() {
-    return (
-      <section className={styles.section}>
-        <div className={styles.container} ref={ref => this.container = ref}>
-          <canvas
-            className={styles.animation}
-            ref={ref => this.animation = ref}
-          />
-        </div>
+    const type = this.props.isBackground
+      ? 'absolute'
+      : 'relative'
 
-        <div className={styles.content}>
-          {this.props.children}
-        </div>
-      </section>
+    return (
+      <div
+        className={styles[`container-${type}`]}
+        ref={ref => this.container = ref}
+      >
+        <canvas
+          className={styles[`animation-${type}`]}
+          ref={ref => this.animation = ref}
+        />
+      </div>
     )
   }
 }

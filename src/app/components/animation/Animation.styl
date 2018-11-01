@@ -2,20 +2,11 @@
 
 @import '../../variables'
 
-.section
-  display flex
-  flex-direction column
-  height "calc(100vh - %s)" % nav-height
-  justify-content center
-  overflow hidden
-  position relative
-  +media-lt(sm)
-    height "calc(100vh - %s)" % nav-height-sm
-  h1,
-  h1 + p
-    color white
+.container-relative
+  height auto !important
+  width 100% !important
 
-.container
+.container-absolute
   position absolute
   margin auto
   left -100%
@@ -24,8 +15,16 @@
   bottom -100%
 
 .animation
-  position absolute
   display block
+
+.animation-relative
+  @extend .animation
+  height auto !important
+  width 100% !important
+
+.animation-absolute
+  @extend .animation
+  position absolute
 
 .content
   z-index 1

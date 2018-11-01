@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {HashRouter, Route} from 'react-router-dom'
 
 import About from './components/about'
 import Contact from './components/contact'
@@ -12,7 +12,7 @@ import './App.styl'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Fragment>
         <Nav />
 
@@ -21,6 +21,6 @@ export default function App() {
         <Route exact path="/what-we-do" component={WhatWeDo} />
         <Route exact path="/contact" component={Contact} />
       </Fragment>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
