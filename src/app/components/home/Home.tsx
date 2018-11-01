@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 
-import AboutUs from './about-us'
-import ContactUs from './contact-us'
+import About from './about'
+import Contact from './contact'
 import GlobalRecruitmentSolutions from './global-recruitment-solutions'
 import WhatWeDo from './what-we-do'
 
@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <Fragment>
       <GlobalRecruitmentSolutions />
-      <AboutUs />
+      <About />
       <WhatWeDo />
-      <ContactUs />
+      <Contact />
     </Fragment>
   )
 }
