@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Animation from './Animation'
-import Container from './Container'
+import Animation from '../../animation'
+import Container from '../../container'
 
-import '../animations/home/carte1.js'
+import './animations/carte1.js'
 
 // ------------------------------------------------------------------ # Public #
 
-export default function Home() {
+export default function GlobalRecruitmentSolutions() {
   return (
     <Animation name="carte1" composition="75E0C7C39499C6409F115355863EC003">
       <Container>
