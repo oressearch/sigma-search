@@ -4,23 +4,23 @@
 
 .container
   background white
-  height menu-height
+  height nav-height
   left 0
   position fixed
   right 0
   top 0
   z-index 2
-  +media(sm)
-    height menu-height-sm
+  +media-lt(sm)
+    height nav-height-sm
 
 .nav
   align-items center
   background white
   display flex
-  height menu-height
+  height nav-height
   justify-content center
   +media-lt(sm)
-    height menu-height-sm
+    height nav-height-sm
 
 .link
   color black-s
@@ -30,12 +30,14 @@
     text-decoration underline
   &:first-of-type
     flex 1
+    padding-left 0
     +media-gt(md)
       display block
     +media-lt(sm)
       display none
   &:nth-of-type(2)
     flex 1
+    padding-left 0
     +media-gt(md)
       display none
     +media-lt(sm)

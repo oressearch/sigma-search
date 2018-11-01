@@ -1,18 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import Container from '../container/Container'
+import Container from '../Container'
 
 // @ts-ignore
 import styles from './Nav.styl'
 
 // @ts-ignore
+import logo_sm from './images/logo-sm.jpeg'
+// @ts-ignore
 import logo from './images/logo.jpeg'
 
-// @ts-ignore
-import logo_sm from './images/logo-sm.jpeg'
-
-// ----------------------------------------------------------------- # Private #
 // ------------------------------------------------------------------ # Public #
 
 export default function Nav() {

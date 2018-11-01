@@ -6,7 +6,7 @@
     "experimentalDecorators": true,
     "jsx": "react",
     "module": "ES6",
-    "moduleResolution": "ES6",
+    "moduleResolution": "Node",
     "outDir": "./dist",
     "plugins": [{
       "name": "tslint-language-service"

@@ -1,0 +1,31 @@
+@import 'stylus-media-breakpoint'
+
+@import '../../variables'
+
+.section
+  display flex
+  flex-direction column
+  height "calc(100vh - %s)" % nav-height
+  justify-content center
+  overflow hidden
+  position relative
+  +media-lt(sm)
+    height "calc(100vh - %s)" % nav-height-sm
+  h1,
+  h1 + p
+    color white
+
+.container
+  position absolute
+  margin auto
+  left -100%
+  right -100%
+  top -100%
+  bottom -100%
+
+.animation
+  position absolute
+  display block
+
+.content
+  z-index 1

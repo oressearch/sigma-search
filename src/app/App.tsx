@@ -6,7 +6,7 @@ import Contact from './components/Contact'
 import Home from './components/Home'
 import WhatWeDo from './components/WhatWeDo'
 
-import Nav from './components/nav/Nav'
+import Nav from './components/Nav'
 
 import './App.styl'
 

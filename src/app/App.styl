@@ -7,9 +7,9 @@
 
 body
   margin 0
-  padding menu-height 0 0 0
+  padding nav-height 0 0 0
   +media-lt(sm)
-    padding menu-height-sm 0 0 0
+    padding nav-height-sm 0 0 0
 
 img
   display block
@@ -30,142 +30,21 @@ main > section[id], footer
     opacity 1
     transform translateY(0)
 
-.container
-  margin-left auto
-  margin-right auto
-  max-width 1140px
-  padding-right 15px
-  padding-left 15px
-  width 100%
-  +media(lg)
-    max-width 960px
-  +media(md)
-    max-width 720px
-  +media(sm)
-    max-width 540px
+h1
+  font-family Poppins, sans-serif
+  font-size 52px
+  font-weight 700
+  line-height 52px
+  margin 0
+  +media-lt(sm)
+    font-size 42px
+    line-height 42px
 
-.block-container
-  height 100%
-  left 0
-  position absolute
-  top 0
-  width 100%
-  +media(l)
-    position relative
-
-.block
-  align-items center
-  color black-m
-  display flex
-  height 100%
-  padding-top 50px
-
-  h1 + p,
-  h2 + p
-    margin 0
-
-  .block-split
-    color black-m
-
-  &.inverted
-    color white
-
-    .block-split
-      color white
-
-  &.top
-    align-items flex-start
-
-  &.bottom
-    padding-bottom 50px
-    padding-top 0
-    align-items flex-end
-    +media(s)
-      padding-bottom 0
-      padding-top 50px
-
-
-.block-content
-  width 100%
-  z-index 1
-
-  a
-    font-size 20px
+h1 + p
+  font-size 22px
+  line-height 25px
+  font-weight 600
+  margin 0 0 30px 0
+  +media-lt(sm)
+    font-size 18px
     line-height 23px
-    +media(s)
-      font-size 18px
-      line-height 23px
-
-  p
-    font-size 20px
-    line-height 23px
-    margin 25px 0 0 0
-    +media(s)
-      font-size 18px
-      line-height 23px
-
-  h1, h2
-    font-size 52px
-    font-weight 700
-    line-height 52px
-    margin 0
-    +media(s)
-      font-size 42px
-      line-height 46px
-
-
-  h1 + p
-    font-size 22px
-    line-height 25px
-    font-weight 600
-    margin 0 0 30px 0
-    +media(s)
-      font-size 18px
-      line-height 23px
-
-  ul
-    margin 0
-    padding 20px
-
-  li
-    font-size 20px
-    line-height 23px
-    margin 20px 40px
-    +media(s)
-      font-size 18px
-      line-height 23px
-
-.block-content-40
-  @extend .block-content
-  width 40%
-  +media(m)
-    width 100%
-
-.block-bg
-  margin auto
-
-.block-split
-  color black-m
-  display flex
-  padding-top 50px
-  +media(m)
-    flex-direction column
-
-  &.teal
-    color teal
-
-  > *
-    flex 1
-
-.animation
-  display block
-  height auto !important
-  width 100% !important
-
-.full-width
-  height auto !important
-  width 100% !important
-
-.full-height
-  height 100vh !important
-  width auto !important
