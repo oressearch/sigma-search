@@ -16,12 +16,10 @@ export default function App() {
     <HashRouter>
       <Fragment>
         <Nav />
-
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
         <Route exact path="/what-we-do" component={WhatWeDo} />
         <Route exact path="/contact" component={Contact} />
-
         <Footer />
       </Fragment>
     </HashRouter>

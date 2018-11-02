@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Container from '../../container'
+import Section from '../../section'
 
 // @ts-ignore
 import styles from './Contact.styl'
@@ -12,12 +13,13 @@ import background from './images/contact.jpeg'
 
 export default function Contact() {
   return (
-    <section className={styles.section}>
+    <Section className={styles.section}>
       <img src={background} alt="" />
+
       <Container className={styles.container}>
         <h1>Contact us</h1>
         <p>By countries</p>
       </Container>
-    </section>
+    </Section>
   )
 }
