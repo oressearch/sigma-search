@@ -1,0 +1,75 @@
+@import 'stylus-media-breakpoint'
+
+@import '../../variables'
+
+.footer
+  background black-md
+  color gray-lg
+  font-weight 600
+
+.container
+  align-items flex-end
+  display flex
+  padding-bottom 50px
+  padding-top 50px
+  +media-lt(md)
+    align-items center
+    flex-direction column
+    justify-content center
+    padding-bottom 15px
+    padding-top 15px
+  a
+    color gray-lg
+    font-size 14px
+    text-decoration none
+    &:hover
+      text-decoration underline
+  p
+    font-size 14px
+    margin 0
+    +media-lt(md)
+      text-align center
+  ul
+    list-style-type none
+
+.map
+  flex 2
+  +media-lt(md)
+    text-align center
+  p
+    margin 20px 0 0 0
+  img
+    width auto
+    max-width 100%
+    +media-lt(md)
+      margin auto
+  h4
+    margin 0 0 30px 52px
+    +media-lt(md)
+      margin 0 0 30px 0
+
+.nav
+  flex 1
+  li
+    +media-lt(md)
+      text-align center
+  h5
+    margin 25px 0 0 0
+    text-transform uppercase
+    > a
+      color white
+    +media-lt(md)
+      text-align center
+
+.credits
+  flex 1
+  margin-left 50px
+  +media-lt(md)
+    margin-left 0
+  h5
+    color white
+    margin 25px 0 0 0
+    > a
+      color white
+    +media-lt(md)
+      text-align center
