@@ -7,13 +7,19 @@ import WhatWeDo from './what-we-do'
 
 // ------------------------------------------------------------------ # Public #
 
-export default function Home() {
-  return (
-    <Fragment>
-      <GlobalRecruitmentSolutions />
-      <About />
-      <WhatWeDo />
-      <Contact />
-    </Fragment>
-  )
+export default class Home extends React.Component {
+  componentDidMount() {
+    window.scroll(0, 0)
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <GlobalRecruitmentSolutions />
+        <About />
+        <WhatWeDo />
+        <Contact />
+      </Fragment>
+    )
+  }
 }

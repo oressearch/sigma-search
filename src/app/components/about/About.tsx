@@ -6,12 +6,18 @@ import OurValues from './our-values'
 
 // ------------------------------------------------------------------ # Public #
 
-export default function About() {
-  return (
-    <Fragment>
-      <About_ />
-      <OurValues />
-      <OurCapability />
-    </Fragment>
-  )
+export default class About extends React.Component {
+  componentDidMount() {
+    window.scroll(0, 0)
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <About_ />
+        <OurValues />
+        <OurCapability />
+      </Fragment>
+    )
+  }
 }
