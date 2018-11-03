@@ -1,0 +1,42 @@
+@import '../../../common'
+
+.section
+  {with-height-100}
+  background url('./images/executive-search.jpeg')
+  background-repeat no-repeat
+  background-size cover
+  color white
+  padding-bottom 50px
+  padding-top 50px
+
+.nav
+  align-items flex-end
+  display flex
+  height 400px
+  justify-content space-around
+  list-style-type none
+  margin 40px 0 20px 0
+  text-align center
+  img
+    margin 15px auto
+    width inherit
+
+.item
+  border-right 1px solid blue-sm
+  flex 1
+  height 100%
+  padding 0 5px
+  &:first-of-type
+    border-left 1px solid blue-sm
+
+.link
+  border-bottom 1px solid transparent
+  cursor pointer
+  display block
+  padding 0 10px 15px 10px
+  &:hover
+    border-bottom 1px solid white
+    text-decoration none
+  &[data-active]
+    border-bottom 1px solid blue
+    color blue
