@@ -16,12 +16,25 @@
   top nav-height
   width 100%
   z-index -1
+  +media-lt(sm)
+    padding-top 15px
+    p
+      margin-bottom 15px
 
 .content
   display flex
   margin-top 50px
+  +media-lt(sm)
+    margin-top 0
   ul
     flex 1
     padding 0 40px
+    +media-lt(sm)
+      list-style-type none
+      padding 0
   li
     padding 15px
+    +media-lt(sm)
+      font-size 14px
+      line-height 14px
+      padding 7px 0
