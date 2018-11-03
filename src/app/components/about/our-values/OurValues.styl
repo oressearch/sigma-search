@@ -1,0 +1,27 @@
+@import '../../../common'
+
+.frame
+  {with-height-100}
+
+.section
+  {with-height-100}
+  background url('./images/our-values.jpeg') center center
+  background-size cover
+  left 0
+  overflow hidden
+  padding-top 50px
+  position fixed
+  top nav-height
+  width 100%
+  z-index -1
+  +media-lt(sm)
+    display none
+
+.content
+  display flex
+  margin-top 50px
+  ul
+    flex 1
+    padding 0 40px
+  li
+    padding 15px

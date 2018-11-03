@@ -1,3 +1,5 @@
+@import 'stylus-media-breakpoint'
+
 black-sm = #444545
 black-md = #2b2e31
 white    = #ffffff
@@ -9,3 +11,8 @@ teal     = #44565d
 
 nav-height = 100px
 nav-height-sm = 60px
+
+with-height-100 =
+  height "calc(100vh - %s)" % nav-height
+  +media-lt(sm)
+    height "calc(100vh - %s)" % nav-height-sm
