@@ -10,19 +10,36 @@ interface Props {
   composition: string
   hasResources?: boolean
   isBackground?: boolean
+  isVisible?: boolean
 }
 
 // ------------------------------------------------------------------ # Public #
 
 export default class Animation extends Component<Props, {}> {
-  private container: HTMLDivElement    | null = null
-  private animation: HTMLCanvasElement | null = null
+  static defaultProps: Partial<Props> = {
+    hasResources: false,
+    isBackground: false,
+    isVisible: true,
+  }
 
-  private constructor(props: Props) {
+  container: HTMLDivElement    | null = null
+  animation: HTMLCanvasElement | null = null
+
+  constructor(props: Props) {
     super(props)
   }
 
-  public onCompleted(comp: any) {
+  onFileLoaded(comp: any) {
+    return (evt: any) => {
+      const images = comp.getImages()
+
+      if (evt && (evt.item.type === 'image')) {
+        images[evt.item.id] = evt.result
+      }
+    }
+  }
+
+  onCompleted(comp: any) {
     return (evt: any) => {
       const {createjs, AdobeAn} = window as any
       const lib = comp.getLibrary()
@@ -90,17 +107,7 @@ export default class Animation extends Component<Props, {}> {
     }
   }
 
-  public onFileLoaded(comp: any) {
-    return (evt: any) => {
-      const images = comp.getImages()
-
-      if (evt && (evt.item.type === 'image')) {
-        images[evt.item.id] = evt.result
-      }
-    }
-  }
-
-  public componentDidMount() {
+  animationStart() {
     const {createjs, AdobeAn} = window as any
     const composition = AdobeAn.getComposition(this.props.composition)
 
@@ -114,7 +121,19 @@ export default class Animation extends Component<Props, {}> {
     }
   }
 
-  public render() {
+  componentDidMount() {
+    if (this.props.isVisible) {
+      this.animationStart()
+    }
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    if (! prevProps.isVisible && this.props.isVisible) {
+      this.animationStart()
+    }
+  }
+
+  render() {
     const type = this.props.isBackground
       ? 'absolute'
       : 'relative'

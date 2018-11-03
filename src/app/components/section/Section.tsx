@@ -8,9 +8,10 @@ import styles from './Section.styl'
 
 interface Props {
   className?: string
+  onVisible?: () => void
 }
 
-interface State {
+export interface State {
   isVisible: boolean
 }
 
@@ -26,29 +27,32 @@ export default class Section extends React.Component<Props, State> {
 
   onEnter = () => {
     this.setState({isVisible: true})
+
+    if (this.props.onVisible) {
+      this.props.onVisible()
+    }
   }
 
-  renderDataVisible() {
+  renderProps() {
+    const classNames = [styles.section]
     const isVisible = this.state.isVisible
       ? {'data-visible': ''}
       : {}
-
-    return {...isVisible}
-  }
-
-  render() {
-    const classNames = [styles.section]
 
     if (this.props.className) {
       classNames.push(this.props.className)
     }
 
+    return {
+      className: classNames.join(' '),
+      ...isVisible,
+    }
+  }
+
+  render() {
     return (
       <Waypoint onEnter={this.onEnter} bottomOffset={100}>
-        <section
-          className={classNames.join(' ')}
-          {...this.renderDataVisible()}
-        >
+        <section {...this.renderProps()}>
           {this.props.children}
         </section>
       </Waypoint>
