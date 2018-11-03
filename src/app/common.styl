@@ -13,6 +13,7 @@ nav-height = 100px
 nav-height-sm = 60px
 
 with-height-100 =
-  height "calc(100vh - %s)" % nav-height
+  height auto
+  min-height "calc(100vh - %s)" % nav-height
   +media-lt(sm)
-    height "calc(100vh - %s)" % nav-height-sm
+    min-height "calc(100vh - %s)" % nav-height-sm

@@ -1,0 +1,32 @@
+@import '../../../common'
+
+.section
+  {with-height-100}
+  background black-md
+  overflow hidden
+  padding-top 50px
+  position relative
+  z-index -1
+
+.container
+  align-items center
+  color white
+  display flex
+  z-index 1
+
+.content
+  width 70%
+  +media-lt(lg)
+    width 80%
+  +media-lt(sm)
+    width 100%
+  ul
+    margin 75px 0 0 40px
+    +media-lt(md)
+      margin-top 0
+    +media-lt(sm)
+      margin-left 20px
+  li
+    padding 20px 0
+    +media-lt(sm)
+      padding 10px 0

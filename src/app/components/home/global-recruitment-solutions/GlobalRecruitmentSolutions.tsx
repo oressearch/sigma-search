@@ -20,7 +20,7 @@ export default function GlobalRecruitmentSolutions() {
         name="carte1"
       />
 
-      <Container className={styles.content}>
+      <Container className={styles.container}>
         <h1>
           Global<br />
           Recruitment<br />
