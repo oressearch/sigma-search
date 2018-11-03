@@ -1,0 +1,21 @@
+@import 'stylus-media-breakpoint'
+
+@import '../../../variables'
+
+.section
+  align-items center
+  background url('./images/about.jpeg') center center
+  background-size cover
+  display flex
+  height "calc(100vh - %s)" % nav-height
+  overflow hidden
+  position relative
+  +media-lt(sm)
+    height "calc(100vh - %s)" % nav-height-sm
+
+.container
+  max-width 40%
+  +media(md)
+    max-width 60%
+  +media-lt(sm)
+    max-width inherit

@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {Fragment} from 'react'
+
+import About_ from './about'
 
 // ------------------------------------------------------------------ # Public #
 
 export default function About() {
   return (
-    <h1>About us</h1>
+    <Fragment>
+      <About_ />
+    </Fragment>
   )
 }
