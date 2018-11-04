@@ -2,7 +2,6 @@
 
 .section
   background gray-sm
-  padding-top 50px
   ul
     list-style-type none
     margin 25px 0
@@ -11,16 +10,19 @@
     font-size 20px
     font-weight bold
     line-height 23px
-    margin-bottom 50px
-    padding 10px 0
   p
-    margin-top 50px
+    margin-top 30px
 
 .container
   display flex
 
 .content
   flex 1
+  padding-bottom 50px
+  padding-top 50px
+  +media-lt(sm)
+    padding-bottom 15px
+    padding-top 15px
 
 .image
   flex 2
