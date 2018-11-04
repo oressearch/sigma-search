@@ -1,13 +1,24 @@
 @import '../../../common'
 
+.corner
+  position absolute
+  width auto
+  top -190px
+  left -165px
+  z-index -1
+  +media-lt(lg)
+    display none
+
 .section
   {with-height-100}
   background url('./images/executive-search.jpeg')
   background-repeat no-repeat
   background-size cover
   color white
+  overflow hidden
   padding-bottom 50px
   padding-top 50px
+  position relative
   +media-lt(sm)
     padding-bottom 15px
     padding-top 15px

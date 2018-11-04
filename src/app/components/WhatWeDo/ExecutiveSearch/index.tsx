@@ -8,6 +8,9 @@ import items, {Item} from './items'
 // @ts-ignore
 import styles from './styles.styl'
 
+// @ts-ignore
+import corner from './images/executive-search-corner.png'
+
 // ----------------------------------------------------------------- # Private #
 
 interface State {
@@ -73,6 +76,7 @@ export default class ExecutiveSearch extends React.Component<{}, State> {
   render() {
     return (
       <Section className={styles.section}>
+        <img className={styles.corner} src={corner} alt="" />
         <Container>
           <h2>Executive Search</h2>
           <p>
