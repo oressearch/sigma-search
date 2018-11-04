@@ -1,9 +1,14 @@
 import React from 'react'
 
+import ScrollToTop from '../ScrollToTop'
+import Contact from './Contact'
+
 // ------------------------------------------------------------------ # Public #
 
-export default function Contact() {
+export default function Contact_() {
   return (
-    <h1>Contact us</h1>
+    <ScrollToTop>
+      <Contact />
+    </ScrollToTop>
   )
 }
