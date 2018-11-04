@@ -9,7 +9,7 @@ import items, {Item} from './items'
 import styles from './styles.styl'
 
 // @ts-ignore
-import corner from './images/executive-search-corner.png'
+import corner from './images/corner.png'
 
 // ----------------------------------------------------------------- # Private #
 
