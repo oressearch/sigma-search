@@ -101,7 +101,7 @@ export default class ExecutiveSearch extends React.Component<{}, State> {
             <div className={styles.view}>
               {items.map(item => (
                 <div {...this.renderItemViewProps(item)}>
-                  <img src={item.iconBig} alt="" />
+                  <img className={styles.viewIcon} src={item.iconBig} alt="" />
                   <div className={styles.viewContent}>
                     <h3 className={styles.viewTitle}>
                       {item.viewTitle}

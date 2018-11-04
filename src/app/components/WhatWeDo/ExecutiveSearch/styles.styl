@@ -26,13 +26,15 @@
 .nav
   align-items flex-end
   display flex
+  height 500px
   justify-content space-around
   list-style-type none
   margin 40px 0 20px 0
   position relative
-  +media-gt(md)
-    height 500px
+  +media-lt(lg)
+    height 350px
   +media-lt(sm)
+    height inherit
     margin 0
   img
     margin 0 auto 10px auto
@@ -93,11 +95,18 @@
     font-size 30px
     font-weight 400
     margin 60px 0 10px 0
+    +media-lt(lg)
+      margin-top 30px
     +media-lt(sm)
       font-size 22px
       margin 15px 0 5px 0
   p
     margin 0
+
+.viewIcon
+  +media-lt(lg)
+    height 200px
+    width 200px
 
 .viewContent
   +media-gt(md)
