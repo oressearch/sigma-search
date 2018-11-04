@@ -5,7 +5,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "module": "ES6",
+    "lib": ["ESNext"],
+    "module": "ESNext",
     "moduleResolution": "Node",
     "outDir": "./dist",
     "plugins": [{

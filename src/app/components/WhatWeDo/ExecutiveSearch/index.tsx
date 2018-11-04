@@ -1,57 +1,18 @@
-import React, {Fragment, MouseEvent} from 'react'
+import React, {MouseEvent} from 'react'
 
 import Container from '../../Container'
 import Section from '../../Section'
 
-// @ts-ignore
-import styles from './styles.styl'
+import items, {Item} from './items'
 
 // @ts-ignore
-import icon1Active from './images/icon-1.active.png'
-// @ts-ignore
-import icon1 from './images/icon-1.png'
-// @ts-ignore
-import icon2Active from './images/icon-2.active.png'
-// @ts-ignore
-import icon2 from './images/icon-2.png'
-// @ts-ignore
-import icon3Active from './images/icon-3.active.png'
-// @ts-ignore
-import icon3 from './images/icon-3.png'
-// @ts-ignore
-import icon4Active from './images/icon-4.active.png'
-// @ts-ignore
-import icon4 from './images/icon-4.png'
-// @ts-ignore
-import icon5Active from './images/icon-5.active.png'
-// @ts-ignore
-import icon5 from './images/icon-5.png'
-// @ts-ignore
-import icon6Active from './images/icon-6.active.png'
-// @ts-ignore
-import icon6 from './images/icon-6.png'
+import styles from './styles.styl'
 
 // ----------------------------------------------------------------- # Private #
 
 interface State {
-  activeItem: number
+  itemActive: number
 }
-
-interface Item {
-  id: number
-  label: JSX.Element
-  icon: string
-  iconActive: string
-}
-
-const items = [
-  {id: 1, icon: icon1, iconActive: icon1Active, label: <Fragment>Thorough<br />understanding ...</Fragment>},
-  {id: 2, icon: icon2, iconActive: icon2Active, label: <Fragment>Identify<br />targets ...</Fragment>},
-  {id: 3, icon: icon3, iconActive: icon3Active, label: <Fragment>Meet and<br />Evaluate ...</Fragment>},
-  {id: 4, icon: icon4, iconActive: icon4Active, label: <Fragment>Facilitate<br />process ...</Fragment>},
-  {id: 5, icon: icon5, iconActive: icon5Active, label: <Fragment>Take up<br />references ...</Fragment>},
-  {id: 6, icon: icon6, iconActive: icon6Active, label: <Fragment>Help<br />on-boarding ...</Fragment>},
-] as Item[]
 
 // ------------------------------------------------------------------ # Public #
 
@@ -59,20 +20,20 @@ export default class ExecutiveSearch extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props)
     this.state = {
-      activeItem: 1,
+      itemActive: 1,
     }
   }
 
-  onItemClick = (activeItem: number) => (
+  onItemClick = (itemActive: number) => (
     (event: MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault()
-      this.setState({activeItem})
+      this.setState({itemActive})
     }
   )
 
-  renderItemProps(key: number) {
-    const className = styles.link
-    const isActive = this.state.activeItem === key
+  renderNavItemProps(key: number) {
+    const className = styles.navItemLink
+    const isActive = this.state.itemActive === key
       ? {'data-active': ''}
       : {}
 
@@ -84,14 +45,28 @@ export default class ExecutiveSearch extends React.Component<{}, State> {
     }
   }
 
-  renderIconProps(item: Item) {
-    const src = this.state.activeItem === item.id
+  renderNavIconProps(item: Item) {
+    const src = this.state.itemActive === item.id
       ? item.iconActive
       : item.icon
 
     return {
       alt: '',
       src,
+    }
+  }
+
+  renderItemViewProps(item: Item) {
+    const className = styles.viewItem
+    const key = item.id
+    const isActive = this.state.itemActive === item.id
+      ? {'data-active': ''}
+      : {}
+
+    return {
+      className,
+      key,
+      ...isActive,
     }
   }
 
@@ -109,14 +84,33 @@ export default class ExecutiveSearch extends React.Component<{}, State> {
 
           <nav className={styles.nav}>
             {items.map(item => (
-              <div className={styles.item}>
-                <a {...this.renderItemProps(item.id)}>
-                  <img {...this.renderIconProps(item)} />
-                  {item.label}
+              <div key={item.id} className={styles.navItem}>
+                <a {...this.renderNavItemProps(item.id)}>
+                  <img {...this.renderNavIconProps(item)} />
+                  <span className={styles.navTitle}>
+                    {item.navTitle}
+                  </span>
                 </a>
               </div>
             ))}
+
+            <div className={styles.view}>
+              {items.map(item => (
+                <div {...this.renderItemViewProps(item)}>
+                  <img src={item.iconBig} alt="" />
+                  <div className={styles.viewContent}>
+                    <h3 className={styles.viewTitle}>
+                      {item.viewTitle}
+                    </h3>
+                    <p>
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </nav>
+
         </Container>
       </Section>
     )
