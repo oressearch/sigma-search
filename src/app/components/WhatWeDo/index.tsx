@@ -1,6 +1,7 @@
 import React from 'react'
 
 import ScrollToTop from '../ScrollToTop'
+import CrossBorderSearch from './CrossBorderSearch'
 import ExecutiveSearch from './ExecutiveSearch'
 import WhatWeDo from './WhatWeDo'
 
@@ -11,6 +12,7 @@ export default function WhatWeDo_() {
     <ScrollToTop>
       <WhatWeDo />
       <ExecutiveSearch />
+      <CrossBorderSearch />
     </ScrollToTop>
   )
 }
