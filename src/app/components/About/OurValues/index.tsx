@@ -8,7 +8,7 @@ import styles from './styles.styl'
 // ----------------------------------------------------------------- # Private #
 
 interface State {
-  backgroundPositionY: number
+  top: number
 }
 
 // ------------------------------------------------------------------ # Public #
@@ -19,7 +19,7 @@ export default class OurValues extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props)
     this.state = {
-      backgroundPositionY: 0,
+      top: 0,
     }
   }
 
@@ -38,9 +38,9 @@ export default class OurValues extends React.Component<{}, State> {
       window.scrollY + document.body.clientHeight - this.ref.offsetTop
 
     const ratio = 1 - scroll / this.ref.clientHeight
-    const backgroundPositionY = this.ref.clientHeight * .4 * ratio
+    const top = this.ref.clientHeight * .4 * ratio
 
-    this.setState({backgroundPositionY})
+    this.setState({top})
   }
 
   componentDidMount() {
@@ -52,11 +52,11 @@ export default class OurValues extends React.Component<{}, State> {
   }
 
   render() {
-    const {backgroundPositionY} = this.state
+    const {top} = this.state
     return (
       <Fragment>
         <div className={styles.frame} ref={ref => this.ref = ref} />
-        <section className={styles.section} style={{backgroundPositionY}}>
+        <section className={styles.section} style={{top}}>
           <Container className={styles.container}>
             <h2>Our values</h2>
             <p>

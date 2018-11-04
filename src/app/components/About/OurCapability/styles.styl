@@ -4,9 +4,14 @@
   {with-height-100}
   background black-md
   overflow hidden
+  padding-bottom 50px
   padding-top 50px
   position relative
   z-index -1
+  +media-lt(sm)
+    min-height inherit
+    padding-bottom 15px
+    padding-top 15px
 
 .container
   align-items center
@@ -25,8 +30,10 @@
     +media-lt(md)
       margin-top 0
     +media-lt(sm)
-      margin-left 20px
+      list-style-type none
+      margin-left 0
   li
     padding 20px 0
     +media-lt(sm)
-      padding 10px 0
+      padding 0
+      margin-top 15px
