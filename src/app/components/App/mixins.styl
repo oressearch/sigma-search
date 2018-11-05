@@ -1,0 +1,40 @@
+@import 'stylus-media-breakpoint'
+
+// --------------------------------------------------------------- # Variables #
+
+black-sm = #444545
+black-md = #2b2e31
+blue     = #5ec8e3
+blue-sm  = #397184
+gray-lg  = #adadad
+gray-md  = #e0e0e0
+gray-sm  = #f0efee
+teal     = #44565d
+white    = #ffffff
+
+nav-height    = 100px
+nav-height-sm = 60px
+
+// ------------------------------------------------------------------ # Blocks #
+
+text =
+  font-size 20px
+  line-height 23px
+  +media-lt(lg)
+    font-size 14px
+    line-height 16px
+
+subtitle =
+  font-size 22px
+  line-height 25px
+  margin 0 0 30px 0
+  +media-lt(lg)
+    font-size 14px
+    line-height 16px
+    margin 0
+
+with-height-100 =
+  height auto
+  min-height "calc(100vh - %s)" % nav-height
+  +media-lt(sm)
+    min-height "calc(100vh - %s)" % nav-height-sm
