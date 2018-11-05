@@ -1,0 +1,58 @@
+@import '../../App/mixins'
+
+.section
+  position relative
+  background gray-sm
+  padding-bottom 50px
+  padding-top 50px
+  +media-lt(sm)
+    padding-bottom 15px
+    padding-top 15px
+
+.nav
+  align-items flex-end
+  display flex
+  justify-content space-between
+  flex-wrap wrap
+  margin 50px 0
+
+.navLink
+  color black
+  padding 10px 25px
+  &[data-active]
+    background black-md
+    color white
+
+.cards
+  display flex
+  +media-lt(sm)
+    flex-direction column
+
+.card
+  flex 1
+  margin 0 2px
+  opacity 1
+  transition opacity 200ms
+  transition-timing-function cubic-bezier(0.215, 0.61, 0.355, 1)
+  word-break break-all
+  +media-lt(sm)
+    margin 0 2px
+    text-align center
+    img
+      margin auto
+      width auto
+  &[data-loading]
+    opacity 0
+    transition none
+  h3
+    font-size 18px
+    font-weight 600
+    margin 15px 0
+  p
+    font-size 16px
+    margin 15px 0
+    img
+      width auto
+  a
+    color black
+    font-size 14px

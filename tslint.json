@@ -1,5 +1,6 @@
 {
   "extends": "soywod-tslint-rules",
   "rules": {
+    "no-bitwise": false
   }
 }
