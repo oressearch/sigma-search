@@ -26,7 +26,7 @@ export default class App extends React.Component<{}, State> {
     const cache = localStorage.getItem('countries')
 
     if (cache) {
-      return this.setState({
+      this.setState({
         countries: JSON.parse(cache),
         status: 'READY',
       })
@@ -34,8 +34,6 @@ export default class App extends React.Component<{}, State> {
 
     fetchCountries()
       .then(countries => {
-        console.log(countries)
-
         localStorage.setItem(
           'countries',
           JSON.stringify(countries),
@@ -45,6 +43,8 @@ export default class App extends React.Component<{}, State> {
           countries,
           status: 'READY',
         })
+
+        console.log('Cache updated.')
       })
   }
 
