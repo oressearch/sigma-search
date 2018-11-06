@@ -1,0 +1,65 @@
+@import '../../App/mixins'
+
+.section
+  position relative
+  background white
+
+.navSection
+  @extend .section
+  padding-top 50px
+  +media-lt(sm)
+    padding-top 15px
+
+.contactSection
+  @extend .section
+
+.nav
+  align-items flex-end
+  display flex
+  justify-content space-between
+  flex-wrap wrap
+  margin 50px 0
+
+.navLink
+  color black
+  padding 10px 25px
+  &[data-active]
+    background black-md
+    color white
+
+.background
+  background-position center center
+  background-repeat no-repeat
+  background-size cover
+
+.content
+  align-items flex-start
+  display flex
+  justify-content space-between
+  opacity 1
+  padding-bottom 100px
+  padding-top 100px
+  transition opacity 200ms
+  transition-timing-function cubic-bezier(0.215, 0.61, 0.355, 1)
+  +media-lt(sm)
+    display block
+    padding-bottom 15px
+    padding-top 15px
+
+.info
+  align-items center
+  color white
+  display flex
+  flex 1
+  flex-direction column
+  font-weight 600
+  text-align center
+  +media-lt(sm)
+    &:not(:first-child)
+      margin-top 15px
+  span
+    font-size 16px
+  img
+    height 50px
+    margin-bottom 15px
+    width auto
