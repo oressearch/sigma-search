@@ -1,5 +1,5 @@
 {
-  "name": "sigma-search-new",
+  "name": "sigma-search",
   "version": "1.0.0",
   "description": "Website for Sigma Search company.",
   "main": "src/index.pug",
@@ -35,12 +35,12 @@
   "scripts": {
     "start": "parcel serve ./src/index.pug",
     "prebuild": "rm -rf dist",
-    "build": "parcel build --public-url /sigma-search-new ./src/index.pug",
+    "build": "parcel build --public-url /sigma-search ./src/index.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soywod/starter-web-app.git"
+    "url": "git+https://github.com/soywod/sigma-search.git"
   },
   "keywords": [
     "starter",
@@ -55,8 +55,5 @@
   ],
   "author": "Clément DOUIN <clement.douin@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/soywod/starter-web-app/issues"
-  },
-  "homepage": "https://github.com/soywod/starter-web-app#readme"
+  "homepage": "https://github.com/soywod/sigma-search#readme"
 }
