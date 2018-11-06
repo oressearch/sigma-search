@@ -25,6 +25,11 @@ export default class Animation extends Component<Props, {}> {
   container: HTMLDivElement    | null = null
   animation: HTMLCanvasElement | null = null
 
+  lastS: number = 1
+  lastW: number = 0
+  lib: any = null
+  stage: any = null
+
   constructor(props: Props) {
     super(props)
   }
@@ -42,12 +47,13 @@ export default class Animation extends Component<Props, {}> {
   onCompleted(comp: any) {
     return (evt: any) => {
       const {createjs, AdobeAn} = window as any
-      const lib = comp.getLibrary()
       const ss = comp.getSpriteSheet()
-      const root = lib[this.props.name]
+
+      this.lib = comp.getLibrary()
+      const root = this.lib[this.props.name]
 
       if (this.props.hasResources) {
-        for (const ss_metadata of lib.ssMetadata) {
+        for (const ss_metadata of this.lib.ssMetadata) {
           ss[ss_metadata.name] = new createjs.SpriteSheet({
             frames: ss_metadata.frames,
             images: [evt.target.getResult(ss_metadata.name)],
@@ -55,55 +61,16 @@ export default class Animation extends Component<Props, {}> {
         }
       }
 
-      const stage = new lib.Stage(this.animation)
-      stage.enableMouseOver()
+      this.stage = new this.lib.Stage(this.animation)
+      this.stage.enableMouseOver()
 
-      const start_animation = () => {
-        stage.addChild(new root())
-        createjs.Ticker.setFPS(lib.properties.fps)
-        createjs.Ticker.addEventListener('tick', stage)
-      }
+      AdobeAn.compositionLoaded(this.lib.properties.id)
+      this.stage.addChild(new root())
+      createjs.Ticker.setFPS(this.lib.properties.fps)
+      createjs.Ticker.addEventListener('tick', this.stage)
 
-      let lastW: number
-      let lastS = 1
-
-      const resize_canvas = () => {
-        const w = lib.properties.width
-        const h = lib.properties.height
-        const iw = window.innerWidth
-        const ih = window.innerHeight
-        const pRatio = window.devicePixelRatio || 1
-        const xRatio = iw / w
-        const yRatio = ih / h
-        let sRatio = 1
-
-        if (lastW === iw) {
-          sRatio = lastS
-        } else {
-          sRatio = Math.max(xRatio, yRatio)
-        }
-
-        if (this.animation && this.container) {
-          this.animation.width = w * pRatio * sRatio
-          this.animation.height = h * pRatio * sRatio
-          this.animation.style.width = this.container.style.width =  w * sRatio + 'px'
-          this.animation.style.height = this.container.style.height = h * sRatio + 'px'
-        }
-
-        stage.scaleX = pRatio * sRatio
-        stage.scaleY = pRatio * sRatio
-        lastW = iw
-        lastS = sRatio
-        stage.tickOnUpdate = false
-        stage.update()
-        stage.tickOnUpdate = true
-      }
-
-      window.addEventListener('resize', resize_canvas)
-      resize_canvas()
-
-      AdobeAn.compositionLoaded(lib.properties.id)
-      start_animation()
+      window.addEventListener('resize', this.onResize)
+      this.onResize()
     }
   }
 
@@ -121,6 +88,38 @@ export default class Animation extends Component<Props, {}> {
     }
   }
 
+  onResize = () => {
+    const w = this.lib.properties.width
+    const h = this.lib.properties.height
+    const iw = window.innerWidth
+    const ih = window.innerHeight
+    const pRatio = window.devicePixelRatio || 1
+    const xRatio = iw / w
+    const yRatio = ih / h
+    let sRatio = 1
+
+    if (this.lastW === iw) {
+      sRatio = this.lastS
+    } else {
+      sRatio = Math.max(xRatio, yRatio)
+    }
+
+    if (this.animation && this.container) {
+      this.animation.width = w * pRatio * sRatio
+      this.animation.height = h * pRatio * sRatio
+      this.animation.style.width = this.container.style.width =  w * sRatio + 'px'
+      this.animation.style.height = this.container.style.height = h * sRatio + 'px'
+    }
+
+    this.stage.scaleX = pRatio * sRatio
+    this.stage.scaleY = pRatio * sRatio
+    this.lastW = iw
+    this.lastS = sRatio
+    this.stage.tickOnUpdate = false
+    this.stage.update()
+    this.stage.tickOnUpdate = true
+  }
+
   componentDidMount() {
     if (this.props.isVisible) {
       this.animationStart()
@@ -131,6 +130,13 @@ export default class Animation extends Component<Props, {}> {
     if (! prevProps.isVisible && this.props.isVisible) {
       this.animationStart()
     }
+  }
+
+  componentWillUnmount() {
+    const {createjs} = window as any
+
+    window.removeEventListener('resize', this.onResize)
+    createjs.Ticker.removeEventListener('tick', this.stage)
   }
 
   render() {
