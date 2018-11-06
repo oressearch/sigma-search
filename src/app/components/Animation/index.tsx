@@ -137,6 +137,7 @@ export default class Animation extends Component<Props, {}> {
 
     window.removeEventListener('resize', this.onResize)
     createjs.Ticker.removeEventListener('tick', this.stage)
+    createjs.Ticker.reset()
   }
 
   render() {
