@@ -1,10 +1,11 @@
 import React, {Fragment, MouseEvent} from 'react'
+import {Map, Marker, Popup, TileLayer} from 'react-leaflet'
 
 import AppContext from '../../App/context'
 
 import Container from '../../Container'
 
-import {Country} from '../../../functions/countries'
+import {Contact, Country} from '../../../functions/countries'
 
 // @ts-ignore
 import styles from './styles.styl'
@@ -120,6 +121,27 @@ export default class ContactByCountry extends React.Component<{}, State> {
     )
   }
 
+  renderMap = () => {
+    const {countries, status} = this.context
+    if (status !== 'READY') return null
+
+    const {activeCountryIndex} = this.state
+    const contact = countries[activeCountryIndex].contact as Contact
+    const position = [contact.latitude, contact.longitude] as [number, number]
+
+    return (
+      <Map center={position} zoom={13} className={styles.map} scrollWheelZoom={false}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+        />
+        <Marker position={position}>
+          <Popup>{contact.address}</Popup>
+        </Marker>
+      </Map>
+    )
+  }
+
   render() {
     return (
       <Fragment>
@@ -136,6 +158,10 @@ export default class ContactByCountry extends React.Component<{}, State> {
 
         <section className={styles.contactSection}>
           {this.renderContact()}
+        </section>
+
+        <section>
+          {this.renderMap()}
         </section>
       </Fragment>
     )

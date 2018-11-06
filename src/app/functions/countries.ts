@@ -150,9 +150,9 @@ export interface Contact {
   address: string
   email: string
   image: string
-  latitude: string
+  latitude: number
   linkedin: string
-  longitude: string
+  longitude: number
   phone: string
   website: string
 }
