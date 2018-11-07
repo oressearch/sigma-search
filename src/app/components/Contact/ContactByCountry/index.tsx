@@ -1,10 +1,11 @@
-import React, {Fragment, MouseEvent} from 'react'
+import React, {Fragment} from 'react'
 import {Map, Marker, Popup, TileLayer} from 'react-leaflet'
 
 import AppContext from '../../App/context'
 
 import Container from '../../Container'
 import Section from '../../Section'
+import {Props} from '../index'
 
 import {Contact, Country} from '../../../functions/countries'
 
@@ -22,35 +23,10 @@ import iconPhone from './images/iconPhone.png'
 // @ts-ignore
 import iconWebsite from './images/iconWebsite.png'
 
-// ----------------------------------------------------------------- # Private #
-
-interface State {
-  activeCountryIndex: number
-  isLoading: boolean,
-}
-
 // ------------------------------------------------------------------ # Public #
 
-export default class ContactByCountry extends React.Component<{}, State> {
+export default class ContactByCountry extends React.Component<Props, {}> {
   static contextType = AppContext
-
-  constructor(props: {}) {
-    super(props)
-    this.state = {
-      activeCountryIndex: 0,
-      isLoading: false,
-    }
-  }
-
-  onNavClick = (index: number) => {
-    return (event: MouseEvent<HTMLAnchorElement>) => {
-      event.preventDefault()
-      this.setState({
-        activeCountryIndex: index,
-        /* isLoading: true, */
-      })
-    }
-  }
 
   renderCountries = () => {
     return this.context.status === 'READY'
@@ -59,7 +35,7 @@ export default class ContactByCountry extends React.Component<{}, State> {
   }
 
   renderCountry = (country: Country, index: number) => {
-    const active = index === this.state.activeCountryIndex
+    const active = index === this.props.activeCountryIndex
       ? {'data-active': ''}
       : {}
 
@@ -68,7 +44,7 @@ export default class ContactByCountry extends React.Component<{}, State> {
         key={country.id}
         href="#"
         className={styles.navLink}
-        onClick={this.onNavClick(index)}
+        onClick={this.props.onCountryClick(index)}
         {...active}
       >
         {country.name}
@@ -80,7 +56,7 @@ export default class ContactByCountry extends React.Component<{}, State> {
     const {countries, status} = this.context
     if (status !== 'READY') return null
 
-    const {activeCountryIndex} = this.state
+    const {activeCountryIndex} = this.props
     const {contact} = countries[activeCountryIndex]
 
     return (
@@ -126,7 +102,7 @@ export default class ContactByCountry extends React.Component<{}, State> {
     const {countries, status} = this.context
     if (status !== 'READY') return null
 
-    const {activeCountryIndex} = this.state
+    const {activeCountryIndex} = this.props
     const contact = countries[activeCountryIndex].contact as Contact
     const position = [contact.latitude, contact.longitude] as [number, number]
 

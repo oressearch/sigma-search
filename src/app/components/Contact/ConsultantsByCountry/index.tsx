@@ -1,9 +1,10 @@
-import React, {Fragment, MouseEvent} from 'react'
+import React, {Fragment} from 'react'
 
 import AppContext from '../../App/context'
 
 import Container from '../../Container'
 import Section from '../../Section'
+import {Props} from '../index'
 
 import {Consultant, Country} from '../../../functions/countries'
 
@@ -17,48 +18,27 @@ import iconLinkedIn from './images/iconLinkedIn.png'
 // @ts-ignore
 import iconPhone from './images/iconPhone.png'
 
-// ----------------------------------------------------------------- # Private #
-
-interface State {
-  activeCountryIndex: number
-  isLoading: boolean,
-}
-
 // ------------------------------------------------------------------ # Public #
 
-export default class ConsultantsByCountry extends React.Component<{}, State> {
+export default class ConsultantsByCountry extends React.Component<Props, {}> {
   static contextType = AppContext
   flags: number = 0b0000
 
-  constructor(props: {}) {
-    super(props)
-    this.state = {
-      activeCountryIndex: 0,
-      isLoading: false,
-    }
-  }
-
-  onNavClick = (index: number) => {
-    return (event: MouseEvent<HTMLAnchorElement>) => {
-      event.preventDefault()
-      this.flags = 0b0000
-      this.setState({
-        activeCountryIndex: index,
-        isLoading: true,
-      })
-    }
+  onCountryClick(index: number) {
+    this.flags = 0b0000
+    return this.props.onCountryClick(index)
   }
 
   cardLoaded = (index: number) => {
     return () => {
-      const activeIndex = this.state.activeCountryIndex
+      const activeIndex = this.props.activeCountryIndex
       const country = this.context.countries[activeIndex] as Country
       const consultantsCount = country.consultants.filter(c => c).length
 
       this.flags = this.flags | Math.pow(2, index)
 
       if (this.flags === Math.pow(2, consultantsCount) - 1) {
-        this.setState({isLoading: false})
+        this.props.setLoading(false)
       }
     }
   }
@@ -70,7 +50,7 @@ export default class ConsultantsByCountry extends React.Component<{}, State> {
   }
 
   renderCountry = (country: Country, index: number) => {
-    const active = index === this.state.activeCountryIndex
+    const active = index === this.props.activeCountryIndex
       ? {'data-active': ''}
       : {}
 
@@ -79,7 +59,7 @@ export default class ConsultantsByCountry extends React.Component<{}, State> {
         key={country.id}
         href="#"
         className={styles.navLink}
-        onClick={this.onNavClick(index)}
+        onClick={this.onCountryClick(index)}
         {...active}
       >
         {country.name}
@@ -92,7 +72,7 @@ export default class ConsultantsByCountry extends React.Component<{}, State> {
     if (status !== 'READY') return null
 
     const consultants = [
-      ...countries[this.state.activeCountryIndex].consultants,
+      ...countries[this.props.activeCountryIndex].consultants,
       null, null, null, null,
     ]
 
@@ -100,7 +80,7 @@ export default class ConsultantsByCountry extends React.Component<{}, State> {
   }
 
   renderConsultant = (consultant: Consultant | null, index: number) => {
-    const {activeCountryIndex, isLoading} = this.state
+    const {activeCountryIndex, isLoading} = this.props
     const country = this.context.countries[activeCountryIndex]
 
     return (
