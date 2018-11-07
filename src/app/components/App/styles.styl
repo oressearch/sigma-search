@@ -6,9 +6,22 @@
 
 body
   margin 0
+  overflow-y scroll
   padding nav-height 0 0 0
   +media-lt(sm)
     padding nav-height-sm 0 0 0
+
+body > div > span
+  background white
+  background-image url('./images/loader.gif')
+  background-position center center
+  background-repeat no-repeat
+  bottom 0
+  left 0
+  position fixed
+  right 0
+  top 0
+  z-index 3
 
 img
   display block
