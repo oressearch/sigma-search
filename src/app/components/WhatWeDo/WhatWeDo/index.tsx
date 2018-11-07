@@ -32,7 +32,7 @@ export default class WhatWeDo extends React.Component<{}, State> {
 
         <Animation
           name="schema"
-          composition="75E0C7C39499C6409F115355863EC005"
+          composition="75E0C7C39499C6409F115355863EC006"
           isVisible={this.state.isVisible}
         />
       </Section>

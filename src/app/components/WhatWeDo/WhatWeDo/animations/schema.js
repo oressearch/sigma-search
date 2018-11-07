@@ -1948,7 +1948,7 @@ an.bootstrapCallback=function(fnCallback) {
 };
 
 an.compositions = an.compositions || {};
-an.compositions['75E0C7C39499C6409F115355863EC005'] = {
+an.compositions['75E0C7C39499C6409F115355863EC006'] = {
 	getStage: function() { return exportRoot.getStage(); },
 	getLibrary: function() { return lib; },
 	getSpriteSheet: function() { return ss; },

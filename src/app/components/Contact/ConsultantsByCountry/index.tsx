@@ -3,6 +3,7 @@ import React, {Fragment, MouseEvent} from 'react'
 import AppContext from '../../App/context'
 
 import Container from '../../Container'
+import Section from '../../Section'
 
 import {Consultant, Country} from '../../../functions/countries'
 
@@ -15,9 +16,6 @@ import iconEmail from './images/iconEmail.png'
 import iconLinkedIn from './images/iconLinkedIn.png'
 // @ts-ignore
 import iconPhone from './images/iconPhone.png'
-
-// @ts-ignore
-import loader from '../../App/images/loader.gif'
 
 // ----------------------------------------------------------------- # Private #
 
@@ -146,14 +144,10 @@ export default class ConsultantsByCountry extends React.Component<{}, State> {
 
   render() {
     return (
-      <section className={styles.section}>
+      <Section className={styles.section}>
         <Container className={styles.container}>
           <h2>Consultants by Country</h2>
           <p>Sigma Search Partners:</p>
-
-          {/*this.state.isLoading && (
-            <img src={loader} alt="Loading ..." />
-          )*/}
 
           <nav className={styles.nav}>
             {this.renderCountries()}
@@ -163,7 +157,7 @@ export default class ConsultantsByCountry extends React.Component<{}, State> {
             {this.renderConsultants()}
           </div>
         </Container>
-      </section>
+      </Section>
     )
   }
 }

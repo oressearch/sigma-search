@@ -4,6 +4,7 @@ import {Map, Marker, Popup, TileLayer} from 'react-leaflet'
 import AppContext from '../../App/context'
 
 import Container from '../../Container'
+import Section from '../../Section'
 
 import {Contact, Country} from '../../../functions/countries'
 
@@ -145,7 +146,7 @@ export default class ContactByCountry extends React.Component<{}, State> {
   render() {
     return (
       <Fragment>
-        <section className={styles.navSection}>
+        <Section className={styles.navSection}>
           <Container className={styles.container}>
             <h2>Contact by Country</h2>
             <p>Sigma Search Partners:</p>
@@ -154,15 +155,15 @@ export default class ContactByCountry extends React.Component<{}, State> {
               {this.renderCountries()}
             </nav>
           </Container>
-        </section>
+        </Section>
 
-        <section className={styles.contactSection}>
+        <Section className={styles.contactSection}>
           {this.renderContact()}
-        </section>
+        </Section>
 
-        <section>
+        <Section>
           {this.renderMap()}
-        </section>
+        </Section>
       </Fragment>
     )
   }

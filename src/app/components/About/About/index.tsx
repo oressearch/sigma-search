@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Container from '../../Container'
+import Section from '../../Section'
 
 // @ts-ignore
 import styles from './styles.styl'
@@ -9,7 +10,7 @@ import styles from './styles.styl'
 
 export default function About() {
   return (
-    <section className={styles.section}>
+    <Section className={styles.section}>
       <Container>
         <div className={styles.container}>
           <h1>About us</h1>
@@ -33,6 +34,6 @@ export default function About() {
           </p>
         </div>
       </Container>
-    </section>
+    </Section>
   )
 }

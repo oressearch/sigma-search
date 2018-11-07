@@ -2,6 +2,7 @@ import React from 'react'
 
 import Animation from '../../Animation'
 import Container from '../../Container'
+import Section from '../../Section'
 
 // @ts-ignore
 import styles from './styles.styl'
@@ -12,7 +13,7 @@ import './animations/carte1.js'
 
 export default function GlobalRecruitmentSolutions() {
   return (
-    <section className={styles.section}>
+    <Section className={styles.section}>
       <Animation
         hasResources
         isBackground
@@ -32,6 +33,6 @@ export default function GlobalRecruitmentSolutions() {
           across international markets.
         </p>
       </Container>
-    </section>
+    </Section>
   )
 }
