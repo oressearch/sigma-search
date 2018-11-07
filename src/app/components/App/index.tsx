@@ -14,6 +14,8 @@ import {fetchCountries} from '../../functions/countries'
 
 import './styles.styl'
 
+const CACHE_UPDATE_FREQUENCY = 1000 * 60 * 60 * 24 // 1 day
+
 // ------------------------------------------------------------------ # Public #
 
 export default class App extends React.Component<{}, State> {
@@ -23,28 +25,25 @@ export default class App extends React.Component<{}, State> {
   }
 
   componentDidMount() {
-    const cache = localStorage.getItem('countries')
+    const cache = JSON.parse(localStorage.getItem('cache') || '{}')
+    const now = Date.now()
 
-    if (cache) {
-      this.setState({
-        countries: JSON.parse(cache),
-        status: 'READY',
-      })
+    if (cache.expiry > now) {
+      console.log('Cache loaded.')
+      return this.setState({countries: cache.countries, status: 'READY'})
     }
 
+    console.log('Cache updating ...')
     fetchCountries()
       .then(countries => {
-        localStorage.setItem(
-          'countries',
-          JSON.stringify(countries),
-        )
-
-        this.setState({
-          countries,
-          status: 'READY',
-        })
-
+        const nextCache = {countries, expiry: now + CACHE_UPDATE_FREQUENCY}
+        localStorage.setItem('cache', JSON.stringify(nextCache))
+        this.setState({countries, status: 'READY'})
         console.log('Cache updated.')
+      })
+      .catch(() => {
+        console.error('Error while updating cache.')
+        this.setState({countries: cache.countries || [], status: 'READY'})
       })
   }
 
