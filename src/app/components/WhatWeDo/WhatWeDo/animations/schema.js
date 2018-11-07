@@ -1751,6 +1751,41 @@ p.nominalBounds = new cjs.Rectangle(-490,-472.5,909,899.5);
 
 	// timeline functions:
 	this.frame_0 = function() {
+		/* Cliquer pour atteindre la page Web
+		Cliquez sur l’occurrence de symbole spécifiée pour charger l’URL dans une nouvelle fenêtre de navigateur.
+		
+		Instructions :
+		1. Remplacez http://www.adobe.com par l’adresse URL de votre choix.
+		      Maintenez les guillemets ("").
+		*/
+		
+		this.button_1.addEventListener("click", fl_ClickToGoToWebPage);
+		
+		function fl_ClickToGoToWebPage() {
+			window.open("#executive-search");
+		}
+		
+		
+		
+		this.button_2.addEventListener("click", fl_ClickToGoToWebPage2);
+		
+		function fl_ClickToGoToWebPage2() {
+			window.open("#cross-border");
+		}
+		
+		
+		
+		this.button_3.addEventListener("click", fl_ClickToGoToWebPage3);
+		
+		function fl_ClickToGoToWebPage3() {
+			window.open("#leadership-development");
+		}
+		
+		this.button_4.addEventListener("click", fl_ClickToGoToWebPage4);
+		
+		function fl_ClickToGoToWebPage4() {
+			window.open("#leadership-development");
+		}
 		//this.button_1.addEventListener("click", fl_MouseClickHandler.bind(this));
 		
 		//function fl_MouseClickHandler()
@@ -1870,7 +1905,7 @@ p.nominalBounds = new cjs.Rectangle(-490,-472.5,909,899.5);
 p.nominalBounds = new cjs.Rectangle(1057.3,379.8,1681.1,731);
 // library properties:
 lib.properties = {
-	id: '75E0C7C39499C6409F115355863EC004',
+	id: '75E0C7C39499C6409F115355863EC003',
 	width: 1920,
 	height: 740,
 	fps: 24,
@@ -1913,7 +1948,7 @@ an.bootstrapCallback=function(fnCallback) {
 };
 
 an.compositions = an.compositions || {};
-an.compositions['75E0C7C39499C6409F115355863EC004'] = {
+an.compositions['75E0C7C39499C6409F115355863EC005'] = {
 	getStage: function() { return exportRoot.getStage(); },
 	getLibrary: function() { return lib; },
 	getSpriteSheet: function() { return ss; },
@@ -1934,3 +1969,4 @@ an.getComposition = function(id) {
 
 
 })(createjs = window.createjs||{}, AdobeAn = window.AdobeAn||{});
+var createjs, AdobeAn;
