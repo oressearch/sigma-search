@@ -8,8 +8,9 @@ import styles from './styles.styl'
 
 interface Props {
   className?: string
-  style?: object
+  id?: string
   onVisible?: () => void
+  style?: object
 }
 
 export interface State {
@@ -37,6 +38,11 @@ export default class Section extends React.Component<Props, State> {
   renderProps() {
     const classNames = [styles.section]
     const style = this.props.style || {}
+
+    const id = this.props.id
+      ? {id: this.props.id}
+      : {}
+
     const isVisible = this.state.isVisible
       ? {'data-visible': ''}
       : {}
@@ -48,6 +54,7 @@ export default class Section extends React.Component<Props, State> {
     return {
       className: classNames.join(' '),
       style,
+      ...id,
       ...isVisible,
     }
   }

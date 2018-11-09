@@ -15,7 +15,7 @@ import corner from './images/corner.png'
 
 export default function CrossBorderSearch() {
   return (
-    <Section className={styles.section}>
+    <Section id="cross-border" className={styles.section}>
       <img className={styles.corner} src={corner} alt="" />
       <Container>
         <div className={styles.container}>

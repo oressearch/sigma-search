@@ -25,7 +25,7 @@ import iconOrganisationConsultancy from './images/icon-organisation-consultancy.
 
 export default function LeadershipDevelopment() {
   return (
-    <Section className={styles.section}>
+    <Section id="leadership-development" className={styles.section}>
       <img className={styles.corner} src={corner} alt="" />
       <Container>
         <h2>

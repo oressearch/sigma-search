@@ -75,7 +75,7 @@ export default class ExecutiveSearch extends React.Component<{}, State> {
 
   render() {
     return (
-      <Section className={styles.section}>
+      <Section id="executive-search" className={styles.section}>
         <img className={styles.corner} src={corner} alt="" />
         <Container>
           <h2>Executive Search</h2>

@@ -7,7 +7,7 @@ import Section, {State} from '../../Section'
 // @ts-ignore
 import styles from './styles.styl'
 
-import './animations/schema.js'
+import './animations/schemahome'
 
 // ------------------------------------------------------------------ # Public #
 
