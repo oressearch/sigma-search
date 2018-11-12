@@ -14,7 +14,7 @@
 
 ### What we do
   - [ ] Change text executive search
-  - [ ] Remove USA dot on image (globe)
+  - [X] Remove USA dot on image (globe)
 
 ### Contact
   - [ ] Manage up to 5 contacts
