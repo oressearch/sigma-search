@@ -20,6 +20,8 @@ export interface State {
 // ------------------------------------------------------------------ # Public #
 
 export default class Section extends React.Component<Props, State> {
+  section: HTMLElement | null = null
+
   constructor(props: Props) {
     super(props)
     this.state = {
@@ -53,16 +55,29 @@ export default class Section extends React.Component<Props, State> {
 
     return {
       className: classNames.join(' '),
+      onLoad: () => this.onLoad(),
       style,
       ...id,
       ...isVisible,
     }
   }
 
+  onLoad() {
+    if (! this.section || ! this.props.id) return
+
+    const hashes = window.location.hash.split('#')
+    if (hashes.length === 3 && this.props.id === hashes[2]) {
+      setTimeout(() => window.scrollTo({
+        behavior: 'smooth',
+        top: this.section && this.section.offsetTop - 100 || 0,
+      }), 400)
+    }
+  }
+
   render() {
     return (
       <Waypoint onEnter={this.onEnter} bottomOffset={100}>
-        <section {...this.renderProps()}>
+        <section ref={ref => this.section = ref} {...this.renderProps()}>
           {this.props.children}
         </section>
       </Waypoint>

@@ -1790,39 +1790,28 @@ p.nominalBounds = null;
 p.nominalBounds = new cjs.Rectangle(-490,-472.5,909,899.5);
 
 
+
 // stage content:
 (lib.schema = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
 	this.frame_0 = function() {
-		this.button_1.addEventListener("click", fl_ClickToGoToWebPage);
+    function onClick(section) {
+      return function() {
+        window.open(`${window.location.pathname}#/what-we-do#${section}`, '_self')
+        window.scrollTo({
+          top: document.getElementById(section).offsetTop - 100,
+          behavior: 'smooth',
+        })
+      }
+    }
 		
-		function fl_ClickToGoToWebPage() {
-      window.open("/sigma-search/#/what-we-do#executive-search","_self");
-		}
+		this.button_1.addEventListener("click", onClick('executive-search'));
+		this.button_2.addEventListener("click", onClick('cross-border'));
+		this.button_3.addEventListener("click", onClick('leadership-development'));
+		this.button_4.addEventListener("click", onClick('leadership-development'));
 		
-		this.button_2.addEventListener("click", fl_ClickToGoToWebPage2);
-		
-		function fl_ClickToGoToWebPage2() {
-			window.open("/sigma-search/#/what-we-do#cross-border","_self");
-		}
-		
-		
-		
-		this.button_3.addEventListener("click", fl_ClickToGoToWebPage3);
-		
-		function fl_ClickToGoToWebPage3() {
-			window.open("/sigma-search/#/what-we-do#leadership-development","_self");
-		}
-		
-		
-		
-		this.button_4.addEventListener("click", fl_ClickToGoToWebPage4);
-		
-		function fl_ClickToGoToWebPage4() {
-			window.open("/sigma-search/#/what-we-do#organisation-consultancy","_self");
-		}
 		this.button_1.addEventListener("mouseover", fl_MouseOverHandler.bind(this));
 		
 		function fl_MouseOverHandler()

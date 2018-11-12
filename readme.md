@@ -3,9 +3,9 @@
 ## 7th of October, 2018: minutes of the meeting
 
 ### Home
-  - [ ] Main animation links
+  - [X] Main animation links
   - [ ] Change about image
-  - [ ] Update schema animation (links)
+  - [X] Update schema animation (links)
   - [ ] Turn countries as links (to contact) + make background lighter
 
 ### About
