@@ -78,6 +78,7 @@ export default function Footer() {
 
         <aside className={styles.credits}>
           <h5>Legal Disclaimers</h5>
+          <p><Link to="/privacy-policy">Privacy Policy</Link></p>
           <h5>Imprint</h5>
           <h5>Webdesign</h5>
           <p>

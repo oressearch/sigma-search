@@ -8,6 +8,7 @@ import Contact from '../Contact'
 import Footer from '../Footer'
 import Home from '../Home'
 import Nav from '../Nav'
+import PrivacyPolicy from '../PrivacyPolicy'
 import WhatWeDo from '../WhatWeDo'
 
 import {fetchCountries} from '../../functions/countries'
@@ -28,7 +29,7 @@ export default class App extends React.Component<{}, State> {
     const cache = JSON.parse(localStorage.getItem('cache') || '{}')
     const now = Date.now()
 
-    if (cache.expiry > now || true) {
+    if (cache.expiry > now) {
       console.log('Cache loaded.')
       return this.setState({countries: cache.countries, status: 'READY'})
     }
@@ -56,6 +57,7 @@ export default class App extends React.Component<{}, State> {
           <Route exact path="/about" component={About} />
           <Route exact path="/what-we-do" component={WhatWeDo} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Footer />
         </Context.Provider>
       </HashRouter>
