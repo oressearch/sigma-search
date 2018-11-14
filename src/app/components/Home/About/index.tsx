@@ -7,7 +7,7 @@ import Section from '../../Section'
 import styles from './styles.styl'
 
 // @ts-ignore
-import background from './images/about.png'
+import background from './images/about.jpeg'
 
 // ------------------------------------------------------------------ # Public #
 

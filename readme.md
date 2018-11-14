@@ -4,7 +4,7 @@
 
 ### Home
   - [X] Main animation links
-  - [ ] Change about image
+  - [X] Change about image
   - [X] Update schema animation (links)
   - [ ] Turn countries as links (to contact) + make background lighter
 
