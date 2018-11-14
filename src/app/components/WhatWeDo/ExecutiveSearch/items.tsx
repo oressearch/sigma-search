@@ -90,29 +90,30 @@ const texts = [
     by the person to fit the role and the client company’s culture.
   </Fragment>,
   <Fragment>
-    Gain a <strong>thorough understanding</strong> of the client’s
-    organisation, the role to be filled and experience and qualities required
-    by the person to fit the role and the client company’s culture.
+    <strong>Identify target</strong> organisations in which suitably qualified
+    potential candidates are likely to be found, and approach the individuals
+    who appear to meet the requirements. At the same time the consultant will
+    review the relevant data bases and consult practice specialists in other
+    partner firms if appropriate.
   </Fragment>,
   <Fragment>
-    Gain a <strong>thorough understanding</strong> of the client’s
-    organisation, the role to be filled and experience and qualities required
-    by the person to fit the role and the client company’s culture.
+    <strong>Meet and evaluate</strong> interested potential candidates to
+    establish their suitability for the client company and the position and
+    introduce the most suitable candidates to the client.
   </Fragment>,
   <Fragment>
-    Gain a <strong>thorough understanding</strong> of the client’s
-    organisation, the role to be filled and experience and qualities required
-    by the person to fit the role and the client company’s culture.
+    Throughout the client’s programme of interviewing candidates,
+    <strong>facilitate the process</strong> and act on behalf of the client.
   </Fragment>,
   <Fragment>
-    Gain a <strong>thorough understanding</strong> of the client’s
-    organisation, the role to be filled and experience and qualities required
-    by the person to fit the role and the client company’s culture.
+    When the selection has been made, <strong>take up references</strong> in
+    respect of the successful candidate if asked to do so, and provide advice
+    to the client on framing the offer of employment.
   </Fragment>,
   <Fragment>
-    Gain a <strong>thorough understanding</strong> of the client’s
-    organisation, the role to be filled and experience and qualities required
-    by the person to fit the role and the client company’s culture.
+    Upon completion of the assignment, remain in contact with the client and
+    successful candidate to help with the on-boarding to ensure a successful
+    outcome to the recruitment process for both parties.
   </Fragment>,
 ]
 

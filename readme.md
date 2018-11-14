@@ -13,7 +13,7 @@
   - [X] Remove parallax on mobile
 
 ### What we do
-  - [ ] Change text executive search
+  - [X] Change text executive search
   - [X] Remove USA dot on image (globe)
 
 ### Contact
