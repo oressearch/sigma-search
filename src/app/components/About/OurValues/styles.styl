@@ -2,11 +2,13 @@
 
 .frame
   {with-height-100}
+  +media-lt(sm)
+    display none
 
 .section
   {with-height-100}
   background url('./images/our-values.jpeg')
-  background-position center 0px
+  background-position bottom
   background-size cover
   background-repeat no-repeat
   left 0
@@ -18,8 +20,13 @@
   z-index -1
   +media-lt(sm)
     background gray-sm
-    margin-top nav-height-sm
+    height auto
+    min-height inherit
+    margin-top 0
+    padding-bottom 15px
     padding-top 15px
+    position relative
+    top 0 !important
     p
       margin-bottom 15px
 

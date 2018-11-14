@@ -9,8 +9,8 @@
   - [ ] Turn countries as links (to contact) + make background lighter
 
 ### About
-  - [ ] Change parallax picture
-  - [ ] Remove parallax on mobile
+  - [X] Change parallax picture
+  - [X] Remove parallax on mobile
 
 ### What we do
   - [ ] Change text executive search
