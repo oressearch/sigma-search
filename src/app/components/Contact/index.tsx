@@ -18,7 +18,7 @@ interface State {
 export interface Props {
   activeCountryIndex: number
   isLoading: boolean
-  onCountryClick: (index: number) => (e: MouseEvent<HTMLAnchorElement>) => void
+  onCountryClick: (index: number) => (e: MouseEvent<HTMLAnchorElement> | null) => void
   setLoading: (loading: boolean) => void
 }
 
@@ -36,8 +36,11 @@ export default class extends React.Component<{}, State> {
   }
 
   onCountryClick = (index: number) => {
-    return (event: MouseEvent<HTMLAnchorElement>) => {
-      event.preventDefault()
+    return (event: MouseEvent<HTMLAnchorElement> | null) => {
+      if (event) {
+        event.preventDefault()
+      }
+
       if (index !== this.state.activeCountryIndex) {
         this.setState({
           activeCountryIndex: index,
@@ -56,7 +59,7 @@ export default class extends React.Component<{}, State> {
 
     return (
       <ScrollToTop>
-        <Contact />
+        <Contact {...props} />
         <ConsultantsByCountry {...props} />
         <ContactByCountry {...props} />
       </ScrollToTop>

@@ -6,7 +6,7 @@
   - [X] Main animation links
   - [X] Change about image
   - [X] Update schema animation (links)
-  - [ ] Turn countries as links (to contact) + make background lighter
+  - [X] Turn countries as links (to contact) + make background lighter
 
 ### About
   - [X] Change parallax picture

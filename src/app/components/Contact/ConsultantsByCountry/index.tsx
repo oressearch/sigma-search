@@ -22,7 +22,7 @@ import iconPhone from './images/iconPhone.png'
 
 // ------------------------------------------------------------------ # Public #
 
-export default class ConsultantsByCountry extends React.Component<Props, {}> {
+export default class extends React.Component<Props, {}> {
   static contextType = AppContext
   flags: number = 0b00000
 
