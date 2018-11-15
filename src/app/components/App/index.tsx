@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter, Route} from 'react-router-dom'
+import {HashRouter, Route, Switch} from 'react-router-dom'
 
 import Context, {Context as State, defaultContext} from './context'
 
@@ -9,6 +9,7 @@ import Footer from '../Footer'
 import Home from '../Home'
 import Nav from '../Nav'
 import PrivacyPolicy from '../PrivacyPolicy'
+import PrivacyPolicyBanner from '../PrivacyPolicy/Banner'
 import WhatWeDo from '../WhatWeDo'
 
 import {fetchCountries} from '../../functions/countries'
@@ -52,12 +53,15 @@ export default class App extends React.Component<{}, State> {
     return (
       <HashRouter>
         <Context.Provider value={this.state}>
+          <PrivacyPolicyBanner />
           <Nav />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/what-we-do" component={WhatWeDo} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/what-we-do" component={WhatWeDo} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+          </Switch>
           <Footer />
         </Context.Provider>
       </HashRouter>

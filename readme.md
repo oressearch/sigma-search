@@ -30,4 +30,4 @@
 
 ### Footer
   - [ ] Update links
-  - [ ] Add privacy policy
+  - [X] Add privacy policy
