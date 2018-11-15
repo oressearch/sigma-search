@@ -76,7 +76,11 @@ export default class ContactByCountry extends React.Component<Props, {}> {
 
           <div className={styles.info}>
             <img src={iconPhone} alt="" />
-            <span>{contact.phone}</span>
+            <span>
+              {contact.phones.split('\n').map((p: string, key: number) => (
+                <Fragment key={key}>{p}<br /></Fragment>
+              ))}
+            </span>
           </div>
 
           <a className={styles.info} href={`mailto:${contact.linkedin}`}>

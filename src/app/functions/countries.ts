@@ -50,7 +50,7 @@ async function fetchConsultantInfos(
       image: parseImage(consultant, images),
       link: data[2].trim(),
       name: consultant.name,
-      phones: parsePhones(data[0]),
+      phones: data[0].trim(),
     } as Consultant))
 }
 
@@ -59,11 +59,6 @@ function parseImage(consultant: GoogleFile, images: GoogleFile[]) {
   if (! image) return ''
 
   return image.webContentLink
-}
-
-function parsePhones(dataRaw: string) {
-  return dataRaw.split(', ')
-    .map((phone: string) => phone.trim())
 }
 
 async function fetchContact(countryId: string, image: string | null) {
@@ -81,7 +76,7 @@ async function fetchContact(countryId: string, image: string | null) {
       latitude: data[1].trim(),
       linkedin: data[6].trim(),
       longitude: data[2].trim(),
-      phone: data[3].trim(),
+      phones: data[3].trim(),
       website: data[5].trim(),
     } as Contact))
 }
@@ -138,7 +133,7 @@ export interface Consultant {
   image: string
   link: string
   name: string
-  phones: string[]
+  phones: string
   company: {
     city: string
     name: string
@@ -153,7 +148,7 @@ export interface Contact {
   latitude: number
   linkedin: string
   longitude: number
-  phone: string
+  phones: string
   website: string
 }
 

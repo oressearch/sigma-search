@@ -19,11 +19,12 @@
 ### Contact
   - [ ] Manage up to 5 contacts
   - [ ] Fix incorrect GPS
-  - [ ] Fix new line phones
+  - [X] Fix new line phones
   - [ ] Change Poland contact address
-  - [ ] Add Spanish country
-  - [ ] Add German contact
+  - [X] Add Spanish country
+  - [X] Add German contact
   - [ ] Setup linkedin addresses + replace (a) to @ in emails
+  - [X] Replace (a) to @ in emails
   - [ ] Add loader
   - [ ] Add `http` in front of links if not present
 
