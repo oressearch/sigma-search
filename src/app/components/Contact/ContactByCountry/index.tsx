@@ -39,6 +39,10 @@ export default class ContactByCountry extends React.Component<Props, {}> {
       ? {'data-active': ''}
       : {}
 
+    const disabled = country.consultants.length === 0
+      ? {'data-disabled': ''}
+      : {}
+
     return (
       <a
         key={country.id}
@@ -46,6 +50,7 @@ export default class ContactByCountry extends React.Component<Props, {}> {
         className={styles.navLink}
         onClick={this.props.onCountryClick(index)}
         {...active}
+        {...disabled}
       >
         {country.name}
       </a>

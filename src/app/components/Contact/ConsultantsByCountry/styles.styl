@@ -22,9 +22,13 @@
   &[data-active]
     background black-md
     color white
+  &[data-disabled]
+    opacity .5
+    pointer-events none
 
 .cards
   display flex
+  position relative
   +media-lt(sm)
     flex-direction column
 
@@ -56,3 +60,11 @@
   a
     color black
     font-size 14px
+
+.loaderContainer
+  position absolute
+  width 100%
+
+.loader
+  margin 0 auto
+  width auto

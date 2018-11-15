@@ -38,10 +38,12 @@ export default class extends React.Component<{}, State> {
   onCountryClick = (index: number) => {
     return (event: MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault()
-      this.setState({
-        activeCountryIndex: index,
-        isLoading: true,
-      })
+      if (index !== this.state.activeCountryIndex) {
+        this.setState({
+          activeCountryIndex: index,
+          isLoading: true,
+        })
+      }
     }
   }
 

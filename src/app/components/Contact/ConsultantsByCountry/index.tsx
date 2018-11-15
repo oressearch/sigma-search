@@ -12,6 +12,8 @@ import {Consultant, Country} from '../../../functions/countries'
 import styles from './styles.styl'
 
 // @ts-ignore
+import loader from '../../App/images/loader.gif'
+// @ts-ignore
 import iconEmail from './images/iconEmail.png'
 // @ts-ignore
 import iconLinkedIn from './images/iconLinkedIn.png'
@@ -22,10 +24,10 @@ import iconPhone from './images/iconPhone.png'
 
 export default class ConsultantsByCountry extends React.Component<Props, {}> {
   static contextType = AppContext
-  flags: number = 0b0000
+  flags: number = 0b00000
 
   onCountryClick(index: number) {
-    this.flags = 0b0000
+    this.flags = 0b00000
     return this.props.onCountryClick(index)
   }
 
@@ -54,6 +56,10 @@ export default class ConsultantsByCountry extends React.Component<Props, {}> {
       ? {'data-active': ''}
       : {}
 
+    const disabled = country.consultants.length === 0
+      ? {'data-disabled': ''}
+      : {}
+
     return (
       <a
         key={country.id}
@@ -61,6 +67,7 @@ export default class ConsultantsByCountry extends React.Component<Props, {}> {
         className={styles.navLink}
         onClick={this.onCountryClick(index)}
         {...active}
+        {...disabled}
       >
         {country.name}
       </a>
@@ -71,12 +78,10 @@ export default class ConsultantsByCountry extends React.Component<Props, {}> {
     const {countries, status} = this.context
     if (status !== 'READY') return null
 
-    const consultants = [
-      ...countries[this.props.activeCountryIndex].consultants,
-      null, null, null, null,
-    ]
-
-    return consultants.slice(0, 4).map(this.renderConsultant)
+    const {consultants} = countries[this.props.activeCountryIndex]
+    return [...consultants, null, null, null, null, null]
+      .slice(0, consultants.length === 5 ? 5 : 4)
+      .map(this.renderConsultant)
   }
 
   renderConsultant = (consultant: Consultant | null, index: number) => {
@@ -136,6 +141,12 @@ export default class ConsultantsByCountry extends React.Component<Props, {}> {
           </nav>
 
           <div className={styles.cards}>
+            {this.props.isLoading && (
+              <div className={styles.loaderContainer}>
+                <img className={styles.loader} src={loader} alt="Loading ..." />
+              </div>
+            )}
+
             {this.renderConsultants()}
           </div>
         </Container>

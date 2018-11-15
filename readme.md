@@ -17,15 +17,16 @@
   - [X] Remove USA dot on image (globe)
 
 ### Contact
-  - [ ] Manage up to 5 contacts
-  - [ ] Fix incorrect GPS
+  - [X] Manage up to 5 contacts
   - [X] Fix new line phones
-  - [ ] Change Poland contact address
   - [X] Add Spanish country
   - [X] Add German contact
-  - [ ] Setup linkedin addresses
   - [X] Replace (a) to @ in emails
+  - [X] Add loader
   - [X] Add `http` in front of links if not present
+  - [ ] Fix incorrect GPS
+  - [ ] Change Poland contact address
+  - [ ] Setup linkedin addresses
 
 ### Footer
   - [X] Update links
