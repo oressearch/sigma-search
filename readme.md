@@ -23,10 +23,9 @@
   - [ ] Change Poland contact address
   - [X] Add Spanish country
   - [X] Add German contact
-  - [ ] Setup linkedin addresses + replace (a) to @ in emails
+  - [ ] Setup linkedin addresses
   - [X] Replace (a) to @ in emails
-  - [ ] Add loader
-  - [ ] Add `http` in front of links if not present
+  - [X] Add `http` in front of links if not present
 
 ### Footer
   - [X] Update links

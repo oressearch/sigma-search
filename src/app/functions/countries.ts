@@ -48,7 +48,7 @@ async function fetchConsultantInfos(
       },
       email: data[1].trim(),
       image: parseImage(consultant, images),
-      link: data[2].trim(),
+      link: parseLink(data[2].trim()),
       name: consultant.name,
       phones: data[0].trim(),
     } as Consultant))
@@ -59,6 +59,12 @@ function parseImage(consultant: GoogleFile, images: GoogleFile[]) {
   if (! image) return ''
 
   return image.webContentLink
+}
+
+function parseLink(link: string) {
+  return link.indexOf('http') === 0
+    ? link
+    : `http://${link}`
 }
 
 async function fetchContact(countryId: string, image: string | null) {
@@ -74,10 +80,10 @@ async function fetchContact(countryId: string, image: string | null) {
       email: data[4].trim(),
       image: image || '#',
       latitude: data[1].trim(),
-      linkedin: data[6].trim(),
+      linkedin: parseLink(data[6].trim()),
       longitude: data[2].trim(),
       phones: data[3].trim(),
-      website: data[5].trim(),
+      website: parseLink(data[5].trim()),
     } as Contact))
 }
 
