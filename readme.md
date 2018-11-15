@@ -29,5 +29,5 @@
   - [ ] Add `http` in front of links if not present
 
 ### Footer
-  - [ ] Update links
+  - [X] Update links
   - [X] Add privacy policy

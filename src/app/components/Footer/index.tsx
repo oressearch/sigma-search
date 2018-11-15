@@ -37,25 +37,25 @@ export default function Footer() {
             <h5><Link to="/about">About us</Link></h5>
             <ul>
               <li>
-                <Link to="/about">Our values</Link>
+                <Link to="/about#our-values">Our values</Link>
               </li>
               <li>
-                <Link to="/about">Our International capability</Link>
+                <Link to="/about#our-capability">Our International capability</Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h5><Link to="/what-we-do">About us</Link></h5>
+            <h5><Link to="/what-we-do">What we do</Link></h5>
             <ul>
               <li>
-                <Link to="/what-we-do">Executive Search</Link>
+                <Link to="/what-we-do#executive-search">Executive Search</Link>
               </li>
               <li>
-                <Link to="/what-we-do">Cross Border Search</Link>
+                <Link to="/what-we-do#cross-border">Cross Border Search</Link>
               </li>
               <li>
-                <Link to="/what-we-do">
+                <Link to="/what-we-do#leadership-development">
                   Leadership Development <br />
                   &amp; Organisation Consultancy
                 </Link>
@@ -67,10 +67,10 @@ export default function Footer() {
             <h5><Link to="/contact">Contact</Link></h5>
             <ul>
               <li>
-                <Link to="/contact">Consultants by country</Link>
+                <Link to="/contact#consultants">Consultants by country</Link>
               </li>
               <li>
-                <Link to="/contact">Contact by country</Link>
+                <Link to="/contact#consultants">Contact by country</Link>
               </li>
             </ul>
           </div>

@@ -126,7 +126,7 @@ export default class ConsultantsByCountry extends React.Component<Props, {}> {
 
   render() {
     return (
-      <Section className={styles.section}>
+      <Section id="consultants" className={styles.section}>
         <Container className={styles.container}>
           <h2>Consultants by Country</h2>
           <p>Sigma Search Partners:</p>

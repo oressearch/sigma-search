@@ -55,7 +55,7 @@ export default class OurValues extends React.Component<{}, State> {
     const {top} = this.state
     return (
       <Fragment>
-        <div className={styles.frame} ref={ref => this.ref = ref} />
+        <div id="our-values" className={styles.frame} ref={ref => this.ref = ref} />
         <section className={styles.section} style={{top}}>
           <Container className={styles.container}>
             <h2>Our values</h2>

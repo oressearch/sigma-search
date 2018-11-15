@@ -12,7 +12,7 @@ import './animations/carte2'
 
 export default function OurCapability() {
   return (
-    <section className={styles.section}>
+    <section id="our-capability" className={styles.section}>
       <Animation
         hasResources
         isBackground
