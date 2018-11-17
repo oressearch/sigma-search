@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import Container from '../../Container'
 import Section from '../../Section'
@@ -30,7 +31,7 @@ export default function About() {
               <li>&gt; Our International Capability</li>
             </ul>
 
-            <a href="#">&gt; See more</a>
+            <Link to="/about">&gt; See more</Link>
           </div>
 
           <div className={styles.image}>
