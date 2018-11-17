@@ -9,7 +9,6 @@ import Footer from '../Footer'
 import Home from '../Home'
 import Nav from '../Nav'
 import PrivacyPolicy from '../PrivacyPolicy'
-import PrivacyPolicyBanner from '../PrivacyPolicy/Banner'
 import WhatWeDo from '../WhatWeDo'
 
 import {fetchCountries} from '../../functions/countries'
@@ -53,7 +52,6 @@ export default class App extends React.Component<{}, State> {
     return (
       <HashRouter>
         <Context.Provider value={this.state}>
-          <PrivacyPolicyBanner />
           <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
