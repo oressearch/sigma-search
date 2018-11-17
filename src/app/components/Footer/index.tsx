@@ -13,6 +13,13 @@ import map from './images/map.png'
 
 // ------------------------------------------------------------------ # Public #
 
+function onClick() {
+  window.scrollTo({
+    behavior: 'smooth',
+    top: 0,
+  })
+}
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
@@ -30,32 +37,32 @@ export default function Footer() {
 
         <nav className={styles.nav}>
           <div>
-            <h5><Link to="/">Home</Link></h5>
+            <h5><Link to="/" onClick={onClick}>Home</Link></h5>
           </div>
 
           <div>
-            <h5><Link to="/about">About us</Link></h5>
+            <h5><Link to="/about" onClick={onClick}>About us</Link></h5>
             <ul>
               <li>
-                <Link to="/about#our-values">Our values</Link>
+                <Link to="/about#our-values" onClick={onClick}>Our values</Link>
               </li>
               <li>
-                <Link to="/about#our-capability">Our International capability</Link>
+                <Link to="/about#our-capability" onClick={onClick}>Our International capability</Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h5><Link to="/what-we-do">What we do</Link></h5>
+            <h5><Link to="/what-we-do" onClick={onClick}>What we do</Link></h5>
             <ul>
               <li>
-                <Link to="/what-we-do#executive-search">Executive Search</Link>
+                <Link to="/what-we-do#executive-search" onClick={onClick}>Executive Search</Link>
               </li>
               <li>
-                <Link to="/what-we-do#cross-border">Cross Border Search</Link>
+                <Link to="/what-we-do#cross-border" onClick={onClick}>Cross Border Search</Link>
               </li>
               <li>
-                <Link to="/what-we-do#leadership-development">
+                <Link to="/what-we-do#leadership-development" onClick={onClick}>
                   Leadership Development <br />
                   &amp; Organisation Consultancy
                 </Link>
@@ -64,13 +71,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h5><Link to="/contact">Contact</Link></h5>
+            <h5><Link to="/contact" onClick={onClick}>Contact</Link></h5>
             <ul>
               <li>
-                <Link to="/contact#consultants">Consultants by country</Link>
+                <Link to="/contact#consultants" onClick={onClick}>Consultants by country</Link>
               </li>
               <li>
-                <Link to="/contact#consultants">Contact by country</Link>
+                <Link to="/contact#consultants" onClick={onClick}>Contact by country</Link>
               </li>
             </ul>
           </div>
@@ -78,7 +85,7 @@ export default function Footer() {
 
         <aside className={styles.credits}>
           <h5>Legal Disclaimers</h5>
-          <p><Link to="/privacy-policy">Privacy Policy</Link></p>
+          <p><Link to="/privacy-policy" onClick={onClick}>Privacy Policy</Link></p>
           <h5>Imprint</h5>
           <h5>Webdesign</h5>
           <p>
