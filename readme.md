@@ -24,9 +24,9 @@
   - [X] Replace (a) to @ in emails
   - [X] Add loader
   - [X] Add `http` in front of links if not present
-  - [ ] Fix incorrect GPS
-  - [ ] Change Poland contact address
-  - [ ] Setup linkedin addresses
+  - [X] Fix incorrect GPS
+  - [X] Change Poland contact address
+  - [X] Setup linkedin addresses
 
 ### Footer
   - [X] Update links
