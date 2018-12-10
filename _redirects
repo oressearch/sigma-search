@@ -1,0 +1,5 @@
+# Redirect default Netlify subdomain to primary domain
+https://sigma-search.netlify.com/* https://sigma-search.soywod.com/:splat 301!
+
+# Redirect all to index.html
+/* /index.html 200

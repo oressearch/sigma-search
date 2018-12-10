@@ -37,7 +37,8 @@
   "scripts": {
     "start": "parcel serve ./src/index.pug",
     "prebuild": "rm -rf dist",
-    "build": "parcel build --no-source-maps ./src/index.pug"
+    "build": "parcel build --no-source-maps ./src/index.pug",
+    "postbuild": "cp _redirects dist/"
   },
   "repository": {
     "type": "git",
