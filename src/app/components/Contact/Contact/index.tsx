@@ -42,7 +42,6 @@ export default class extends React.Component<Props, {}> {
   componentDidMount() {
     const params = window.location.href.split('index=')
     if (params.length > 1) {
-      console.log(+params[1])
       this.scrollToConsultants()
       this.props.onCountryClick(+params[1])(null)
     }

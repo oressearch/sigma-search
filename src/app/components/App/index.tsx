@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import Context, {Context as State, defaultContext} from './context'
 
@@ -50,7 +50,7 @@ export default class App extends React.Component<{}, State> {
 
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Context.Provider value={this.state}>
           <Nav />
           <Switch>
@@ -62,7 +62,7 @@ export default class App extends React.Component<{}, State> {
           </Switch>
           <Footer />
         </Context.Provider>
-      </HashRouter>
+      </BrowserRouter>
     )
   }
 }
