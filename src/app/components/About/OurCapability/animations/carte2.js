@@ -3184,7 +3184,7 @@ p.nominalBounds = new cjs.Rectangle(2.2,-3.1,31.1,31.2);
 		
     function onClick(index) {
       return function() {
-        window.open(`${window.location.pathname}#/contact?index=${index}`, '_self')
+        window.open(`/contact?index=${index}`, '_self')
       }
     }
 		

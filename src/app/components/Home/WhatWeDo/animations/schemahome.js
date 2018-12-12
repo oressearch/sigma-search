@@ -1799,7 +1799,7 @@ p.nominalBounds = new cjs.Rectangle(-490,-472.5,909,899.5);
 	this.frame_0 = function() {
     function onClick(section) {
       return function() {
-        window.open(`${window.location.pathname}#/what-we-do#${section}`, '_self')
+        window.open(`/what-we-do#${section}`, '_self')
       }
     }
 		

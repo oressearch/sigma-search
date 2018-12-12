@@ -66,7 +66,7 @@ export default class Section extends React.Component<Props, State> {
     if (! this.section || ! this.props.id) return
 
     const hashes = window.location.hash.split('#')
-    if (hashes.length === 3 && this.props.id === hashes[2]) {
+    if (hashes.length === 2 && this.props.id === hashes[1]) {
       setTimeout(() => window.scrollTo({
         behavior: 'smooth',
         top: this.section && this.section.offsetTop - 100 || 0,

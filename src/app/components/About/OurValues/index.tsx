@@ -27,7 +27,7 @@ export default class OurValues extends React.Component<{}, State> {
     if (! this.ref) return
 
     const scrollBeforeRef =
-      window.scrollY + document.body.clientHeight <= this.ref.offsetTop
+      window.scrollY + window.innerHeight <= this.ref.offsetTop
 
     const scrollAfterRef =
       window.scrollY >= this.ref.offsetTop + this.ref.clientHeight
@@ -35,7 +35,7 @@ export default class OurValues extends React.Component<{}, State> {
     if (scrollBeforeRef || scrollAfterRef) return
 
     const scroll =
-      window.scrollY + document.body.clientHeight - this.ref.offsetTop
+      window.scrollY + window.innerHeight - this.ref.offsetTop
 
     const ratio = 1 - scroll / this.ref.clientHeight
     const top = this.ref.clientHeight * .4 * ratio

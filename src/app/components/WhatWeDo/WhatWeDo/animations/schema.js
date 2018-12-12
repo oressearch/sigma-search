@@ -1799,7 +1799,7 @@ p.nominalBounds = new cjs.Rectangle(-490,-472.5,909,899.5);
 	this.frame_0 = function() {
     function onClick(section) {
       return function() {
-        window.open(`${window.location.pathname}#/what-we-do#${section}`, '_self')
+        history.pushState(null, null, `#${section}`);
         window.scrollTo({
           top: document.getElementById(section).offsetTop - 100,
           behavior: 'smooth',
