@@ -91,9 +91,9 @@ export default function Footer() {
           <p>
             Design:{' '}
             <a
-              href="http://www.dogms.com"
+              href="http://dogms.com/"
               target="_blank"
-              rel="author"
+              rel="author noopener"
             >
               www.dogms.com
             </a>
@@ -101,9 +101,9 @@ export default function Footer() {
           <p>
             Development:{' '}
             <a
-              href="https://soywod.github.com"
+              href="https://soywod.com"
               target="_blank"
-              rel="author"
+              rel="author noopener"
             >
               Clément DOUIN
             </a>
