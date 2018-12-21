@@ -68,8 +68,8 @@ export default function LeadershipDevelopment() {
             <ul className={styles.countries}>
               <li>
                 <img src={flagDE} alt="" />
-                <a href="https://sigma-search.com/" target="_blank">
-                  www.sigma-search.de
+                <a href="https://www.odigos.de/index.php/en/your-human-resource-partner/" target="_blank">
+                  www.odigos.de
                 </a>
               </li>
               <li>
@@ -127,8 +127,8 @@ export default function LeadershipDevelopment() {
             <ul className={styles.countries}>
               <li>
                 <img src={flagDE} alt="" />
-                <a href="https://sigma-search.com/" target="_blank">
-                  www.sigma-search.de
+                <a href="https://www.odigos.de/index.php/en/your-human-resource-partner/" target="_blank">
+                  www.odigos.de
                 </a>
               </li>
               <li>
