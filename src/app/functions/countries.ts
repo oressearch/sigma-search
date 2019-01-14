@@ -1,3 +1,5 @@
+import {fetch} from 'whatwg-fetch'
+
 // ----------------------------------------------------------------- # Private #
 
 const COUNTRY_FOLDER = '1CybM-yy7u8rlhKzhafSGsGW1ltuSYl7b'

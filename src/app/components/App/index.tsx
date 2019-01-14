@@ -42,8 +42,9 @@ export default class App extends React.Component<{}, State> {
         this.setState({countries, status: 'READY'})
         console.log('Cache updated.')
       })
-      .catch(() => {
+      .catch(error => {
         console.error('Error while updating cache.')
+        console.error(error)
         this.setState({countries: cache.countries || [], status: 'READY'})
       })
   }
