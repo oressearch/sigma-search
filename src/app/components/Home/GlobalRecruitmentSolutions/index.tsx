@@ -23,9 +23,8 @@ export default function GlobalRecruitmentSolutions() {
 
       <Container className={styles.container}>
         <h1>
-          Global<br />
-          Recruitment<br />
-          Solutions
+          Global Executive Search<br />
+          &amp; Development Solutions
         </h1>
 
         <p>

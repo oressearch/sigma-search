@@ -83,7 +83,7 @@ export default class ContactByCountry extends React.Component<Props, {}> {
             <img src={iconPhone} alt="" />
             <span>
               {contact.phones.split('\n').map((p: string, key: number) => (
-                <Fragment key={key}>{p}<br /></Fragment>
+                <a key={key} href={`tel:${p}`}>{p}<br /></a>
               ))}
             </span>
           </div>

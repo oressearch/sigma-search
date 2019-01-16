@@ -112,7 +112,7 @@ export default class extends React.Component<Props, {}> {
             <p>
               <img src={iconPhone} alt="Phones" />
               {consultant.phones.split('\n').map((a: string, key: number) => (
-                <Fragment key={key}>{a}<br /></Fragment>
+                <a key={key} href={`tel:${a}`}>{a}<br /></a>
               ))}
             </p>
             <p>
