@@ -101,7 +101,7 @@ export default function Footer() {
           <p>
             Development:{' '}
             <a
-              href="https://soywod.com"
+              href="https://soywod.github.io/"
               target="_blank"
               rel="author noopener"
             >
