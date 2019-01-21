@@ -88,7 +88,7 @@ export default class ContactByCountry extends React.Component<Props, {}> {
             </span>
           </div>
 
-          <a className={styles.info} href={`mailto:${contact.linkedin}`}>
+          <a className={styles.info} href={`mailto:${contact.email}`}>
             <img src={iconEmail} alt="" />
             <span>{contact.email}</span>
           </a>
