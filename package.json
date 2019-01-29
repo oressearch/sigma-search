@@ -5,6 +5,7 @@
   "main": "src/index.pug",
   "devDependencies": {
     "es5-shim": "^4.5.12",
+    "prettier": "^1.16.1",
     "soywod-tslint-rules": "^1.0.8",
     "tslint": "^5.10.0",
     "tslint-language-service": "^0.9.9",
