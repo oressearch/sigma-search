@@ -25,7 +25,7 @@ export default function GlobalRecruitmentSolutions() {
         <h1>
           Global Executive<br />
           Search &amp;<br />
-          Development<br />
+          HR Development<br />
           Solutions
         </h1>
 
