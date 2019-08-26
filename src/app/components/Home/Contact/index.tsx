@@ -8,7 +8,7 @@ import Section from '../../Section'
 import styles from './styles.styl'
 
 // @ts-ignore
-import logo from '../../App/images/loader.gif'
+import logo from '../../App/images/logo.jpeg'
 // @ts-ignore
 import dublin from './images/dublin.jpeg'
 // @ts-ignore

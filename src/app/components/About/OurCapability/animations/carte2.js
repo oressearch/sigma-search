@@ -3182,20 +3182,6 @@ p.nominalBounds = new cjs.Rectangle(2.2,-3.1,31.1,31.2);
 			//alert("L’utilisateur a cliqué sur la souris");
 		//}
 		
-    function onClick(index) {
-      return function() {
-        window.open(`/contact?index=${index}`, '_self')
-      }
-    }
-		
-		this.button_9.addEventListener("click", onClick(8))
-		this.button_7.addEventListener("click", onClick(5))
-		this.button_6.addEventListener("click", onClick(0))
-		this.button_8.addEventListener("click", onClick(6))
-		this.button_1.addEventListener("click", onClick(3))
-		this.button_2.addEventListener("click", onClick(7))
-		this.button_3.addEventListener("click", onClick(1))
-		this.button_5.addEventListener("click", onClick(2))
 		
 		this.button_1.addEventListener("mouseover", fl_MouseOverHandler.bind(this));
 		
