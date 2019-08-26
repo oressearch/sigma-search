@@ -11,6 +11,8 @@ import styles from './styles.styl'
 // @ts-ignore
 import logo from '../../App/images/logo.jpeg'
 // @ts-ignore
+import benelux from './images/benelux.jpeg'
+// @ts-ignore
 import dublin from './images/dublin.jpeg'
 // @ts-ignore
 import london from './images/london.jpeg'
@@ -30,6 +32,7 @@ import usa from './images/usa.jpeg'
 import warsaw from './images/warsaw.jpeg'
 
 const allCountries = [
+  [9, benelux],
   [8, usa],
   [3, dublin],
   [7, london],
