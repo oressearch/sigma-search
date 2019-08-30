@@ -31,16 +31,16 @@ import usa from './images/usa.jpeg'
 import warsaw from './images/warsaw.jpeg'
 
 const allCountries = [
-  [9, benelux],
-  [8, usa],
-  [3, dublin],
-  [7, london],
-  [6, madrid],
+  [0, benelux],
+  [9, usa],
+  [4, dublin],
+  [8, london],
+  [7, madrid],
   [-1, milan],
-  [2, munich],
-  [1, paris],
-  [0, prague],
-  [5, warsaw],
+  [3, munich],
+  [2, paris],
+  [1, prague],
+  [6, warsaw],
 ]
 
 if (allCountries.length % 2 === 1) {
