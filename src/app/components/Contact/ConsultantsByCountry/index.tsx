@@ -52,13 +52,11 @@ export default class extends React.Component<Props, {}> {
   }
 
   renderCountry = (country: Country, index: number) => {
-    const active = index === this.props.activeCountryIndex
-      ? {'data-active': ''}
-      : {}
+    const active =
+      index === this.props.activeCountryIndex ? {'data-active': ''} : {}
 
-    const disabled = country.consultants.length === 0
-      ? {'data-disabled': ''}
-      : {}
+    const disabled =
+      country.consultants.length === 0 ? {'data-disabled': ''} : {}
 
     return (
       <a
@@ -104,15 +102,19 @@ export default class extends React.Component<Props, {}> {
             />
             <h3>{consultant.name}</h3>
             <p>
-              {consultant.company.name}<br />
-              {consultant.company.street}<br />
-              {consultant.company.city}<br />
-              {country.name}
+              {consultant.company.name}
+              <br />
+              {consultant.company.street}
+              <br />
+              {consultant.company.city}
             </p>
             <p>
               <img src={iconPhone} alt="Phones" />
               {consultant.phones.split('\n').map((a: string, key: number) => (
-                <a key={key} href={`tel:${a}`}>{a}<br /></a>
+                <a key={key} href={`tel:${a}`}>
+                  {a}
+                  <br />
+                </a>
               ))}
             </p>
             <p>
@@ -121,7 +123,9 @@ export default class extends React.Component<Props, {}> {
             </p>
             <p>
               <img src={iconLinkedIn} alt="LinkedIn" />
-              <a href={consultant.link} target="_blank">LinkedIn profile</a>
+              <a href={consultant.link} target="_blank">
+                LinkedIn profile
+              </a>
             </p>
           </Fragment>
         )}
@@ -136,9 +140,7 @@ export default class extends React.Component<Props, {}> {
           <h2>Consultants by Country</h2>
           <p>Sigma Search Partners:</p>
 
-          <nav className={styles.nav}>
-            {this.renderCountries()}
-          </nav>
+          <nav className={styles.nav}>{this.renderCountries()}</nav>
 
           <div className={styles.cards}>
             {this.props.isLoading && (
