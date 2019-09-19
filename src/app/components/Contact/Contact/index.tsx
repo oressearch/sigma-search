@@ -1,4 +1,5 @@
 import React, {MouseEvent} from 'react'
+import {Link} from 'react-router-dom'
 
 import Container from '../../Container'
 import Section from '../../Section'
@@ -8,6 +9,10 @@ import {Props} from '../index'
 // @ts-ignore
 import styles from './styles.styl'
 
+// @ts-ignore
+import logo from '../../App/images/logo.jpeg'
+// @ts-ignore
+import benelux from './images/benelux.jpeg'
 // @ts-ignore
 import dublin from './images/dublin.jpeg'
 // @ts-ignore
@@ -27,16 +32,40 @@ import usa from './images/usa.jpeg'
 // @ts-ignore
 import warsaw from './images/warsaw.jpeg'
 
+const allCountries = [
+  [0, benelux],
+  [9, usa],
+  [4, dublin],
+  [8, london],
+  [7, madrid],
+  [-1, milan],
+  [3, munich],
+  [2, paris],
+  [1, prague],
+  [6, warsaw],
+]
+
+if (allCountries.length % 2 === 1) {
+  allCountries.push([-1, logo])
+}
+
+const countriesTop = allCountries.slice(0, allCountries.length / 2)
+const countriesBottom = allCountries.slice(allCountries.length / 2)
+
 // ------------------------------------------------------------------ # Public #
 
 export default class extends React.Component<Props, {}> {
   scrollToConsultants = () => {
     const consultants = document.getElementById('consultants')
 
-    setTimeout(() => window.scrollTo({
-      behavior: 'smooth',
-      top: consultants && consultants.offsetTop - 100 || 0,
-    }), 400)
+    setTimeout(
+      () =>
+        window.scrollTo({
+          behavior: 'smooth',
+          top: (consultants && consultants.offsetTop - 100) || 0,
+        }),
+      400,
+    )
   }
 
   componentDidMount() {
@@ -53,35 +82,40 @@ export default class extends React.Component<Props, {}> {
   }
 
   render() {
+    // tslint:disable-next-line
+    const Country = ({index, src}: {index: number; src: string}) => {
+      if (index === -1) {
+        return (
+          <div className={styles.country}>
+            <img src={src} alt="" />
+          </div>
+        )
+      }
+
+      return (
+        <a
+          href="#"
+          onClick={this.onCountryClick(index)}
+          className={styles.country}
+        >
+          <img src={src} alt="" />
+        </a>
+      )
+    }
+
     return (
-      <Section className={styles.section}>
-        <a href="#" onClick={this.onCountryClick(8)} className={styles.country}>
-          <img src={usa} alt="USA" />
-        </a>
-        <a href="#" onClick={this.onCountryClick(3)} className={styles.country}>
-          <img src={dublin} alt="Dublin" />
-        </a>
-        <a href="#" onClick={this.onCountryClick(7)} className={styles.country}>
-          <img src={london} alt="London" />
-        </a>
-        <a href="#" onClick={this.onCountryClick(6)} className={styles.country}>
-          <img src={madrid} alt="Madrid" />
-        </a>
-        <div className={styles.country}>
-          <img src={milan} alt="Milan" />
+      <Section className={styles.section} style={{flexDirection: 'column'}}>
+        <div className={styles.countries}>
+          {countriesTop.map(([index, src], key) => (
+            <Country key={key} index={index} src={src} />
+          ))}
         </div>
-        <a href="#" onClick={this.onCountryClick(2)} className={styles.country}>
-          <img src={munich} alt="Munich" />
-        </a>
-        <a href="#" onClick={this.onCountryClick(1)} className={styles.country}>
-          <img src={paris} alt="Paris" />
-        </a>
-        <a href="#" onClick={this.onCountryClick(0)} className={styles.country}>
-          <img src={prague} alt="Prague" />
-        </a>
-        <a href="#" onClick={this.onCountryClick(5)} className={styles.country}>
-          <img src={warsaw} alt="Warsaw" />
-        </a>
+
+        <div className={styles.countries}>
+          {countriesBottom.map(([index, src], key) => (
+            <Country key={key} index={index} src={src} />
+          ))}
+        </div>
 
         <Container className={styles.container}>
           <h1>Contact us</h1>

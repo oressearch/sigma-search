@@ -17,6 +17,8 @@ import flagFR from './images/flag-fr.png'
 // @ts-ignore
 import flagGB from './images/flag-gb.png'
 // @ts-ignore
+import flagNL from './images/flag-nl.png'
+// @ts-ignore
 import flagUS from './images/flag-us.png'
 // @ts-ignore
 import iconLeadershipDevelopment from './images/icon-leadership-development.png'
@@ -116,6 +118,16 @@ export default function LeadershipDevelopment() {
                   www.touchdown.cz
                 </a>
               </li>
+              <li>
+                <img src={flagNL} alt="" />
+                <a
+                  href="https://www.nextsteptalentgroup.com/"
+                  target="_blank"
+                  rel="author noopener"
+                >
+                  www.nextsteptalentgroup.com
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -197,6 +209,16 @@ export default function LeadershipDevelopment() {
                   rel="author noopener"
                 >
                   www.touchdown.cz
+                </a>
+              </li>
+              <li>
+                <img src={flagNL} alt="" />
+                <a
+                  href="https://www.nextsteptalentgroup.com/"
+                  target="_blank"
+                  rel="author noopener"
+                >
+                  www.nextsteptalentgroup.com
                 </a>
               </li>
             </ul>

@@ -8,6 +8,10 @@ import Section from '../../Section'
 import styles from './styles.styl'
 
 // @ts-ignore
+import logo from '../../App/images/logo.jpeg'
+// @ts-ignore
+import benelux from './images/benelux.jpeg'
+// @ts-ignore
 import dublin from './images/dublin.jpeg'
 // @ts-ignore
 import london from './images/london.jpeg'
@@ -26,38 +30,58 @@ import usa from './images/usa.jpeg'
 // @ts-ignore
 import warsaw from './images/warsaw.jpeg'
 
+const allCountries = [
+  [0, benelux],
+  [9, usa],
+  [4, dublin],
+  [8, london],
+  [7, madrid],
+  [-1, milan],
+  [3, munich],
+  [2, paris],
+  [1, prague],
+  [6, warsaw],
+]
+
+if (allCountries.length % 2 === 1) {
+  allCountries.push([-1, logo])
+}
+
+const countriesTop = allCountries.slice(0, allCountries.length / 2)
+const countriesBottom = allCountries.slice(allCountries.length / 2)
+
+function Country({index, src}: {index: number; src: string}) {
+  if (index === -1) {
+    return (
+      <div className={styles.country}>
+        <img src={src} alt="" />
+      </div>
+    )
+  }
+
+  return (
+    <Link className={styles.country} to={`/contact?index=${index}`}>
+      <img src={src} alt="" />
+    </Link>
+  )
+}
+
 // ------------------------------------------------------------------ # Public #
 
 export default function Contact() {
   return (
-    <Section className={styles.section}>
-      <Link className={styles.country} to="/contact?index=8">
-        <img src={usa} alt="USA" />
-      </Link>
-      <Link className={styles.country} to="/contact?index=3">
-        <img src={dublin} alt="Dublin" />
-      </Link>
-      <Link className={styles.country} to="/contact?index=7">
-        <img src={london} alt="London" />
-      </Link>
-      <Link className={styles.country} to="/contact?index=6">
-        <img src={madrid} alt="Madrid" />
-      </Link>
-      <div className={styles.country}>
-        <img src={milan} alt="Milan" />
+    <Section className={styles.section} style={{flexDirection: 'column'}}>
+      <div className={styles.countries}>
+        {countriesTop.map(([index, src], key) => (
+          <Country key={key} index={index} src={src} />
+        ))}
       </div>
-      <Link className={styles.country} to="/contact?index=2">
-        <img src={munich} alt="Munich" />
-      </Link>
-      <Link className={styles.country} to="/contact?index=1">
-        <img src={paris} alt="Paris" />
-      </Link>
-      <Link className={styles.country} to="/contact?index=0">
-        <img src={prague} alt="Prague" />
-      </Link>
-      <Link className={styles.country} to="/contact?index=5">
-        <img src={warsaw} alt="Warsaw" />
-      </Link>
+
+      <div className={styles.countries}>
+        {countriesBottom.map(([index, src], key) => (
+          <Country key={key} index={index} src={src} />
+        ))}
+      </div>
 
       <Container className={styles.container}>
         <h1>Contact us</h1>
