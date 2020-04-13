@@ -42,7 +42,7 @@ const allCountries = [
   [3, munich],
   [2, paris],
   [1, prague],
-  [6, warsaw],
+  [-1, warsaw],
 ]
 
 if (allCountries.length % 2 === 1) {

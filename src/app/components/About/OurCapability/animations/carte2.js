@@ -3719,7 +3719,7 @@ p.nominalBounds = new cjs.Rectangle(-10.6,-43.3,66.39999999999999,75.69999999999
 		
 		this.button_10.addEventListener("click", onClick(0))
 		this.button_9.addEventListener("click", onClick(9))
-		this.button_7.addEventListener("click", onClick(6))
+		// this.button_7.addEventListener("click", onClick(6))
 		this.button_6.addEventListener("click", onClick(1))
 		this.button_8.addEventListener("click", onClick(7))
 		this.button_1.addEventListener("click", onClick(4))
