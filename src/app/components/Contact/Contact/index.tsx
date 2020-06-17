@@ -28,9 +28,9 @@ import paris from './images/paris.jpeg'
 // @ts-ignore
 import prague from './images/prague.jpeg'
 // @ts-ignore
-import usa from './images/usa.jpeg'
+import pune from './images/pune.jpeg'
 // @ts-ignore
-import warsaw from './images/warsaw.jpeg'
+import usa from './images/usa.jpeg'
 
 const allCountries = [
   [0, benelux],
@@ -42,7 +42,7 @@ const allCountries = [
   [3, munich],
   [2, paris],
   [1, prague],
-  [-1, warsaw],
+  [-1, pune],
 ]
 
 if (allCountries.length % 2 === 1) {
