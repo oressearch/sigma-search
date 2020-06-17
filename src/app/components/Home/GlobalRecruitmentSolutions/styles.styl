@@ -15,7 +15,14 @@
   pointer-events none
 
 .img
-  width: auto;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
+  width: auto
+  position: fixed
+  bottom: 10px
+  right: 10px
+  max-width: 300px
+
+  +media-lt(md)
+    max-width: 250px
+
+  +media-lt(sm)
+    max-width: 200px

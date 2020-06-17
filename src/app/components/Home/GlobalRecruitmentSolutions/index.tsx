@@ -7,7 +7,7 @@ import Section from '../../Section'
 // @ts-ignore
 import styles from './styles.styl'
 
-import './animations/carte2.js'
+import './animations/carte1.js'
 
 // @ts-ignore
 import india from './animations/medaillon1.gif'
@@ -21,7 +21,7 @@ export default function GlobalRecruitmentSolutions() {
         hasResources
         isBackground
         composition="75E0C7C39499C6409F115355863EC003"
-        name="carte2"
+        name="carte1"
       >
         <img className={styles.img} src={india} alt="" />
       </Animation>
