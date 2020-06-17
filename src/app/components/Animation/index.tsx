@@ -22,7 +22,7 @@ export default class Animation extends Component<Props, {}> {
     isVisible: true,
   }
 
-  container: HTMLDivElement    | null = null
+  container: HTMLDivElement | null = null
   animation: HTMLCanvasElement | null = null
 
   lastS: number = 1
@@ -38,7 +38,7 @@ export default class Animation extends Component<Props, {}> {
     return (evt: any) => {
       const images = comp.getImages()
 
-      if (evt && (evt.item.type === 'image')) {
+      if (evt && evt.item.type === 'image') {
         images[evt.item.id] = evt.result
       }
     }
@@ -107,8 +107,10 @@ export default class Animation extends Component<Props, {}> {
     if (this.animation && this.container) {
       this.animation.width = w * pRatio * sRatio
       this.animation.height = h * pRatio * sRatio
-      this.animation.style.width = this.container.style.width =  w * sRatio + 'px'
-      this.animation.style.height = this.container.style.height = h * sRatio + 'px'
+      this.animation.style.width = this.container.style.width =
+        w * sRatio + 'px'
+      this.animation.style.height = this.container.style.height =
+        h * sRatio + 'px'
     }
 
     this.stage.scaleX = pRatio * sRatio
@@ -127,7 +129,7 @@ export default class Animation extends Component<Props, {}> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    if (! prevProps.isVisible && this.props.isVisible) {
+    if (!prevProps.isVisible && this.props.isVisible) {
       this.animationStart()
     }
   }
@@ -141,19 +143,18 @@ export default class Animation extends Component<Props, {}> {
   }
 
   render() {
-    const type = this.props.isBackground
-      ? 'absolute'
-      : 'relative'
+    const type = this.props.isBackground ? 'absolute' : 'relative'
 
     return (
       <div
         className={styles[`container-${type}`]}
-        ref={ref => this.container = ref}
+        ref={ref => (this.container = ref)}
       >
         <canvas
           className={styles[`animation-${type}`]}
-          ref={ref => this.animation = ref}
+          ref={ref => (this.animation = ref)}
         />
+        {this.props.children}
       </div>
     )
   }
