@@ -305,7 +305,7 @@
             "street": "Undri Pisoli Road"
           },
           "email": "mayuresh.deshpande@ethosindiaconsulting.co.in",
-          "image": "https://drive.google.com/uc?id=1D3dOkbTMrYuar-zjyZ-_6WPu3bzXR3ac&export=download",
+          "image": "https://drive.google.com/uc?id=1kWm4fyxSPHR0BRdbC4SRODzFbsQc1hjS&export=download",
           "link": "https://www.linkedin.com/in/mayuresh-deshpande-16204881/",
           "name": "Mayuresh Deshpande",
           "phones": "+ 91 98220 45275"
@@ -382,15 +382,39 @@
       "consultants": [
         {
           "company": {
-            "city": "London NW1 3BT",
-            "name": "Simmonds International",
-            "street": "Regent's Place, 338 Euston Road"
+            "city": "London W1K 6LX",
+            "name": "Ivy Street",
+            "street": "20 North Audley Street"
           },
-          "email": "barry.simmonds@simmondsinternational.com",
-          "image": "https://drive.google.com/uc?id=1dyJaTndq2D-6dMNjFHjn9kbLqQKcQ8O5&export=download",
-          "link": "https://www.linkedin.com/in/barry-simmonds-017a705/",
-          "name": "Barry Simmonds",
-          "phones": "+44 20 75 44 86 00"
+          "email": "katebamford@ivystreet.net",
+          "image": "https://drive.google.com/uc?id=1wgM6kKASCQlSQXzEcBbZoog5rNbTsj0y&export=download",
+          "link": "https://www.linkedin.com/in/katebamford/",
+          "name": "Kate Bamford",
+          "phones": "+44 20 3931 9873"
+        },
+        {
+          "company": {
+            "city": "London W1K 6LX",
+            "name": "Ivy Street",
+            "street": "20 North Audley Street"
+          },
+          "email": "amandadominy@ivystreet.net",
+          "image": "https://drive.google.com/uc?id=1Zuv7hFbBljWNG2mOP8HX9W-78wk0ePnD&export=download",
+          "link": "https://www.linkedin.com/in/amanda-dominy-5b48507a/",
+          "name": "Amanda Dominy",
+          "phones": "+44 20 3931 9872"
+        },
+        {
+          "company": {
+            "city": "London W1K 6LX",
+            "name": "Ivy Street",
+            "street": "20 North Audley Street"
+          },
+          "email": "elizamcintyre@ivystreet.net",
+          "image": "https://drive.google.com/uc?id=1fCjh8S3FzQtOBAbH-VfSuCUK1CvuELEt&export=download",
+          "link": "https://www.linkedin.com/in/elizamcintyre/",
+          "name": "Eliza McIntyre",
+          "phones": "+44 20 3931 9870"
         }
       ],
       "contact": {
