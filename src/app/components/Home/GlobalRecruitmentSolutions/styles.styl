@@ -8,6 +8,8 @@
   justify-content center
   overflow hidden
   position relative
+  +media-lt(sm)
+    min-height: calc(75vh - 60px)
 
 .container
   color white
@@ -22,7 +24,11 @@
   max-width: 300px
 
   +media-lt(md)
-    max-width: 250px
+    max-width: 200px
 
   +media-lt(sm)
-    max-width: 200px
+    max-width: 125px
+
+.anim
+  top: 0;
+  bottom: inherit;

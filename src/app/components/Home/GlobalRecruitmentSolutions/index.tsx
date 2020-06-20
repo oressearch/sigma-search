@@ -18,6 +18,7 @@ export default function GlobalRecruitmentSolutions() {
   return (
     <Section className={styles.section}>
       <Animation
+        className={styles.anim}
         hasResources
         isBackground
         composition="75E0C7C39499C6409F115355863EC003"

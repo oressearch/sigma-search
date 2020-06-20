@@ -3,176 +3,26 @@
   var lib = {}
   var ss = {}
   var img = {}
-  lib.ssMetadata = [{name: 'carte1_atlas_P_1', frames: [[0, 0, 1920, 1400]]}]
+  lib.ssMetadata = [{name: 'carte1_atlas_P_1', frames: [[0, 0, 1920, 1920]]}]
 
   ;(lib.AnMovieClip = function() {
-    this.currentSoundStreamInMovieclip
     this.actionFrames = []
-    this.soundStreamDuration = new Map()
-    this.streamSoundSymbolsList = []
-
-    this.gotoAndPlayForStreamSoundSync = function(positionOrLabel) {
-      cjs.MovieClip.prototype.gotoAndPlay.call(this, positionOrLabel)
-    }
     this.gotoAndPlay = function(positionOrLabel) {
-      this.clearAllSoundStreams()
-      this.startStreamSoundsForTargetedFrame(positionOrLabel)
       cjs.MovieClip.prototype.gotoAndPlay.call(this, positionOrLabel)
     }
     this.play = function() {
-      this.clearAllSoundStreams()
-      this.startStreamSoundsForTargetedFrame(this.currentFrame)
       cjs.MovieClip.prototype.play.call(this)
     }
     this.gotoAndStop = function(positionOrLabel) {
       cjs.MovieClip.prototype.gotoAndStop.call(this, positionOrLabel)
-      this.clearAllSoundStreams()
     }
     this.stop = function() {
       cjs.MovieClip.prototype.stop.call(this)
-      this.clearAllSoundStreams()
-    }
-    this.startStreamSoundsForTargetedFrame = function(targetFrame) {
-      for (var index = 0; index < this.streamSoundSymbolsList.length; index++) {
-        if (
-          index <= targetFrame &&
-          this.streamSoundSymbolsList[index] != undefined
-        ) {
-          for (var i = 0; i < this.streamSoundSymbolsList[index].length; i++) {
-            var sound = this.streamSoundSymbolsList[index][i]
-            if (sound.endFrame > targetFrame) {
-              var targetPosition = Math.abs(
-                ((targetFrame - sound.startFrame) / lib.properties.fps) * 1000,
-              )
-              var instance = playSound(sound.id)
-              var remainingLoop = 0
-              if (sound.offset) {
-                targetPosition = targetPosition + sound.offset
-              } else if (sound.loop > 1) {
-                var loop = targetPosition / instance.duration
-                remainingLoop = Math.floor(sound.loop - loop)
-                if (targetPosition == 0) {
-                  remainingLoop -= 1
-                }
-                targetPosition = targetPosition % instance.duration
-              }
-              instance.loop = remainingLoop
-              instance.position = Math.round(targetPosition)
-              this.InsertIntoSoundStreamData(
-                instance,
-                sound.startFrame,
-                sound.endFrame,
-                sound.loop,
-                sound.offset,
-              )
-            }
-          }
-        }
-      }
-    }
-    this.InsertIntoSoundStreamData = function(
-      soundInstance,
-      startIndex,
-      endIndex,
-      loopValue,
-      offsetValue,
-    ) {
-      this.soundStreamDuration.set(
-        {instance: soundInstance},
-        {
-          start: startIndex,
-          end: endIndex,
-          loop: loopValue,
-          offset: offsetValue,
-        },
-      )
-    }
-    this.clearAllSoundStreams = function() {
-      var keys = this.soundStreamDuration.keys()
-      for (var i = 0; i < this.soundStreamDuration.size; i++) {
-        var key = keys.next().value
-        key.instance.stop()
-      }
-      this.soundStreamDuration.clear()
-      this.currentSoundStreamInMovieclip = undefined
-    }
-    this.stopSoundStreams = function(currentFrame) {
-      if (this.soundStreamDuration.size > 0) {
-        var keys = this.soundStreamDuration.keys()
-        for (var i = 0; i < this.soundStreamDuration.size; i++) {
-          var key = keys.next().value
-          var value = this.soundStreamDuration.get(key)
-          if (value.end == currentFrame) {
-            key.instance.stop()
-            if (this.currentSoundStreamInMovieclip == key) {
-              this.currentSoundStreamInMovieclip = undefined
-            }
-            this.soundStreamDuration.delete(key)
-          }
-        }
-      }
-    }
-
-    this.computeCurrentSoundStreamInstance = function(currentFrame) {
-      if (this.currentSoundStreamInMovieclip == undefined) {
-        if (this.soundStreamDuration.size > 0) {
-          var keys = this.soundStreamDuration.keys()
-          var maxDuration = 0
-          for (var i = 0; i < this.soundStreamDuration.size; i++) {
-            var key = keys.next().value
-            var value = this.soundStreamDuration.get(key)
-            if (value.end > maxDuration) {
-              maxDuration = value.end
-              this.currentSoundStreamInMovieclip = key
-            }
-          }
-        }
-      }
-    }
-    this.getDesiredFrame = function(currentFrame, calculatedDesiredFrame) {
-      for (var frameIndex in this.actionFrames) {
-        if (frameIndex > currentFrame && frameIndex < calculatedDesiredFrame) {
-          return frameIndex
-        }
-      }
-      return calculatedDesiredFrame
-    }
-
-    this.syncStreamSounds = function() {
-      this.stopSoundStreams(this.currentFrame)
-      this.computeCurrentSoundStreamInstance(this.currentFrame)
-      if (this.currentSoundStreamInMovieclip != undefined) {
-        var soundInstance = this.currentSoundStreamInMovieclip.instance
-        if (soundInstance.position != 0) {
-          var soundValue = this.soundStreamDuration.get(
-            this.currentSoundStreamInMovieclip,
-          )
-          var soundPosition = soundValue.offset
-            ? soundInstance.position - soundValue.offset
-            : soundInstance.position
-          var calculatedDesiredFrame =
-            soundValue.start + (soundPosition / 1000) * lib.properties.fps
-          if (soundValue.loop > 1) {
-            calculatedDesiredFrame +=
-              (((soundValue.loop - soundInstance.loop - 1) *
-                soundInstance.duration) /
-                1000) *
-              lib.properties.fps
-          }
-          calculatedDesiredFrame = Math.floor(calculatedDesiredFrame)
-          var deltaFrame = calculatedDesiredFrame - this.currentFrame
-          if (deltaFrame >= 2) {
-            this.gotoAndPlayForStreamSoundSync(
-              this.getDesiredFrame(this.currentFrame, calculatedDesiredFrame),
-            )
-          }
-        }
-      }
     }
   }).prototype = p = new cjs.MovieClip()
   // symbols:
 
-  ;(lib.carto1 = function() {
+  ;(lib.cartissa = function() {
     this.initialize(ss['carte1_atlas_P_1'])
     this.gotoAndStop(0)
   }).prototype = p = new cjs.Sprite()
@@ -180,7 +30,12 @@
 
   function mc_symbol_clone() {
     var clone = this._cloneProps(
-      new this.constructor(this.mode, this.startPosition, this.loop),
+      new this.constructor(
+        this.mode,
+        this.startPosition,
+        this.loop,
+        this.reversed,
+      ),
     )
     clone.gotoAndStop(this.currentFrame)
     clone.paused = this.paused
@@ -196,8 +51,20 @@
     return prototype
   }
 
-  ;(lib.uk = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.uk = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -226,8 +93,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-0.1, 0, 25.200000000000003, 30.5)
 
-  ;(lib.tcheq = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.tcheq = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -372,8 +251,20 @@
     null,
   )
 
-  ;(lib.spain = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.spain = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -436,8 +327,20 @@
     null,
   )
 
-  ;(lib.prague = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.prague = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_4
     this.shape = new cjs.Shape()
@@ -1162,8 +1065,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0, -0.6, 27.8, 21.6)
 
-  ;(lib.pol = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.pol = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -1242,8 +1157,20 @@
     null,
   )
 
-  ;(lib.lignes = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.lignes = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_9
     this.shape = new cjs.Shape()
@@ -8755,8 +8682,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-927.3, -168.5, 1742.6, 539.8)
 
-  ;(lib.ital = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.ital = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -8815,8 +8754,20 @@
     null,
   )
 
-  ;(lib.ire = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.ire = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -8892,8 +8843,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-0.2, 0, 66.8, 30.5)
 
-  ;(lib.germany = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.germany = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -8972,8 +8935,20 @@
     null,
   )
 
-  ;(lib.fr = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.fr = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -9041,8 +9016,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-0.2, 0, 64, 30.5)
 
-  ;(lib.copiecerclesviolet = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.copiecerclesviolet = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_5
     this.shape = new cjs.Shape()
@@ -9795,8 +9782,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0.8, 0, 30.7, 24.9)
 
-  ;(lib.copiecerclesvertpomme = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.copiecerclesvertpomme = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_5
     this.shape = new cjs.Shape()
@@ -10575,8 +10574,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0, -1.2, 32.8, 28.2)
 
-  ;(lib.copiecerclesvert = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.copiecerclesvert = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_5
     this.shape = new cjs.Shape()
@@ -11369,8 +11380,20 @@
     25.900000000000002,
   )
 
-  ;(lib.copiecerclesrouge = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.copiecerclesrouge = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_5
     this.shape = new cjs.Shape()
@@ -12134,8 +12157,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(3.8, -2.3, 25, 28.1)
 
-  ;(lib.copiecerclesorange = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.copiecerclesorange = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_5
     this.shape = new cjs.Shape()
@@ -12869,8 +12904,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-1.7, -3.6, 34.2, 30.1)
 
-  ;(lib.copiecerclesjaune = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.copiecerclesjaune = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_4
     this.shape = new cjs.Shape()
@@ -13519,8 +13566,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(1.9, 0.3, 25, 29.8)
 
-  ;(lib.copiecerclesazur = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.copiecerclesazur = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_5
     this.shape = new cjs.Shape()
@@ -14239,8 +14298,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-21.4, 4.3, 29.5, 23.4)
 
-  ;(lib.cerclesorange = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.cerclesorange = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_4
     this.shape = new cjs.Shape()
@@ -14825,8 +14896,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0, 0, 33.3, 26.5)
 
-  ;(lib.cachegris = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.cachegris = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -14845,8 +14928,20 @@
     null,
   )
 
-  ;(lib.btn1 = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.btn1 = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // Calque_1
     this.shape = new cjs.Shape()
@@ -14868,8 +14963,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0, 0, 104.8, 104.8)
 
-  ;(lib.warsaw = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.warsaw = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // timeline functions:
     this.frame_0 = function() {
@@ -14927,8 +15034,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-13.5, -3.9, 70, 97.7)
 
-  ;(lib.usa = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.usa = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // timeline functions:
     this.frame_0 = function() {
@@ -14971,8 +15090,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-4.8, -3.9, 47.699999999999996, 38.1)
 
-  ;(lib.paris = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.paris = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // timeline functions:
     this.frame_0 = function() {
@@ -15027,8 +15158,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-15.4, -2.6, 64, 83.8)
 
-  ;(lib.munich = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.munich = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // timeline functions:
     this.frame_0 = function() {
@@ -15086,8 +15229,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-19.4, -44.6, 79.6, 76.9)
 
-  ;(lib.milan = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.milan = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // timeline functions:
     this.frame_0 = function() {
@@ -15145,8 +15300,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-4.3, -45.3, 46, 75)
 
-  ;(lib.madrid = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.madrid = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // timeline functions:
     this.frame_0 = function() {
@@ -15204,8 +15371,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-5, -45.8, 52.3, 83.1)
 
-  ;(lib.london = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.london = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // timeline functions:
     this.frame_0 = function() {
@@ -15255,8 +15434,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-4.6, -48, 46.6, 81.3)
 
-  ;(lib.dublin = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.dublin = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // timeline functions:
     this.frame_0 = function() {
@@ -15306,8 +15497,20 @@
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-10.8, -43.3, 66.8, 79.9)
 
-  ;(lib.copiecerclesviolet2 = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.copiecerclesviolet2 = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     // timeline functions:
     this.frame_0 = function() {
@@ -15366,8 +15569,20 @@
   p.nominalBounds = new cjs.Rectangle(-61.6, -39.1, 122.1, 66.7)
 
   // stage content:
-  ;(lib.carte1 = function(mode, startPosition, loop) {
-    this.initialize(mode, startPosition, loop, {})
+  ;(lib.carte1 = function(mode, startPosition, loop, reversed) {
+    if (loop == null) {
+      loop = true
+    }
+    if (reversed == null) {
+      reversed = false
+    }
+    var props = new Object()
+    props.mode = mode
+    props.startPosition = startPosition
+    props.labels = {}
+    props.loop = loop
+    props.reversed = reversed
+    cjs.MovieClip.apply(this, [props])
 
     this.actionFrames = [0]
     this.isSingleFrame = false
@@ -15379,8 +15594,6 @@
       if (this.totalFrames == 1) {
         this.isSingleFrame = true
       }
-      this.clearAllSoundStreams()
-
       //this.button_1.addEventListener("click", fl_MouseClickHandler.bind(this));
 
       //function fl_MouseClickHandler()
@@ -16332,20 +16545,20 @@
 
     this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(1))
 
-    // Calque_1
-    this.instance_4 = new lib.carto1()
-    this.instance_4.setTransform(0, -138)
+    // Calque_3
+    this.instance_4 = new lib.cartissa()
+    this.instance_4.setTransform(0, -137)
 
     this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(1))
 
     this._renderFirstFrame()
   }).prototype = p = new lib.AnMovieClip()
-  p.nominalBounds = new cjs.Rectangle(960, 342, 960, 920)
+  p.nominalBounds = new cjs.Rectangle(922.5, 823, 997.5, 960)
   // library properties:
   lib.properties = {
     id: '75E0C7C39499C6409F115355863EC003',
-    width: 1920,
-    height: 960,
+    width: 1845,
+    height: 1920,
     fps: 24,
     color: '#FFFFFF',
     opacity: 1.0,

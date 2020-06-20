@@ -1,3 +1,4 @@
+import cn from 'classnames'
 import React, {Component} from 'react'
 
 // @ts-ignore
@@ -6,6 +7,7 @@ import styles from './styles.styl'
 // ----------------------------------------------------------------- # Private #
 
 interface Props {
+  className?: string
   name: string
   composition: string
   hasResources?: boolean
@@ -147,7 +149,7 @@ export default class Animation extends Component<Props, {}> {
 
     return (
       <div
-        className={styles[`container-${type}`]}
+        className={cn(styles[`container-${type}`], this.props.className)}
         ref={ref => (this.container = ref)}
       >
         <canvas
