@@ -29,10 +29,10 @@ export default class App extends React.Component<{}, State> {
     const cache = JSON.parse(localStorage.getItem('cache') || '{}')
     const now = Date.now()
 
-    if (cache.expiry > now) {
-      console.log('Cache loaded.')
-      return this.setState({countries: cache.countries, status: 'READY'})
-    }
+    /* if (cache.expiry > now) { */
+    /*   console.log('Cache loaded.') */
+    /*   return this.setState({countries: cache.countries, status: 'READY'}) */
+    /* } */
 
     console.log('Cache updating ...')
     fetchCountries()

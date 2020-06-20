@@ -1,5 +1,7 @@
 import {fetch} from 'whatwg-fetch'
 
+import cache from './cache.json'
+
 // ----------------------------------------------------------------- # Private #
 
 const COUNTRY_FOLDER = '1CybM-yy7u8rlhKzhafSGsGW1ltuSYl7b'
@@ -117,11 +119,12 @@ async function fetchContactAndConsultants(country: GoogleFile) {
 
   const consultantsImage = consultantImageFiles.filter(f => f.mimeType === JPEG)
 
-  const consultants = await Promise.all(
-    consultantInfosFiles.map(consultant =>
-      fetchConsultantInfos(consultant, consultantsImage),
-    ),
-  )
+  const consultants = cache.flatMap(c => c.consultants)
+  /* const consultants = await Promise.all( */
+  /*   consultantInfosFiles.map(consultant => */
+  /*     fetchConsultantInfos(consultant, consultantsImage), */
+  /*   ), */
+  /* ) */
 
   return {
     ...country,
@@ -162,10 +165,5 @@ export interface Contact {
 }
 
 export async function fetchCountries() {
-  const countryFiles = await fetchFiles(COUNTRY_FOLDER, 'name')
-  const contactInfos = await Promise.all(
-    countryFiles.map(fetchContactAndConsultants),
-  )
-
-  return contactInfos as Country[]
+  return cache.countries as Country[]
 }
