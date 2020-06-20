@@ -4,7 +4,6 @@
   var ss = {}
   var img = {}
   lib.ssMetadata = [{name: 'carte1_atlas_P_1', frames: [[0, 0, 1920, 1920]]}]
-
   ;(lib.AnMovieClip = function() {
     this.actionFrames = []
     this.gotoAndPlay = function(positionOrLabel) {
@@ -21,7 +20,6 @@
     }
   }).prototype = p = new cjs.MovieClip()
   // symbols:
-
   ;(lib.cartissa = function() {
     this.initialize(ss['carte1_atlas_P_1'])
     this.gotoAndStop(0)
@@ -92,7 +90,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-0.1, 0, 25.200000000000003, 30.5)
-
   ;(lib.tcheq = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -250,7 +247,6 @@
     new cjs.Rectangle(-0.2, 0, 122.10000000000001, 30.5),
     null,
   )
-
   ;(lib.spain = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -326,7 +322,6 @@
     new cjs.Rectangle(-0.2, 0, 49.5, 30.5),
     null,
   )
-
   ;(lib.prague = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -1064,7 +1059,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0, -0.6, 27.8, 21.6)
-
   ;(lib.pol = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -1156,7 +1150,6 @@
     new cjs.Rectangle(-2.2, 0, 70, 30.5),
     null,
   )
-
   ;(lib.lignes = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -8681,7 +8674,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-927.3, -168.5, 1742.6, 539.8)
-
   ;(lib.ital = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -8753,7 +8745,6 @@
     new cjs.Rectangle(0, 0, 45.6, 30.5),
     null,
   )
-
   ;(lib.ire = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -8842,7 +8833,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-0.2, 0, 66.8, 30.5)
-
   ;(lib.germany = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -8934,7 +8924,6 @@
     new cjs.Rectangle(19.3, 6.8, 79.60000000000001, 30.400000000000002),
     null,
   )
-
   ;(lib.fr = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -9015,7 +9004,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-0.2, 0, 64, 30.5)
-
   ;(lib.copiecerclesviolet = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -9781,7 +9769,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0.8, 0, 30.7, 24.9)
-
   ;(lib.copiecerclesvertpomme = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -10573,7 +10560,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0, -1.2, 32.8, 28.2)
-
   ;(lib.copiecerclesvert = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -11379,7 +11365,6 @@
     30.500000000000004,
     25.900000000000002,
   )
-
   ;(lib.copiecerclesrouge = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -12156,7 +12141,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(3.8, -2.3, 25, 28.1)
-
   ;(lib.copiecerclesorange = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -12903,7 +12887,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-1.7, -3.6, 34.2, 30.1)
-
   ;(lib.copiecerclesjaune = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -13565,7 +13548,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(1.9, 0.3, 25, 29.8)
-
   ;(lib.copiecerclesazur = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -14297,7 +14279,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-21.4, 4.3, 29.5, 23.4)
-
   ;(lib.cerclesorange = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -14895,7 +14876,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0, 0, 33.3, 26.5)
-
   ;(lib.cachegris = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -14927,7 +14907,6 @@
     new cjs.Rectangle(0, 0, 90, 22.8),
     null,
   )
-
   ;(lib.btn1 = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -14962,7 +14941,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(0, 0, 104.8, 104.8)
-
   ;(lib.warsaw = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -15033,7 +15011,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-13.5, -3.9, 70, 97.7)
-
   ;(lib.usa = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -15089,7 +15066,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-4.8, -3.9, 47.699999999999996, 38.1)
-
   ;(lib.paris = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -15157,7 +15133,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-15.4, -2.6, 64, 83.8)
-
   ;(lib.munich = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -15228,7 +15203,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-19.4, -44.6, 79.6, 76.9)
-
   ;(lib.milan = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -15299,7 +15273,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-4.3, -45.3, 46, 75)
-
   ;(lib.madrid = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -15370,7 +15343,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-5, -45.8, 52.3, 83.1)
-
   ;(lib.london = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -15433,7 +15405,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-4.6, -48, 46.6, 81.3)
-
   ;(lib.dublin = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -15496,7 +15467,6 @@
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-10.8, -43.3, 66.8, 79.9)
-
   ;(lib.copiecerclesviolet2 = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
       loop = true
@@ -16569,7 +16539,6 @@
   }
 
   // bootstrap callback support:
-
   ;(lib.Stage = function(canvas) {
     createjs.Stage.call(this, canvas)
   }).prototype = p = new createjs.Stage()
@@ -16698,4 +16667,3 @@
     }
   }
 })(window.createjs, (window.AdobeAn = window.AdobeAn || {}))
-
