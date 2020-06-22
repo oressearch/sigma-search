@@ -91,11 +91,11 @@ export default function LeadershipDevelopment() {
               <li>
                 <img src={flagGB} alt="" />
                 <a
-                  href="http://www.simmondsinternational.com/"
+                  href="https://www.ivystreet.net/"
                   target="_blank"
                   rel="author noopener"
                 >
-                  www.simmondsinternational.com
+                  www.ivystreet.net
                 </a>
               </li>
               <li>
@@ -184,11 +184,11 @@ export default function LeadershipDevelopment() {
               <li>
                 <img src={flagGB} alt="" />
                 <a
-                  href="http://www.simmondsinternational.com/"
+                  href="https://www.ivystreet.net/"
                   target="_blank"
                   rel="author noopener"
                 >
-                  www.simmondsinternational.com
+                  www.ivystreet.net
                 </a>
               </li>
               <li>

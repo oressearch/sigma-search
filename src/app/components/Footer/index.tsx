@@ -30,8 +30,8 @@ export default function Footer() {
 
           <img src={map} alt="" />
           <p>
-            Benelux - Dublin - London - Madrid - Milan - <br />
-            Munich - Paris - Prague - USA - Warsaw
+            Benelux - Dublin - India - London - Madrid - <br />
+            Milan - Munich - Paris - Prague - USA
           </p>
         </section>
 
