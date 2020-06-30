@@ -12,7 +12,8 @@
   position relative
   z-index 1
   +media-lt(sm)
-    min-height: calc(75vh - 60px)
+    min-height unset
+    height 100%
     padding-bottom 15px
     padding-top 15px
 
@@ -55,8 +56,11 @@
     max-width: 200px
 
   +media-lt(sm)
-    max-width: 125px
+    display none
 
 .anim
   top: 0;
   bottom: inherit;
+
+  +media-lt(sm)
+    display none
