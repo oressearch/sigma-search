@@ -19,6 +19,8 @@ import iconEmail from './images/iconEmail.png'
 import iconLinkedIn from './images/iconLinkedIn.png'
 // @ts-ignore
 import iconPhone from './images/iconPhone.png'
+// @ts-ignore
+import iconWebsite from './images/iconWebsite.png'
 
 // ------------------------------------------------------------------ # Public #
 
@@ -85,6 +87,7 @@ export default class extends React.Component<Props, {}> {
   renderConsultant = (consultant: Consultant | null, index: number) => {
     const {activeCountryIndex, isLoading} = this.props
     const country = this.context.countries[activeCountryIndex]
+    console.log()
 
     return (
       <div
@@ -125,6 +128,12 @@ export default class extends React.Component<Props, {}> {
               <img src={iconLinkedIn} alt="LinkedIn" />
               <a href={consultant.link} target="_blank">
                 LinkedIn profile
+              </a>
+            </p>
+            <p>
+              <img src={iconWebsite} alt="Website" />
+              <a href={country.contact.website} target="_blank">
+                {country.contact.website}
               </a>
             </p>
           </Fragment>
