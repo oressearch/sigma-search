@@ -36,9 +36,9 @@
       "consultants": [
         {
           "company": {
-            "city": "120 000 Praha 2",
+            "city": "130 000 Praha 3 - Vinohrady",
             "name": "Touchdown Czech Republic s.r.o.",
-            "street": "Lazarská 11/6"
+            "street": "nám.Jiřího z Lobkovic 2458/17"
           },
           "email": "es@touchdown.cz",
           "image": "https://drive.google.com/uc?id=1WZVlsrqjwIFitthdYMag-fHYDonoLoNY&export=download",
@@ -48,9 +48,9 @@
         },
         {
           "company": {
-            "city": "120 00 Praha 2",
+            "city": "130 00 Praha 3 - Vinohrady",
             "name": "Touchdown Czech Republic s.r.o.",
-            "street": "Lazarská 11/6"
+            "street": "nám.Jiřího z Lobkovic 2458/17"
           },
           "email": "es@touchdown.cz",
           "image": "https://drive.google.com/uc?id=1eEUnwfylUOY1AhHCN8IB2QEbhRUO9uhL&export=download",
@@ -60,9 +60,9 @@
         },
         {
           "company": {
-            "city": "120 000 Praha 2",
+            "city": "130 000 Praha 3 - Vinohrady",
             "name": "Touchdown Czech Republic s.r.o.",
-            "street": "Lazarská 11/6"
+            "street": "nám.Jiřího z Lobkovic 2458/17"
           },
           "email": "es@touchdown.cz",
           "image": "https://drive.google.com/uc?id=1tNGB48TQRW4DUVgN9-AGDL94KHnKMavh&export=download",
@@ -72,9 +72,9 @@
         },
         {
           "company": {
-            "city": "120 000 Praha 2",
+            "city": "130 000 Praha 3 - Vinohrady",
             "name": "Touchdown Czech Republic s.r.o.",
-            "street": "Lazarská 11/6, 120 00 Praha 2"
+            "street": "nám.Jiřího z Lobkovic 2458/17"
           },
           "email": "es@touchdown.cz",
           "image": "https://drive.google.com/uc?id=1jh-E2BIIcC2ZhURLM7I6RubATsysNAmT&export=download",
@@ -84,14 +84,14 @@
         }
       ],
       "contact": {
-        "address": "Touchdown Czech Republic s.r.o \nLazarská 11/6, \n120 00 Praha 2 \nCzech Republic",
+        "address": "Touchdown Czech Republic s.r.o \nnám.Jiřího z Lobkovic 2458/17, \n130 00 Praha 3 - Vinohrady \nCzech Republic",
         "email": "es@touchdown.cz",
         "image": "https://drive.google.com/uc?id=16Uh9CEq2f3VaaRn1VW5Deh_vXKbKw-C1&export=download",
         "latitude": "50.079231",
         "linkedin": "https://www.linkedin.com/company/touchdown/",
         "longitude": "14.420863",
         "phones": "+420 272 660 043",
-        "website": "http://www.touchdown.cz"
+        "website": "https://www.touchdown.cz"
       }
     },
     {
