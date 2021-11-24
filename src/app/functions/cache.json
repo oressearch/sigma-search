@@ -358,26 +358,26 @@
       "consultants": [
         {
           "company": {
-            "city": "Colorado",
-            "name": "Lean HR Consulting",
-            "street": "Fort Collins"
+            "city": "Cambridge, MA 02116,\nUnited States",
+            "name": "Next Step Talent Group",
+            "street": "One Broadway, 14th floor"
           },
-          "email": "uli@leanhrconsult.com",
-          "image": "https://drive.google.com/uc?id=1mIeGGd3RlCr-dkBlb5QMCOSjDQJ68pYq&export=download",
-          "link": "https://www.linkedin.com/in/uli-mueller-90347411/",
-          "name": "Uli Müller",
-          "phones": "+1 970 233 8868"
+          "email": "loek.vandebroek@nextsteptalentgroup.com",
+          "image": "https://drive.google.com/uc?id=12uRmAo7TsLXTAbWcwCgkciKdUs0ODm2A&export=download",
+          "link": "https://www.linkedin.com/in/loekvandebroek/",
+          "name": "Loek Vandebroek",
+          "phones": "617-401-2259"
         }
       ],
       "contact": {
-        "address": "Lean HR Consulting\nUli Müller\nFort Collins, Colorado, USA",
-        "email": "uli@leanhrconsult.com",
-        "image": "https://drive.google.com/uc?id=1eKQR4GY7JVyN-tu4LXmOt68hFdrA0iGX&export=download",
-        "latitude": "40.592358",
-        "linkedin": "https://www.linkedin.com/company/lean-hr-consulting/",
-        "longitude": "-105.075859",
-        "phones": "+1 970 233 8868",
-        "website": "http://www.leanhrconsult.com"
+        "address": "Next Step Talent\nOne Broadway, 14th floor\nCambridge, MA 02116,\nUnited States",
+        "email": "loek.vandebroek@nextsteptalentgroup.com",
+        "image": "https://drive.google.com/uc?id=1e1P3slCh2JUUijJekA1Wqe8oieoKNF_O&export=download",
+        "latitude": "42.362912",
+        "linkedin": "https://www.linkedin.com/company/nextsteptalentgroup.com/",
+        "longitude": "-71.0839294",
+        "phones": "617-401-2259",
+        "website": "http://www.nextsteptalentgroup.com"
       }
     }
   ],
