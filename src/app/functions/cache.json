@@ -201,59 +201,6 @@
       }
     },
     {
-      "id": "13WF_GXl__xadNiZq-JZF-IrSnkaVYTXB",
-      "name": "Ireland",
-      "mimeType": "application/vnd.google-apps.folder",
-      "consultants": [
-        {
-          "company": {
-            "city": "Co. Dublin",
-            "name": "Lansdowne Executive Search Ltd.",
-            "street": "13 Priory Office Park, Stillorgan,"
-          },
-          "email": "sean.mcdonagh@lansdownesearch.ie",
-          "image": "https://drive.google.com/uc?id=1c6KTarrAC71Pq0fBKg3x9dYCparzdbaJ&export=download",
-          "link": "https://www.linkedin.com/in/se%C3%A1n-mcdonagh-a01ab64/",
-          "name": "Seán McDonagh",
-          "phones": "+353 1 5636158\n+353 87 79 61 062"
-        },
-        {
-          "company": {
-            "city": "Co. Dublin",
-            "name": "Lansdowne Executive Search Ltd.",
-            "street": "13 Priory Office Park, Stillorgan,"
-          },
-          "email": "luke.freeley@lansdownesearch.ie",
-          "image": "https://drive.google.com/uc?id=1dcASsQRYe8dTQqcwMcBMFI6yhygDuKbQ&export=download",
-          "link": "https://www.linkedin.com/in/luke-freeley-6b38783/",
-          "name": "Luke Freeley",
-          "phones": "+353 1 534 5115\n+353 87 240 4889"
-        },
-        {
-          "company": {
-            "city": "Co. Dublin",
-            "name": "Lansdowne Executive Search Ltd.",
-            "street": "13 Priory Office Park, Stillorgan,"
-          },
-          "email": "tom.keane@lansdownesearch.ie",
-          "image": "https://drive.google.com/uc?id=1gZ2s772Kg_9hU220I6KAdYfazyVk7uO8&export=download",
-          "link": "https://www.linkedin.com/in/tokeane/",
-          "name": "Tom Keane",
-          "phones": "+353 1 55 562 46\n+353 87 741 3085"
-        }
-      ],
-      "contact": {
-        "address": "Lansdowne Executive Search Ltd.\n13 Priory Office Park,\nStillorgan.\nco. Dublin",
-        "email": "seanmcdonagh@\nlansdownesearch.ie",
-        "image": "https://drive.google.com/uc?id=18BZL-J3UlZlypGIT9ofHYg28owpKxt-1&export=download",
-        "latitude": "53.294802",
-        "linkedin": "https://www.linkedin.com/company/lansdowne-executive-search/",
-        "longitude": "-6.201968",
-        "phones": "+353 1 563 6158",
-        "website": "http://www.lansdownesearch.ie"
-      }
-    },
-    {
       "id": "15N59wyrrzUyr4-pAXmISei3g8ZJ75MZb",
       "name": "Italy",
       "mimeType": "application/vnd.google-apps.folder",
