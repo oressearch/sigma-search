@@ -34,14 +34,14 @@ import usa from './images/usa.jpeg'
 
 const allCountries = [
   [0, benelux],
-  [9, usa],
-  [8, london],
-  [7, madrid],
+  [8, usa],
+  [7, london],
+  [6, madrid],
   [-1, milan],
   [3, munich],
   [2, paris],
   [1, prague],
-  [6, pune],
+  [5, pune],
 ]
 
 if (allCountries.length % 2 === 1) {
