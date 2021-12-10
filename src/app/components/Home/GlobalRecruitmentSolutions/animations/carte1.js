@@ -15442,21 +15442,6 @@
       //alert("L’utilisateur a cliqué sur la souris");
       //}
 
-      this.button_1.addEventListener(
-        'mouseover',
-        fl_MouseOverHandler.bind(this),
-      )
-
-      function fl_MouseOverHandler() {
-        this.dublin.gotoAndPlay(1)
-      }
-
-      this.button_1.addEventListener('mouseout', fl_MouseOutHandler.bind(this))
-
-      function fl_MouseOutHandler() {
-        this.dublin.gotoAndPlay(10)
-      }
-
       this.button_2.addEventListener(
         'mouseover',
         f2_MouseOverHandler.bind(this),

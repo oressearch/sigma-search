@@ -10604,90 +10604,6 @@
 
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
-  p.nominalBounds = new cjs.Rectangle(-19.4, -44.6, 79.6, 65.9)
-  ;(lib.milan = function(mode, startPosition, loop, reversed) {
-    if (loop == null) {
-      loop = true
-    }
-    if (reversed == null) {
-      reversed = false
-    }
-    var props = new Object()
-    props.mode = mode
-    props.startPosition = startPosition
-    props.labels = {}
-    props.loop = loop
-    props.reversed = reversed
-    cjs.MovieClip.apply(this, [props])
-
-    // timeline functions:
-    this.frame_0 = function() {
-      this.stop()
-    }
-    this.frame_9 = function() {
-      this.stop()
-    }
-
-    // actions tween:
-    this.timeline.addTween(
-      cjs.Tween.get(this)
-        .call(this.frame_0)
-        .wait(9)
-        .call(this.frame_9)
-        .wait(41),
-    )
-
-    // Calque_3
-    this.instance = new lib.ital()
-    this.instance.setTransform(18.95, -30.15, 1, 1, 0, 0, 0, 22.8, 15.2)
-    this.instance.alpha = 0
-    this.instance._off = true
-
-    this.timeline.addTween(
-      cjs.Tween.get(this.instance)
-        .wait(1)
-        .to({_off: false}, 0)
-        .to({alpha: 1}, 8)
-        .to({alpha: 0}, 40, cjs.Ease.get(1))
-        .wait(1),
-    )
-
-    // Calque_1
-    this.instance_1 = new lib.copiecerclesazur()
-    this.instance_1.setTransform(16.45, 13.1, 1.15, 1.15, 0, 0, 0, -6.3, 15.7)
-
-    this.timeline.addTween(
-      cjs.Tween.get(this.instance_1)
-        .wait(1)
-        .to(
-          {
-            regX: -6.2,
-            regY: 15.6,
-            scaleX: 1.4547,
-            scaleY: 1.4547,
-            x: 16.6,
-            y: 13.05,
-          },
-          8,
-          cjs.Ease.get(1),
-        )
-        .to(
-          {
-            regX: -6.3,
-            regY: 15.7,
-            scaleX: 1.15,
-            scaleY: 1.15,
-            x: 16.45,
-            y: 13.1,
-          },
-          40,
-          cjs.Ease.get(1),
-        )
-        .wait(1),
-    )
-
-    this._renderFirstFrame()
-  }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-3.9, -45.3, 45.6, 60.9)
   ;(lib.madrid = function(mode, startPosition, loop, reversed) {
     if (loop == null) {
@@ -10890,68 +10806,6 @@
 
     this._renderFirstFrame()
   }).prototype = p = new cjs.MovieClip()
-  p.nominalBounds = new cjs.Rectangle(0.2, -48, 40.099999999999994, 81.7)
-  ;(lib.dublin = function(mode, startPosition, loop, reversed) {
-    if (loop == null) {
-      loop = true
-    }
-    if (reversed == null) {
-      reversed = false
-    }
-    var props = new Object()
-    props.mode = mode
-    props.startPosition = startPosition
-    props.labels = {}
-    props.loop = loop
-    props.reversed = reversed
-    cjs.MovieClip.apply(this, [props])
-
-    // timeline functions:
-    this.frame_0 = function() {
-      this.stop()
-    }
-    this.frame_9 = function() {
-      this.stop()
-    }
-
-    // actions tween:
-    this.timeline.addTween(
-      cjs.Tween.get(this)
-        .call(this.frame_0)
-        .wait(9)
-        .call(this.frame_9)
-        .wait(36),
-    )
-
-    // Calque_3
-    this.instance = new lib.ire()
-    this.instance.setTransform(22.6, -28.15, 1, 1, 0, 0, 0, 33.2, 15.2)
-    this.instance.alpha = 0
-    this.instance._off = true
-
-    this.timeline.addTween(
-      cjs.Tween.get(this.instance)
-        .wait(1)
-        .to({_off: false}, 0)
-        .to({alpha: 1}, 8)
-        .to({alpha: 0}, 35)
-        .wait(1),
-    )
-
-    // Calque_1
-    this.instance_1 = new lib.copiecerclesjaune()
-    this.instance_1.setTransform(16.5, 13.4, 1.15, 1.15, 0, 0, 0, 16.2, 12.8)
-
-    this.timeline.addTween(
-      cjs.Tween.get(this.instance_1)
-        .wait(1)
-        .to({scaleX: 1.4375, scaleY: 1.4375}, 8, cjs.Ease.get(0.98))
-        .to({scaleX: 1.15, scaleY: 1.15}, 35, cjs.Ease.get(1))
-        .wait(1),
-    )
-
-    this._renderFirstFrame()
-  }).prototype = p = new cjs.MovieClip()
   p.nominalBounds = new cjs.Rectangle(-10.8, -43.3, 66.8, 75.69999999999999)
 
   // stage content:
@@ -10994,27 +10848,12 @@
       }
 
       this.button_10.addEventListener('click', onClick(0))
-      this.button_9.addEventListener('click', onClick(9))
+      this.button_9.addEventListener('click', onClick(8))
       this.button_6.addEventListener('click', onClick(1))
-      this.button_8.addEventListener('click', onClick(7))
-      this.button_1.addEventListener('click', onClick(4))
-      this.button_2.addEventListener('click', onClick(8))
+      this.button_8.addEventListener('click', onClick(6))
+      this.button_2.addEventListener('click', onClick(7))
       this.button_3.addEventListener('click', onClick(2))
       this.button_5.addEventListener('click', onClick(3))
-      this.button_1.addEventListener(
-        'mouseover',
-        fl_MouseOverHandler.bind(this),
-      )
-
-      function fl_MouseOverHandler() {
-        this.dublin.gotoAndPlay(1)
-      }
-
-      this.button_1.addEventListener('mouseout', fl_MouseOutHandler.bind(this))
-
-      function fl_MouseOutHandler() {
-        this.dublin.gotoAndPlay(10)
-      }
 
       this.button_2.addEventListener(
         'mouseover',
@@ -11044,21 +10883,6 @@
 
       function f3_MouseOutHandler() {
         this.paris.gotoAndPlay(10)
-      }
-
-      this.button_4.addEventListener(
-        'mouseover',
-        f4_MouseOverHandler.bind(this),
-      )
-
-      function f4_MouseOverHandler() {
-        this.milan.gotoAndPlay(1)
-      }
-
-      this.button_4.addEventListener('mouseout', f4_MouseOutHandler.bind(this))
-
-      function f4_MouseOutHandler() {
-        this.milan.gotoAndPlay(10)
       }
 
       this.button_5.addEventListener(
@@ -12039,10 +11863,6 @@
       14.6,
     )
 
-    this.milan = new lib.milan()
-    this.milan.name = 'milan'
-    this.milan.setTransform(1206.3, 457.6, 0.8506, 0.8506, 0, 0, 0, 16.8, 13.3)
-
     this.paris = new lib.paris()
     this.paris.name = 'paris'
     this.paris.setTransform(
@@ -12071,10 +11891,6 @@
       15.1,
     )
 
-    this.dublin = new lib.dublin()
-    this.dublin.name = 'dublin'
-    this.dublin.setTransform(949.35, 285, 0.8506, 0.8506, 0, 0, 0, 14.2, 16.4)
-
     this.prague = new lib.copiecerclesviolet2()
     this.prague.name = 'prague'
     this.prague.setTransform(
@@ -12094,10 +11910,8 @@
         .to({
           state: [
             {t: this.prague},
-            {t: this.dublin},
             {t: this.london},
             {t: this.paris},
-            {t: this.milan},
             {t: this.munich},
             {t: this.madrid},
             {t: this.maastricht},
