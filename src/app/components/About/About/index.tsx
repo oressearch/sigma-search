@@ -24,7 +24,7 @@ export default function About() {
 
           <p>
             Today the partnership is represented in Czech Republic, France,
-            Germany, Italy, Ireland, India, Benelux, Spain, UK and USA.
+            Germany, Italy, India, Benelux, Spain, UK and USA.
           </p>
 
           <p>

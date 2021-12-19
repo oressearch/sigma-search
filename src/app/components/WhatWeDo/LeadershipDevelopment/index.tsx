@@ -99,16 +99,6 @@ export default function LeadershipDevelopment() {
                 </a>
               </li>
               <li>
-                <img src={flagUS} alt="" />
-                <a
-                  href="https://www.leanhrconsult.com/"
-                  target="_blank"
-                  rel="author noopener"
-                >
-                  www.leanhrconsult.com
-                </a>
-              </li>
-              <li>
                 <img src={flagCZ} alt="" />
                 <a
                   href="http://www.touchdown.cz/"
@@ -189,16 +179,6 @@ export default function LeadershipDevelopment() {
                   rel="author noopener"
                 >
                   www.ivystreet.net
-                </a>
-              </li>
-              <li>
-                <img src={flagUS} alt="" />
-                <a
-                  href="https://www.leanhrconsult.com/"
-                  target="_blank"
-                  rel="author noopener"
-                >
-                  www.leanhrconsult.com
                 </a>
               </li>
               <li>

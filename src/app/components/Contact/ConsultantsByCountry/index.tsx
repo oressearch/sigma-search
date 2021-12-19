@@ -90,55 +90,60 @@ export default class extends React.Component<Props, {}> {
     console.log()
 
     return (
-      <div
-        key={index}
-        className={styles.card}
-        onLoad={this.cardLoaded(index)}
-        {...(isLoading ? {'data-loading': ''} : {})}
-      >
-        {consultant && (
-          <Fragment>
-            <img
-              src={consultant.image}
-              alt={consultant.name}
-              title={consultant.name}
-            />
-            <h3>{consultant.name}</h3>
-            <p>
-              {consultant.company.name}
-              <br />
-              {consultant.company.street}
-              <br />
-              {consultant.company.city}
-            </p>
-            <p>
-              <img src={iconPhone} alt="Phones" />
-              {consultant.phones.split('\n').map((a: string, key: number) => (
-                <a key={key} href={`tel:${a}`}>
-                  {a}
-                  <br />
-                </a>
-              ))}
-            </p>
-            <p>
-              <img src={iconEmail} alt="Email" />
-              <a href={`mailto:${consultant.email}`}>{consultant.email}</a>
-            </p>
-            <p>
-              <img src={iconLinkedIn} alt="LinkedIn" />
-              <a href={consultant.link} target="_blank">
-                LinkedIn profile
-              </a>
-            </p>
-            <p>
-              <img src={iconWebsite} alt="Website" />
-              <a href={country.contact.website} target="_blank">
-                {country.contact.website}
-              </a>
-            </p>
-          </Fragment>
-        )}
-      </div>
+	<div
+            key={index}
+            className={styles.card}
+            onLoad={this.cardLoaded(index)}
+            {...(isLoading ? {'data-loading': ''} : {})}
+	>
+            {consultant && (
+		<Fragment>
+		    <img
+			src={consultant.image}
+			alt={consultant.name}
+			title={consultant.name}
+		    />
+		    <h3>{consultant.name}</h3>
+		    <p>
+			{consultant.company.name.split('\n').map((a: string, key: number) => (
+			    <a key={key} href={`tel:${a}`}>
+				{a}
+				<br />
+			    </a>
+			))}
+			<br />
+			{consultant.company.street}
+			<br />
+			{consultant.company.city}
+		    </p>
+		    <p>
+			<img src={iconPhone} alt="Phones" />
+			{consultant.phones.split('\n').map((a: string, key: number) => (
+			    <a key={key} href={`tel:${a}`}>
+				{a}
+				<br />
+			    </a>
+			))}
+		    </p>
+		    <p>
+			<img src={iconEmail} alt="Email" />
+			<a href={`mailto:${consultant.email}`}>{consultant.email}</a>
+		    </p>
+		    <p>
+			<img src={iconLinkedIn} alt="LinkedIn" />
+			<a href={consultant.link} target="_blank">
+			    LinkedIn profile
+			</a>
+		    </p>
+		    <p>
+			<img src={iconWebsite} alt="Website" />
+			<a href={country.contact.website} target="_blank">
+			    {country.contact.website}
+			</a>
+		    </p>
+		</Fragment>
+            )}
+	</div>
     )
   }
 

@@ -18,7 +18,7 @@ export default function SelectCountry() {
       <img
         className={styles.img}
         src={india}
-        onClick={() => window.open(`/contact?index=6`, '_self')}
+        onClick={() => window.open(`/contact?index=5`, '_self')}
         alt=""
       />
 
