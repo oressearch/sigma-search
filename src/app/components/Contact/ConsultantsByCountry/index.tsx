@@ -87,32 +87,31 @@ export default class extends React.Component<Props, {}> {
   renderConsultant = (consultant: Consultant | null, index: number) => {
     const {activeCountryIndex, isLoading} = this.props
     const country = this.context.countries[activeCountryIndex]
-    console.log()
-
+      
     return (
 	<div
             key={index}
             className={styles.card}
-            onLoad={this.cardLoaded(index)}
             {...(isLoading ? {'data-loading': ''} : {})}
 	>
             {consultant && (
-		<Fragment>
+		<Fragment key={consultant.company.street}>
 		    <img
 			src={consultant.image}
 			alt={consultant.name}
-			title={consultant.name}
-		    />
-		    <h3>{consultant.name}</h3>
-		    <p>
-			{consultant.company.name.split('\n').map((a: string, key: number) => (
-			    <a key={key} href={`tel:${a}`}>
-				{a}
-				<br />
-			    </a>
-			))}
+		        title={consultant.name}
+		        onLoad={this.cardLoaded(index)}
+		     />
+		<h3>{consultant.name}</h3>
+		<p>
+		{consultant.company.name.split('\n').map((a: string, key: number) => (
+		    <a key={key} href={`tel:${a}`}>
+			{a}
 			<br />
-			{consultant.company.street}
+		    </a>
+		))}
+		<br />
+		{consultant.company.street}
 			<br />
 			{consultant.company.city}
 		    </p>
