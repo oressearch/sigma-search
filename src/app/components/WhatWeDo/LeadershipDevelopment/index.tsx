@@ -15,8 +15,6 @@ import flagDE from './images/flag-de.png'
 // @ts-ignore
 import flagFR from './images/flag-fr.png'
 // @ts-ignore
-import flagGB from './images/flag-gb.png'
-// @ts-ignore
 import flagNL from './images/flag-nl.png'
 // @ts-ignore
 import flagUS from './images/flag-us.png'
@@ -86,16 +84,6 @@ export default function LeadershipDevelopment() {
                   rel="author noopener"
                 >
                   www.oressearch.com
-                </a>
-              </li>
-              <li>
-                <img src={flagGB} alt="" />
-                <a
-                  href="https://www.ivystreet.net/"
-                  target="_blank"
-                  rel="author noopener"
-                >
-                  www.ivystreet.net
                 </a>
               </li>
               <li>
@@ -169,16 +157,6 @@ export default function LeadershipDevelopment() {
                   rel="author noopener"
                 >
                   www.oressearch.com
-                </a>
-              </li>
-              <li>
-                <img src={flagGB} alt="" />
-                <a
-                  href="https://www.ivystreet.net/"
-                  target="_blank"
-                  rel="author noopener"
-                >
-                  www.ivystreet.net
                 </a>
               </li>
               <li>

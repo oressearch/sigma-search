@@ -35,7 +35,7 @@ import usa from './images/usa.jpeg'
 const allCountries = [
   [0, benelux],
   [8, usa],
-  [7, london],
+  [-1, london],
   [6, madrid],
   [-1, milan],
   [3, munich],

@@ -4076,7 +4076,6 @@ if (reversed == null) { reversed = false; }
 	    this.button_6.addEventListener('click', onClick(1))
 	    this.button_5.addEventListener('click', onClick(3))
 	    this.button_8.addEventListener('click', onClick(6))
-	    this.button_2.addEventListener('click', onClick(7))
 	    this.button_3.addEventListener('click', onClick(2))
 		
 		
