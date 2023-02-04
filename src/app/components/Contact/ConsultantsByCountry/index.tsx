@@ -89,62 +89,64 @@ export default class extends React.Component<Props, {}> {
     const country = this.context.countries[activeCountryIndex]
       
     return (
-	<div
-            key={index}
-            className={styles.card}
-            {...(isLoading ? {'data-loading': ''} : {})}
-	>
-            {consultant && (
-		<Fragment key={consultant.company.street}>
-		    <img
-			src={consultant.image}
-			alt={consultant.name}
+	    <div
+        key={index}
+        className={styles.card}
+        {...(isLoading ? {'data-loading': ''} : {})}
+	    >
+        {consultant && (
+		    <Fragment key={consultant.company.street}>
+		      <img
+			    src={consultant.image}
+			    alt={consultant.name}
 		        title={consultant.name}
 		        onLoad={this.cardLoaded(index)}
-		     />
-		<h3>{consultant.name}</h3>
-		<p>
-		{consultant.company.name.split('\n').map((a: string, key: number) => (
-		    <a key={key} href={`tel:${a}`}>
-			{a}
-			<br />
-		    </a>
-		))}
-		<br />
-		{consultant.company.street}
-			<br />
-			{consultant.company.city}
-		    </p>
-		    <p>
-			<img src={iconPhone} alt="Phones" />
-			{consultant.phones.split('\n').map((a: string, key: number) => (
-			    <a key={key} href={`tel:${a}`}>
-				{a}
-				<br />
-			    </a>
-			))}
-		    </p>
-		    <p>
-			<img src={iconEmail} alt="Email" />
-			<a href={`mailto:${consultant.email}`}>{consultant.email}</a>
-		    </p>
-		    <p>
-			<img src={iconLinkedIn} alt="LinkedIn" />
-			<a href={consultant.link} target="_blank">
-			    LinkedIn profile
-			</a>
-		    </p>
-		    <p>
-			<img src={iconWebsite} alt="Website" />
-			<a href={country.contact.website} target="_blank">
-			    {country.contact.website}
-			</a>
-		    </p>
-		</Fragment>
-            )}
-	</div>
-    )
-  }
+		      />
+		      <h3>{consultant.name}</h3>
+		      <p>
+		        {consultant.company.name.split('\n').map((a: string, key: number) => (
+		        <a key={key} href={`tel:${a}`}>
+			        {a}
+			        <br />
+		        </a>
+		        ))}
+		        <br />
+		        {consultant.company.street}
+			      <br />
+			      {consultant.company.city}
+		      </p>
+		      {consultant.phones.trim().length > 0 && (
+            <p>
+			        <img src={iconPhone} alt="Phones" />
+			        {consultant.phones.split('\n').map((a: string, key: number) => (
+			          <a key={key} href={`tel:${a}`}>
+				          {a}
+				          <br />
+			          </a>
+			        ))}
+		        </p>
+          )}
+		      <p>
+			      <img src={iconEmail} alt="Email" />
+			      <a href={`mailto:${consultant.email}`}>{consultant.email}</a>
+		      </p>
+		      <p>
+			      <img src={iconLinkedIn} alt="LinkedIn" />
+			      <a href={consultant.link} target="_blank">
+			        LinkedIn profile
+			      </a>
+		      </p>
+		      <p>
+			      <img src={iconWebsite} alt="Website" />
+			      <a href={country.contact.website} target="_blank">
+			        {country.contact.website}
+			      </a>
+		      </p>
+		    </Fragment>
+        )}
+	    </div>
+        )
+        }
 
   render() {
     return (

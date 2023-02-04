@@ -79,14 +79,16 @@ export default class ContactByCountry extends React.Component<Props, {}> {
             </span>
           </div>
 
-          <div className={styles.info}>
-            <img src={iconPhone} alt="" />
-            <span>
-              {contact.phones.split('\n').map((p: string, key: number) => (
-                <a key={key} href={`tel:${p}`}>{p}<br /></a>
-              ))}
-            </span>
-          </div>
+          {contact.phones.trim().length > 0 &&
+            <div className={styles.info}>
+              <img src={iconPhone} alt="" />
+                <span>
+                  {contact.phones.split('\n').map((p: string, key: number) => (
+                    <a key={key} href={`tel:${p}`}>{p}<br /></a>
+                  ))}
+                </span>
+            </div>
+          }
 
           <a className={styles.info} href={`mailto:${contact.email}`}>
             <img src={iconEmail} alt="" />
