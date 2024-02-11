@@ -99,11 +99,11 @@ export default class extends React.Component<Props, {}> {
 		      />
 		      <h3>{consultant.name}</h3>
 		      <p>
-		        {consultant.company.name.split('\n').map((a: string, key: number) => (
-		        <a key={key} href={`tel:${a}`}>
-			        {a}
+		        {consultant.company.name.split('\n').map((name: string) => (
+		        <Fragment key={name}>
+			        {name}
 			        <br />
-		        </a>
+		        </Fragment>
 		        ))}
 		        <br />
 		        {consultant.company.street}
