@@ -5,7 +5,7 @@ import AppContext from '../../App/context'
 
 import Container from '../../Container'
 import Section from '../../Section'
-import {Props} from '../index'
+import {Props, IMAGES} from '../index'
 
 import {Contact, Country} from '../../../functions/countries'
 
@@ -62,12 +62,12 @@ export default class ContactByCountry extends React.Component<Props, {}> {
     if (status !== 'READY') return null
 
     const {activeCountryIndex} = this.props
-    const {contact} = countries[activeCountryIndex]
+    const {contact, name} = countries[activeCountryIndex]
 
     return (
       <div
         className={styles.background}
-        style={{backgroundImage: `url(${contact.image})`}}
+        style={{backgroundImage: `url(${IMAGES[name]})`}}
       >
         <Container className={styles.content}>
           <div className={styles.info}>

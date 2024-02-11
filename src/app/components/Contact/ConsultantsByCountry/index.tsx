@@ -4,22 +4,17 @@ import AppContext from '../../App/context'
 
 import Container from '../../Container'
 import Section from '../../Section'
-import {Props} from '../index'
+import {Props, IMAGES} from '../index'
 
 import {Consultant, Country} from '../../../functions/countries'
 
 // @ts-ignore
 import styles from './styles.styl'
 
-// @ts-ignore
 import loader from '../../App/images/loader.gif'
-// @ts-ignore
 import iconEmail from './images/iconEmail.png'
-// @ts-ignore
 import iconLinkedIn from './images/iconLinkedIn.png'
-// @ts-ignore
 import iconPhone from './images/iconPhone.png'
-// @ts-ignore
 import iconWebsite from './images/iconWebsite.png'
 
 // ------------------------------------------------------------------ # Public #
@@ -97,7 +92,7 @@ export default class extends React.Component<Props, {}> {
         {consultant && (
 		    <Fragment key={consultant.company.street}>
 		      <img
-			    src={consultant.image}
+			    src={IMAGES[consultant.name]}
 			    alt={consultant.name}
 		        title={consultant.name}
 		        onLoad={this.cardLoaded(index)}
