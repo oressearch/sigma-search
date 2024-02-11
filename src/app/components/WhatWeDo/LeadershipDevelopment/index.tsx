@@ -32,7 +32,7 @@ export default function LeadershipDevelopment() {
       <Container>
         <h2>
           Leadership Development <br />
-          &amp; Organisation Consultancy
+    &amp; Organisation Consultancy
         </h2>
         <p />
 
@@ -60,8 +60,8 @@ export default function LeadershipDevelopment() {
               </li>
             </ul>
             <p>
-              These Services are offered mainly by partners in Germany, Italy,
-              France, UK and the USA; further details are available on their
+              These Services are offered mainly by partners in Germany,
+              France, Czech Republic and the USA; further details are available on their
               respective web sites.
             </p>
 
@@ -99,11 +99,11 @@ export default function LeadershipDevelopment() {
               <li>
                 <img src={flagNL} alt="" />
                 <a
-                  href="https://www.nextsteptalentgroup.com/"
+                  href="https://marwilhr.com/"
                   target="_blank"
                   rel="author noopener"
                 >
-                  www.nextsteptalentgroup.com
+                  marwilhr.com
                 </a>
               </li>
             </ul>
@@ -133,8 +133,8 @@ export default function LeadershipDevelopment() {
               </li>
             </ul>
             <p>
-              These Services are offered mainly by partners in Germany, Italy,
-              France, UK and the USA; further details are available on their
+              These Services are offered mainly by partners in Germany,
+              France, Czech Republic and the USA; further details are available on their
               respective web sites.
             </p>
 
@@ -172,11 +172,11 @@ export default function LeadershipDevelopment() {
               <li>
                 <img src={flagNL} alt="" />
                 <a
-                  href="https://www.nextsteptalentgroup.com/"
+                  href="https://marwilhr.com/"
                   target="_blank"
                   rel="author noopener"
                 >
-                  www.nextsteptalentgroup.com
+                  marwilhr.com
                 </a>
               </li>
             </ul>

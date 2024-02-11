@@ -30,8 +30,8 @@ export default function Footer() {
 
           <img src={map} alt="" />
           <p>
-            Benelux - India - UK - Spain - Italy -<br />
-            Germany - France - Czech Republic - USA
+            Benelux - Spain - Germany -<br />
+            France - Czech Republic - USA
           </p>
         </section>
 
@@ -84,7 +84,7 @@ export default function Footer() {
               <li>
                 <Link to="/what-we-do#leadership-development" onClick={onClick}>
                   Leadership Development <br />
-                  &amp; Organisation Consultancy
+    &amp; Organisation Consultancy
                 </Link>
               </li>
             </ul>
