@@ -7,24 +7,24 @@
       "consultants": [
         {
           "company": {
-            "city": "6221 BT Maastricht\nThe Netherlands",
-            "name": "Next Step Talent Group",
-            "street": "De Colonel \nStationsplein 8-M"
+            "city": "6466 HZ Kerkrade,\nThe Netherlands",
+            "name": "Marwil",
+            "street": "Petrus Dorrstraat 7"
           },
-          "email": "loek.vandebroek@nextsteptalentgroup.com",
+          "email": "loek.vandebroek@marwilhr.com",
           "link": "https://www.linkedin.com/in/loekvandebroek/",
           "name": "Loek Vandebroek",
-          "phones": "+31-6-53487564"
+          "phones": "+31 (0)6 534 875 64",
         }
       ],
       "contact": {
-        "address": "next step talent\nDe Colonel\nStationsplein 8-M\n6221 BT Maastricht\nThe Netherlands",
-        "email": "loek.vandebroek@nextsteptalentgroup.com",
-        "latitude": "50.848661",
-        "linkedin": "https://www.linkedin.com/company/next-step-talent-group/",
-        "longitude": "5.706123",
-        "phones": "+31 85 273 7904",
-        "website": "http://www.nextsteptalentgroup.com"
+        "address": "Marwil\nPetrus Dorrstraat 7\n6466 HZ Kerkrade,\nThe Netherlands",
+        "email": "loek.vandebroek@marwilhr.com",
+        "latitude": "50.8586012",
+        "linkedin": "https://www.linkedin.com/company/marwil-hr-solutions/",
+        "longitude": "6.0203446",
+        "phones": "+31 (0)6 534 875 64",
+        "website": "https://marwilhr.com/"
       }
     },
     {
@@ -36,7 +36,7 @@
           "company": {
             "city": "130 000 Praha 3 - Vinohrady",
             "name": "Touchdown Czech Republic s.r.o.",
-            "street": "nám.Jiřího z Lobkovic 2458/17"
+            "street": "náměstí Jiřího z Lobkovic 2458/17"
           },
           "email": "es@touchdown.cz",
           "link": "https://www.linkedin.com/in/barborat/",
@@ -47,7 +47,7 @@
           "company": {
             "city": "130 00 Praha 3 - Vinohrady",
             "name": "Touchdown Czech Republic s.r.o.",
-            "street": "nám.Jiřího z Lobkovic 2458/17"
+            "street": "náměstí Jiřího z Lobkovic 2458/17"
           },
           "email": "es@touchdown.cz",
           "link": "https://www.linkedin.com/in/petr-z%C3%ADt-2b320920/",
@@ -58,7 +58,7 @@
           "company": {
             "city": "130 000 Praha 3 - Vinohrady",
             "name": "Touchdown Czech Republic s.r.o.",
-            "street": "nám.Jiřího z Lobkovic 2458/17"
+            "street": "náměstí Jiřího z Lobkovic 2458/17"
           },
           "email": "es@touchdown.cz",
           "link": "https://www.linkedin.com/in/ivana-votockova-06aa7b5/",
@@ -69,7 +69,7 @@
           "company": {
             "city": "130 000 Praha 3 - Vinohrady",
             "name": "Touchdown Czech Republic s.r.o.",
-            "street": "nám.Jiřího z Lobkovic 2458/17"
+            "street": "náměstí Jiřího z Lobkovic 2458/17"
           },
           "email": "es@touchdown.cz",
           "link": "https://www.linkedin.com/in/jirina-korinkova-0b201230/",
@@ -78,11 +78,11 @@
         }
       ],
       "contact": {
-        "address": "Touchdown Czech Republic s.r.o \nnám.Jiřího z Lobkovic 2458/17, \n130 00 Praha 3 - Vinohrady \nCzech Republic",
+        "address": "Touchdown Czech Republic s.r.o \nnáměstí Jiřího z Lobkovic 2458/17, \n130 00 Praha 3 - Vinohrady \nCzech Republic",
         "email": "es@touchdown.cz",
-        "latitude": "50.079231",
+        "latitude": "50.0768509",
         "linkedin": "https://www.linkedin.com/company/touchdown/",
-        "longitude": "14.420863",
+        "longitude": "14.4681166",
         "phones": "+420 272 660 043",
         "website": "https://www.touchdown.cz"
       }
@@ -223,8 +223,8 @@
         {
           "company": {
             "city": "28006 Madrid",
-            "name": "TOUCH IN TOUCH",
-            "street": "C/Núñez de Balboa 120"
+            "name": "Touch in Touch",
+            "street": "Calle Núñez de Balboa 120"
           },
           "email": "elena.desalamanca@touchintouch.com",
           "link": "https://www.linkedin.com/in/elena-enr%C3%ADquez-de-salamanca-saura-8301593/",
@@ -234,8 +234,8 @@
         {
           "company": {
             "city": "28006 Madrid",
-            "name": "TOUCH IN TOUCH",
-            "street": "C/Núñez de Balboa 120"
+            "name": "Touch in Touch",
+            "street": "Calle Núñez de Balboa 120"
           },
           "email": "francisco.alvarez@touchintouch.com",
           "link": "https://www.linkedin.com/in/francisco-j-alvarez-a-78743625/",
@@ -245,8 +245,8 @@
         {
           "company": {
             "city": "28006 Madrid",
-            "name": "TOUCH IN TOUCH",
-            "street": "C/Núñez de Balboa 120"
+            "name": "Touch in Touch",
+            "street": "Calle Núñez de Balboa 120"
           },
           "email": "noelia.matias@touchintouch.com",
           "link": "https://www.linkedin.com/in/noeliamatiasrecursoshumanosrrhh",
@@ -255,11 +255,11 @@
         }
       ],
       "contact": {
-        "address": "TOUCH IN TOUCH\nC/Núñez de Balboa 120\n28006 Madrid\nSpain",
+        "address": "Touch In Touch\nCalle Núñez de Balboa 120\n28006 Madrid\nSpain",
         "email": "hola@touchintouch.com",
-        "latitude": "40.4383331",
+        "latitude": "40.4383349",
         "linkedin": "https://www.linkedin.com/company/touch-in-touch/",
-        "longitude": "-3.6837268",
+        "longitude": "-3.6815356",
         "phones": "+34 610 727 733",
         "website": "https://www.touchintouch.com"
       }
@@ -286,24 +286,24 @@
       "consultants": [
         {
           "company": {
-            "city": "MA 02142,\nUSA",
-            "name": "Next Step Talent Group",
-            "street": "CIC Building 14th floor, One broadway"
+            "city": "6466 HZ Kerkrade,\nThe Netherlands",
+            "name": "Marwil",
+            "street": "Petrus Dorrstraat 7"
           },
-          "email": "loek.vandebroek@nextsteptalentgroup.com",
+          "email": "loek.vandebroek@marwilhr.com",
           "link": "https://www.linkedin.com/in/loekvandebroek/",
           "name": "Loek Vandebroek",
-          "phones": "617-401-2259"
+          "phones": "+31 (0)6 534 875 64",
         }
       ],
       "contact": {
-        "address": "Next Step Talent Group\nCIC Building 14th floor, One broadway\nMA 02142,\nUSA",
-        "email": "loek.vandebroek@nextsteptalentgroup.com",
-        "latitude": "42.362912",
-        "linkedin": "https://www.linkedin.com/company/next-step-talent-group/",
-        "longitude": "-71.0839294",
-        "phones": "617-401-2259",
-        "website": "http://www.nextsteptalentgroup.com"
+        "address": "Marwil\nPetrus Dorrstraat 7\n6466 HZ Kerkrade,\nThe Netherlands",
+        "email": "loek.vandebroek@marwilhr.com",
+        "latitude": "50.8586012",
+        "linkedin": "https://www.linkedin.com/company/marwil-hr-solutions/",
+        "longitude": "6.0203446",
+        "phones": "+31 (0)6 534 875 64",
+        "website": "https://marwilhr.com/"
       }
     }
   ],
