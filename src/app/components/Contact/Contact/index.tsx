@@ -14,8 +14,6 @@ import logo from '../../App/images/logo.jpeg'
 // @ts-ignore
 import benelux from './images/benelux.jpeg'
 // @ts-ignore
-import dublin from './images/dublin.jpeg'
-// @ts-ignore
 import madrid from './images/madrid.jpeg'
 // @ts-ignore
 import munich from './images/munich.jpeg'
@@ -38,9 +36,6 @@ const allCountries = [
 if (allCountries.length % 2 === 1) {
   allCountries.push([-1, logo])
 }
-
-const countriesTop = allCountries.slice(0, allCountries.length / 2)
-const countriesBottom = allCountries.slice(allCountries.length / 2)
 
 // ------------------------------------------------------------------ # Public #
 
@@ -96,13 +91,7 @@ export default class extends React.Component<Props, {}> {
     return (
       <Section className={styles.section} style={{flexDirection: 'column'}}>
         <div className={styles.countries}>
-          {countriesTop.map(([index, src], key) => (
-            <Country key={key} index={index} src={src} />
-          ))}
-        </div>
-
-        <div className={styles.countries}>
-          {countriesBottom.map(([index, src], key) => (
+          {allCountries.map(([index, src], key) => (
             <Country key={key} index={index} src={src} />
           ))}
         </div>
