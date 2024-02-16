@@ -286,9 +286,9 @@
       "consultants": [
         {
           "company": {
-            "city": "6466 HZ Kerkrade,\nThe Netherlands",
+            "city": "\nUSA",
             "name": "Marwil",
-            "street": "Petrus Dorrstraat 7"
+            "street": "Cambridge, MA"
           },
           "email": "loek.vandebroek@marwilhr.com",
           "link": "https://www.linkedin.com/in/loekvandebroek/",
@@ -297,11 +297,11 @@
         }
       ],
       "contact": {
-        "address": "Marwil\nPetrus Dorrstraat 7\n6466 HZ Kerkrade,\nThe Netherlands",
+        "address": "Marwil\nCambridge, MA, USA",
         "email": "loek.vandebroek@marwilhr.com",
-        "latitude": "50.8586012",
+        "latitude": "42.3783903",
         "linkedin": "https://www.linkedin.com/company/marwil-hr-solutions/",
-        "longitude": "6.0203446",
+        "longitude": "-71.1129096",
         "phones": "+31 (0)6 534 875 64",
         "website": "https://marwilhr.com/"
       }
