@@ -4107,13 +4107,7 @@ if (reversed == null) { reversed = false; }
 		
 		
 		
-	    function onClick(index) {
-		return function() {
-		    window.open(`/contact?index=${index}`, '_self')
-		}
-	    }
 	    
-	        this.button_3.addEventListener('click', onClick(2))
 		this.button_3.addEventListener("mouseover", f3_MouseOverHandler.bind(this));
 		
 		function f3_MouseOverHandler()
@@ -4131,7 +4125,6 @@ if (reversed == null) { reversed = false; }
 		
 		
 		
-	        this.button_5.addEventListener('click', onClick(3))
 		this.button_5.addEventListener("mouseover", f5_MouseOverHandler.bind(this));
 		
 		function f5_MouseOverHandler()
@@ -4147,7 +4140,6 @@ if (reversed == null) { reversed = false; }
 		this.munich.gotoAndPlay(10);	
 		}
 		
-	        this.button_6.addEventListener('click', onClick(1))
 		this.button_6.addEventListener("mouseover", f6_MouseOverHandler.bind(this));
 		
 		function f6_MouseOverHandler()
@@ -4164,7 +4156,6 @@ if (reversed == null) { reversed = false; }
 		}
 		
 		
-	        this.button_7.addEventListener('click', onClick(0))
 		this.button_7.addEventListener("mouseover", f7_MouseOverHandler.bind(this));
 		
 		function f7_MouseOverHandler()
@@ -4182,7 +4173,6 @@ if (reversed == null) { reversed = false; }
 		
 		
 		
-	        this.button_8.addEventListener('click', onClick(6))
 		this.button_8.addEventListener("mouseover", f8_MouseOverHandler.bind(this));
 		
 		function f8_MouseOverHandler()
@@ -4200,7 +4190,6 @@ if (reversed == null) { reversed = false; }
 		
 		
 		
-	        this.button_9.addEventListener('click', onClick(8))
 		this.button_9.addEventListener("mouseover", f9_MouseOverHandler.bind(this));
 		
 		function f9_MouseOverHandler()
