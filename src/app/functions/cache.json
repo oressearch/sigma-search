@@ -1,33 +1,6 @@
 {
   "countries": [
     {
-      "id": "1OsPzNemDaDArPk6-vmOm8vT-kWqPtE1a",
-      "name": "Benelux",
-      "mimeType": "application/vnd.google-apps.folder",
-      "consultants": [
-        {
-          "company": {
-            "city": "6466 HZ Kerkrade,\nThe Netherlands",
-            "name": "Marwil",
-            "street": "Petrus Dorrstraat 7"
-          },
-          "email": "loek.vandebroek@marwilhr.com",
-          "link": "https://www.linkedin.com/in/loekvandebroek/",
-          "name": "Loek Vandebroek",
-          "phones": "+31 (0)6 534 875 64",
-        }
-      ],
-      "contact": {
-        "address": "Marwil\nPetrus Dorrstraat 7\n6466 HZ Kerkrade,\nThe Netherlands",
-        "email": "loek.vandebroek@marwilhr.com",
-        "latitude": "50.8586012",
-        "linkedin": "https://www.linkedin.com/company/marwil-hr-solutions/",
-        "longitude": "6.0203446",
-        "phones": "+31 (0)6 534 875 64",
-        "website": "https://marwilhr.com/"
-      }
-    },
-    {
       "id": "11vCHphNjkBe-UgJ9Zk2ITPyslfhxCQ2g",
       "name": "Czech Republic",
       "mimeType": "application/vnd.google-apps.folder",
@@ -124,28 +97,6 @@
           "link": "https://www.linkedin.com/in/gillesherreman/",
           "name": "Gilles Herreman",
           "phones": "+33 6 14 67 09 28"
-        },
-        {
-          "company": {
-            "city": "75008 Paris",
-            "name": "Ores Search",
-            "street": "42, avenue Montaigne"
-          },
-          "email": "henri.floret@oressearch.com",
-          "link": "https://www.linkedin.com/in/henri-floret-108814/",
-          "name": "Henri Floret",
-          "phones": "+33 6 82 82 89 31"
-        },
-        {
-          "company": {
-            "city": "75008 Paris",
-            "name": "Ores Search",
-            "street": "42, avenue Montaigne"
-          },
-          "email": "herve.boyart@oressearch.com",
-          "link": "https://www.linkedin.com/in/herveboyart/",
-          "name": "Hervé Boyart",
-          "phones": ""
         }
       ],
       "contact": {
@@ -183,36 +134,6 @@
         "longitude": "11.3501431",
         "phones": "+49 89 179 59 58-0\nFax +49 89 179 59 58-20",
         "website": "http://www.odigos.de"
-      }
-    },
-    {
-      "id": "15N59wyrrzUyr4-pAXmISei3g8ZJ75MZb",
-      "name": "Italy",
-      "mimeType": "application/vnd.google-apps.folder",
-      "consultants": [],
-      "contact": {
-        "address": "Lean HR Consulting\nUli Müller\nFort Collins, Colorado, USA",
-        "email": "uli@leanhrconsult.com",
-        "latitude": "40.592358",
-        "linkedin": "https://www.google.com/",
-        "longitude": "-105.075859",
-        "phones": "+1 970 233 8868",
-        "website": "http://www.leanhrconsult.com"
-      }
-    },
-    {
-      "id": "1B3QOadZ61Xufs_60JLmVwFj28-FpkQos",
-      "name": "India",
-      "mimeType": "application/vnd.google-apps.folder",
-      "consultants": [],
-      "contact": {
-        "address": "Pune 411060",
-        "email": "deelip.amolic@ethos-india.com",
-        "latitude": "18.4444",
-        "linkedin": "https://www.linkedin.com/company/ethos-india-consulting/",
-        "longitude": "73.9126",
-        "phones": "+ 91 98220 45275",
-        "website": "https://www.ethosindiaconsulting.co.in/"
       }
     },
     {
@@ -262,48 +183,6 @@
         "longitude": "-3.6815356",
         "phones": "+34 610 727 733",
         "website": "https://www.touchintouch.com"
-      }
-    },
-    {
-      "id": "1gwhG9tIkAWwbeemHrE5JwEMl9a548HI9",
-      "name": "UK",
-      "mimeType": "application/vnd.google-apps.folder",
-      "consultants": [],
-      "contact": {
-        "address": "Ivy Street\n20 North Audley Street, London, W1K 6LX, UK",
-        "email": "contact@ivystreet.net",
-        "latitude": "51.512378",
-        "linkedin": "https://www.linkedin.com/company/ivy-street/",
-        "longitude": "-0.154171",
-        "phones": "+44 7976 033680",
-        "website": "https://www.ivystreet.net/"
-      }
-    },
-    {
-      "id": "166OzJqECEP3Eu3v9J6uqSXzzGW0uOekR",
-      "name": "USA",
-      "mimeType": "application/vnd.google-apps.folder",
-      "consultants": [
-        {
-          "company": {
-            "city": "\nUSA",
-            "name": "Marwil",
-            "street": "Cambridge, MA"
-          },
-          "email": "loek.vandebroek@marwilhr.com",
-          "link": "https://www.linkedin.com/in/loekvandebroek/",
-          "name": "Loek Vandebroek",
-          "phones": "+31 (0)6 534 875 64",
-        }
-      ],
-      "contact": {
-        "address": "Marwil\nCambridge, MA, USA",
-        "email": "loek.vandebroek@marwilhr.com",
-        "latitude": "42.3783903",
-        "linkedin": "https://www.linkedin.com/company/marwil-hr-solutions/",
-        "longitude": "-71.1129096",
-        "phones": "+31 (0)6 534 875 64",
-        "website": "https://marwilhr.com/"
       }
     }
   ],

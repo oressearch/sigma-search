@@ -30,8 +30,7 @@ export default function Footer() {
 
           <img src={map} alt="" />
           <p>
-            Benelux - Spain - Germany -<br />
-            France - Czech Republic - USA
+            Spain - Germany - France - Czech Republic
           </p>
         </section>
 
@@ -79,12 +78,6 @@ export default function Footer() {
               <li>
                 <Link to="/what-we-do#cross-border" onClick={onClick}>
                   Cross Border Search
-                </Link>
-              </li>
-              <li>
-                <Link to="/what-we-do#leadership-development" onClick={onClick}>
-                  Leadership Development <br />
-    &amp; Organisation Consultancy
                 </Link>
               </li>
             </ul>

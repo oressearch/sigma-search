@@ -10,8 +10,6 @@ import styles from './styles.styl'
 // @ts-ignore
 import logo from '../../App/images/logo.jpeg'
 // @ts-ignore
-import benelux from './images/benelux.jpeg'
-// @ts-ignore
 import madrid from './images/madrid.jpeg'
 // @ts-ignore
 import munich from './images/munich.jpeg'
@@ -19,12 +17,8 @@ import munich from './images/munich.jpeg'
 import paris from './images/paris.jpeg'
 // @ts-ignore
 import prague from './images/prague.jpeg'
-// @ts-ignore
-import usa from './images/usa.jpeg'
 
 const allCountries = [
-  [0, benelux],
-  [8, usa],
   [6, madrid],
   [3, munich],
   [2, paris],

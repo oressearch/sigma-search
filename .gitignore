@@ -2,3 +2,7 @@
 /.env
 /dist
 /node_modules
+
+# Direnv
+.direnv
+.envrc
