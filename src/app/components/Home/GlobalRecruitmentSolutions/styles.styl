@@ -1,5 +1,14 @@
 @import '../../App/mixins'
 
+.title
+  font-size 3.5rem
+  +media-lt(lg)
+    font-size 36px
+    line-height 36px
+  +media-lt(sm)
+    font-size 1.5rem
+    line-height 1.5rem
+  
 .section
   {with-height-100}
   display flex
@@ -8,30 +17,23 @@
   justify-content center
   overflow hidden
   position relative
+  background-image url('./background.jpeg')
+  background-position center center
+  background-size cover  
   +media-lt(sm)
-    min-height: calc(75vh - 60px)
+    justify-content end
+    min-height calc(75vh - 60px)
+    background-image url('./background-mobile.jpeg')
 
 .container
   color white
   margin-top 7rem
   z-index 1
+  max-width 25rem
+  margin-left: 7rem
   pointer-events none
   +media-lt(sm)
-    margin-top 0
-
-.img
-  width: auto
-  position: fixed
-  bottom: 10px
-  right: 10px
-  max-width: 225px
-
-  +media-lt(md)
-    max-width: 175px
-
-  +media-lt(sm)
-    max-width: 100px
-
-.anim
-  top: 0;
-  bottom: inherit;
+    text-align center
+    max-width inherit
+    margin 0
+    padding 1rem

@@ -21,10 +21,10 @@ import paris from './images/paris.jpeg'
 import prague from './images/prague.jpeg'
 
 const allCountries = [
-  [6, madrid],
-  [3, munich],
-  [2, paris],
-  [1, prague],
+  [3, madrid],
+  [2, munich],
+  [1, paris],
+  [0, prague],
 ]
 
 if (allCountries.length % 2 === 1) {

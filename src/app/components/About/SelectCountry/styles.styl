@@ -11,48 +11,10 @@
   padding-top 50px
   position relative
   z-index 1
-
-.container
-  align-items center
-  color white
-  display flex
-  pointer-events none
-  z-index 1
-  background: radial-gradient(circle, rgba(37,42,45,.5) 25%, rgba(37,42,45,0) 100%);
-
-.content
-  width 70%
-  +media-lt(lg)
-    width 80%
+  background-image url('./background.jpeg')
+  background-position center center
+  background-size cover  
   +media-lt(sm)
-    width 100%
-  ul
-    margin 75px 0 0 40px
-    +media-lt(md)
-      margin-top 0
-    +media-lt(sm)
-      list-style-type none
-      margin-left 0
-  li
-    padding 20px 0
-    +media-lt(sm)
-      padding 0
-      margin-top 15px
-
-.img
-  width: auto
-  position: absolute
-  bottom: 10px
-  right: 10px
-  cursor: pointer;
-  max-width: 225px
-
-  +media-lt(md)
-    max-width: 175px
-
-  +media-lt(sm)
-    max-width: 125px
-
-.anim
-  top: 0;
-  bottom: inherit;
+    justify-content end
+    min-height calc(75vh - 60px)
+    background-image url('./background-mobile.jpeg')
