@@ -67,44 +67,44 @@
       "consultants": [
         {
           "company": {
-            "city": "75008 Paris",
+            "city": "Paris",
             "name": "Ores Search",
-            "street": "42, avenue Montaigne"
+            "street": ""
           },
           "email": "cyril.accard@oressearch.com",
           "link": "https://www.linkedin.com/in/cyril-accard-guillois-74594925/",
           "name": "Cyril Accard",
-          "phones": "+33 6 82 82 89 21"
+          "phones": ""
         },
         {
           "company": {
-            "city": "75008 Paris",
+            "city": "Paris",
             "name": "Ores Search",
-            "street": "42, avenue Montaigne"
+            "street": ""
           },
           "email": "agnes.saugeron@oressearch.com",
           "link": "https://www.linkedin.com/in/agnessaugerondaube/",
           "name": "Agnès Saugeron-Daube",
-          "phones": "+33 6 32 35 59 45"
+          "phones": ""
         },
         {
           "company": {
-            "city": "75008 Paris",
+            "city": "Paris",
             "name": "Ores Search",
-            "street": "42, avenue Montaigne"
+            "street": ""
           },
           "email": "gilles.herreman@oressearch.com",
           "link": "https://www.linkedin.com/in/gillesherreman/",
           "name": "Gilles Herreman",
-          "phones": "+33 6 14 67 09 28"
+          "phones": ""
         }
       ],
       "contact": {
-        "address": "Ores Search\n42, avenue Montaigne\n75008 Paris",
+        "address": "Ores Search\nParis",
         "email": "contact@oressearch.com",
-        "latitude": "48.867502",
+        "latitude": "48.8589385",
         "linkedin": "https://www.linkedin.com/company/ores-search/",
-        "longitude": "2.307324",
+        "longitude": "2.2646342",
         "phones": "",
         "website": "https://www.oressearch.com/locale?lang=en"
       }
