@@ -1,0 +1,69 @@
+xs-max = 575.98px
+
+sm-min = 576px
+sm-max = 767.98px
+
+md-min = 768px
+md-max = 991.98px
+
+lg-min = 992px
+lg-max = 1199.98px
+
+xl-min = 1200px
+
+// -------------------------------------------------------------- # Media only #
+
+media(size)
+  if size == xs
+    @media (max-width xs-max)
+      {block}
+  else if size == sm
+    @media (min-width sm-min) and (max-width sm-max)
+      {block}
+  else if size == md
+    @media (min-width md-min) and (max-width md-max)
+      {block}
+  else if size == lg
+    @media (min-width lg-min) and (max-width lg-max)
+      {block}
+  else if size == xl
+    @media (min-width xl-min)
+      {block}
+  else
+    {block}
+
+// --------------------------------------------------------- # Media less than #
+
+media-lt(size)
+  if size == xs
+    @media (max-width xs-max)
+      {block}
+  else if size == sm
+    @media (max-width sm-max)
+      {block}
+  else if size == md
+    @media (max-width md-max)
+      {block}
+  else if size == lg
+    @media (max-width lg-max)
+      {block}
+  else
+    {block}
+
+// ------------------------------------------------------ # Media greater than #
+
+media-gt(size)
+  if size == sm
+    @media (min-width sm-min)
+      {block}
+  else if size == md
+    @media (min-width md-min)
+      {block}
+  else if size == lg
+    @media (min-width lg-min)
+      {block}
+  else if size == xl
+    @media (min-width xl-min)
+      {block}
+  else
+    {block}

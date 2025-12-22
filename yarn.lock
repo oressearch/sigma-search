@@ -5399,11 +5399,6 @@ source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.1:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
-soywod-tslint-rules@^1.0.8:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/soywod-tslint-rules/-/soywod-tslint-rules-1.0.9.tgz#1dff790b3a5d1fc7472a27b9cef156dfd54b5bc5"
-  integrity sha512-M4FxV9p0HqZkYPfFwCgbiLvuwLrpdxKIVvuGjVVvZnldit6NkAku1TRQZ/XLvd8wafBGnAcfX2FwRjN/7OmF0A==
-
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/split-string/-/split-string-3.1.0.tgz#7cb09dda3a86585705c64b39a6466038682e8fe2"
@@ -5568,13 +5563,6 @@ stylehacks@^4.0.0:
     browserslist "^4.0.0"
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
-
-stylus-media-breakpoint@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/stylus-media-breakpoint/-/stylus-media-breakpoint-1.0.0.tgz#5b19bd2a190146cd0597adfe4d53e8ec63f7dbcb"
-  integrity sha512-IrreQOUKhwvernqc0gUfJ79m5UnTkDJfWdi7mLN4U3KAeGiCmRyClJ0NQSnqbRW9ZAZxkTfIFhSWaPwnz1PNkw==
-  dependencies:
-    stylus "^0.54.5"
 
 stylus@^0.54.5:
   version "0.54.5"
